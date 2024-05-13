@@ -6943,6 +6943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79823ce8979e2e943b8894ca3f0b68a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSettings: {fileID: 11400000, guid: 7d7f77771a113b4458c27f2742c93c1b, type: 2}
   playerRigidbody: {fileID: 126119385119969719}
 --- !u!1 &7361907947088496877
 GameObject:
