@@ -23,11 +23,13 @@ namespace Gameplay.Entities.Common.EntityMovement
         private void Init()
         {
             entityMovementView.OnMoveInputDetected += EntityMovementView_OnMoveInputDetected;
-        }        
+            entityMovementView.OnRunInputDetected += EntityMovementView_OnRunInputDetected;
+        }       
 
         private void Deinit()
         {
             entityMovementView.OnMoveInputDetected -= EntityMovementView_OnMoveInputDetected;
+            entityMovementView.OnRunInputDetected -= EntityMovementView_OnRunInputDetected;
         }
 
         private void EntityMovementView_OnMoveInputDetected(Vector2 rawMovementDirection)
@@ -40,6 +42,11 @@ namespace Gameplay.Entities.Common.EntityMovement
             {
                 entityMovementModel.StopMovement();
             }            
+        }
+
+        private void EntityMovementView_OnRunInputDetected(bool obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
