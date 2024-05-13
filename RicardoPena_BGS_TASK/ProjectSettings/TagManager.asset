@@ -38,12 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Floor
     uniqueID: 1168486373
     locked: 0
-  - name: Buildings
-    uniqueID: 3785138869
+  - name: Default
+    uniqueID: 0
     locked: 0
