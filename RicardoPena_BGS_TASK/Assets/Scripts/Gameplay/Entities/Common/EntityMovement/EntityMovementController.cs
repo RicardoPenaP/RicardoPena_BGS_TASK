@@ -32,7 +32,14 @@ namespace Gameplay.Entities.Common.EntityMovement
 
         private void EntityMovementView_OnMoveInputDetected(Vector2 rawMovementDirection)
         {
-            entityMovementModel.MoveTowards(rawMovementDirection);
+            if (rawMovementDirection.magnitude > Mathf.Epsilon)
+            {
+                entityMovementModel.MoveTowards(rawMovementDirection);
+            }
+            else
+            {
+                entityMovementModel.StopMovement();
+            }            
         }
     }
 }
