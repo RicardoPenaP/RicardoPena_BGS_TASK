@@ -6,7 +6,6 @@ namespace Gameplay.Entities.Player
         Idle,
         Walking,
         Running,
-        Recolecting,
-        Equipping
+        Recolecting
     }
 }
