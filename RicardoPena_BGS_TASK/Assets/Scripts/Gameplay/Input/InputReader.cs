@@ -27,20 +27,8 @@ namespace Gameplay.Input
         }
 
         public void OnInteract(InputAction.CallbackContext context)
-        {
-            bool state = false;
-            switch (context.phase)
-            {               
-                case InputActionPhase.Started:
-                    state = true;
-                    break;                
-                case InputActionPhase.Canceled:
-                    state = false;
-                    break;
-                default:
-                    break;
-            }
-            OnInteractInputUpdated?.Invoke(state);
+        {           
+            OnInteractInputUpdated?.Invoke(context.ReadValueAsButton());
         }
 
         public void OnMove(InputAction.CallbackContext context) => OnMoveInputUpdated?.Invoke(context.ReadValue<Vector2>());    
