@@ -1,0 +1,12 @@
+namespace Gameplay.Entities.Player
+{
+    public enum PlayerState 
+    {
+        None,
+        Idle,
+        Walking,
+        Running,
+        Recolecting,
+        Equipping
+    }
+}

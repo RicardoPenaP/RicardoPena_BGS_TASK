@@ -11,6 +11,7 @@ namespace Gameplay.Entities.Player
         [Header("References")]
         [SerializeField] private InputReader inputReader;
         [SerializeField] private Transform spriteRendererTransform;
+        [SerializeField] private Animator playerAnimator;
 
         public event Action<Vector2> OnMoveInputDetected;
         public event Action<bool> OnRunInputDetected;
