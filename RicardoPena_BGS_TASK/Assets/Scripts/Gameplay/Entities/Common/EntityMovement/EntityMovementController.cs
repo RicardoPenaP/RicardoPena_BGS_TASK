@@ -44,9 +44,7 @@ namespace Gameplay.Entities.Common.EntityMovement
             }            
         }
 
-        private void EntityMovementView_OnRunInputDetected(bool obj)
-        {
-            throw new NotImplementedException();
-        }
+        private void EntityMovementView_OnRunInputDetected(bool state) => entityMovementModel.SetIsRunning(state);
+
     }
 }
