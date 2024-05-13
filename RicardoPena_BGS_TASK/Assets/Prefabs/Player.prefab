@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1616e2be6a2948449844c06da53041eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: ece4c3d15cff2f446a0dfcee14b3382a, type: 2}
 --- !u!1 &1724888014862644140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,6 +6840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4286281039815262161}
+  - component: {fileID: 2284573050747906331}
   m_Layer: 0
   m_Name: SpriteRenderer
   m_TagString: Untagged
@@ -6862,6 +6864,41 @@ Transform:
   - {fileID: 1727853448629340968}
   m_Father: {fileID: 6138509671386022057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2284573050747906331
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650157822799710285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.039513588, y: 1.2932606}
+  m_Size: {x: 1.1729345, y: 2.5117493}
+  m_Direction: 0
 --- !u!1 &5833290048468242175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6906,6 +6943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79823ce8979e2e943b8894ca3f0b68a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 126119385119969719}
 --- !u!1 &7361907947088496877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,6 +6953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3563097684233820085}
+  - component: {fileID: 126119385119969719}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6940,3 +6979,30 @@ Transform:
   - {fileID: 4234500007952257885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &126119385119969719
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361907947088496877}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 0
