@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Gameplay.Entities.Common.EntityMovement
 {
@@ -21,14 +22,17 @@ namespace Gameplay.Entities.Common.EntityMovement
 
         private void Init()
         {
-
-        }
+            entityMovementView.OnMoveInputDetected += EntityMovementView_OnMoveInputDetected;
+        }        
 
         private void Deinit()
         {
-
+            entityMovementView.OnMoveInputDetected -= EntityMovementView_OnMoveInputDetected;
         }
 
-        
+        private void EntityMovementView_OnMoveInputDetected(Vector2 rawMovementDirection)
+        {
+            entityMovementModel.MoveTowards(rawMovementDirection);
+        }
     }
 }
