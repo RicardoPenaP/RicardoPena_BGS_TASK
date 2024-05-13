@@ -6,10 +6,10 @@ namespace Gameplay.Entities.Common.EntityMovement
     public class EntityMovementSettings : ScriptableObject
     {
         [Header("Entity Movement Settings")]
-        [SerializeField] private float movementSpeed = 6f;
+        [SerializeField] private float walkingSpeed = 6f;
         [SerializeField, Range(1f, 10f)] private float runningSpeedMultiplier = 1.5f;
 
-        public float MovementSpeed => movementSpeed;
-        public float RunningSpeed => movementSpeed * runningSpeedMultiplier;
+        public float WalkingSpeed => walkingSpeed;
+        public float RunningSpeed => walkingSpeed * runningSpeedMultiplier;
     }
 }

@@ -22,7 +22,7 @@ namespace Gameplay.Entities.Player
             }
             else
             {
-                playerRigidbody.velocity = movementDirection * movementSettings.MovementSpeed;
+                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
             }            
         }      
 
