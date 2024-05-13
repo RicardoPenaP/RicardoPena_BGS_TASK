@@ -13,6 +13,7 @@ namespace Gameplay.Entities.Player
         [SerializeField] private Transform spriteRendererTransform;
 
         public event Action<Vector2> OnMoveInputDetected;
+        public event Action<bool> OnRunInputDetected;
 
         private void Awake()
         {
@@ -26,12 +27,14 @@ namespace Gameplay.Entities.Player
 
         private void Init()
         {
-            inputReader.OnMoveInputUpdated += InputReader_OnMoveInputUpdated;           
-        }
+            inputReader.OnMoveInputUpdated += InputReader_OnMoveInputUpdated;
+            inputReader.OnRunInputUpdated += InputReader_OnRunInputUpdated;
+        }      
 
         private void Deinit()
         {
             inputReader.OnMoveInputUpdated -= InputReader_OnMoveInputUpdated;
+            inputReader.OnRunInputUpdated -= InputReader_OnRunInputUpdated;
         }
 
         private void InputReader_OnMoveInputUpdated(Vector2 rawInput)
@@ -39,6 +42,8 @@ namespace Gameplay.Entities.Player
             SetLookingDirection(rawInput.x);
             OnMoveInputDetected?.Invoke(rawInput);
         }
+
+        private void InputReader_OnRunInputUpdated(bool state) => OnRunInputDetected?.Invoke(state);
 
         private void SetLookingDirection(float direction)
         {
