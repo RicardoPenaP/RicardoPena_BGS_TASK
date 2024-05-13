@@ -10,6 +10,7 @@ namespace Gameplay.Input
     {
         public event Action<bool> OnInteractInputUpdated;
         public event Action<Vector2> OnMoveInputUpdated;
+        public event Action<bool> OnRunInputUpdated;
 
         private Controls controls;
 
@@ -42,9 +43,23 @@ namespace Gameplay.Input
             OnInteractInputUpdated?.Invoke(state);
         }
 
-        public void OnMove(InputAction.CallbackContext context)
+        public void OnMove(InputAction.CallbackContext context) => OnMoveInputUpdated?.Invoke(context.ReadValue<Vector2>());    
+
+        public void OnRun(InputAction.CallbackContext context)
         {
-            OnMoveInputUpdated?.Invoke(context.ReadValue<Vector2>());
+            bool state = false;
+            switch (context.phase)
+            {
+                case InputActionPhase.Started:
+                    state = true;
+                    break;
+                case InputActionPhase.Canceled:
+                    state = false;
+                    break;
+                default:
+                    break;
+            }
+            OnRunInputUpdated?.Invoke(state);
         }
     }
 }
