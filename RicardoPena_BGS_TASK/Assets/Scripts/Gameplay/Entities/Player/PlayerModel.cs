@@ -13,8 +13,27 @@ namespace Gameplay.Entities.Player
         [SerializeField] private Rigidbody2D playerRigidbody;
 
         private bool isRunning = false;
+        private Vector2 movementDirection;
 
         public void MoveTowards(Vector2 movementDirection)
+        {
+            this.movementDirection = movementDirection;
+            Move();
+        }      
+
+        public void StopMovement()
+        {
+            this.movementDirection = Vector2.zero;
+            Move();
+        }
+
+        public void SetIsRunning(bool state)
+        {
+            isRunning = state;
+            Move();
+        }
+
+        private void Move()
         {
             if (isRunning)
             {
@@ -23,18 +42,9 @@ namespace Gameplay.Entities.Player
             else
             {
                 playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
-            }            
-        }      
-
-        public void StopMovement()
-        {
-            MoveTowards(Vector2.zero);
+            }
         }
 
-        public void SetIsRunning(bool state)
-        {
-            isRunning = state;
-        }
 
     }
 }

@@ -47,19 +47,7 @@ namespace Gameplay.Input
 
         public void OnRun(InputAction.CallbackContext context)
         {
-            bool state = false;
-            switch (context.phase)
-            {
-                case InputActionPhase.Started:
-                    state = true;
-                    break;
-                case InputActionPhase.Canceled:
-                    state = false;
-                    break;
-                default:
-                    break;
-            }
-            OnRunInputUpdated?.Invoke(state);
+            OnRunInputUpdated?.Invoke(context.ReadValueAsButton());
         }
     }
 }
