@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 49728
+  controlID: 50815
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -92,7 +92,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 49619
+  controlID: 50816
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 49620
+  controlID: 50726
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 880
     height: 636
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 0.2514338, y: 3.6071384, z: 0.26147816}
     speed: 2
-    m_Value: {x: 4.26, y: 6.77, z: 0}
+    m_Value: {x: 0.2514338, y: 3.6071384, z: 0.26147816}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 8.711457
     speed: 2
-    m_Value: 1.5486851
+    m_Value: 8.711457
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -719,8 +719,8 @@ MonoBehaviour:
     y: 0
     width: 249
     height: 636
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e0d00200
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: f86cf8fffc6df8ffbe7bf8ff32a6f8ffcca6f8ffc4b7f8ffcecaf8ffcccbfaffc0eafcffe80cfdfff2d7ffff58edffffe4faffffe8faffff84c1000062c10200
       m_RenameOverlay:
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 49671
+  controlID: 50817
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -835,13 +835,13 @@ MonoBehaviour:
     height: 303
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Gameplay/Entities
+    - Assets/AssetsPackages/2D Platformer Tileset/Sprites/NPC/NPC_Blacksmith/Action_2
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6a330000
     m_LastClickedID: 13162
-    m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc50000fec5000000c6000096c900009ec90000a4c90000f6be0200eec2020000ca9a3b
+    m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc50000fec5000000c6000096c900009ac900009ec90000f6be020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -930,8 +930,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
     scrollPos: {x: 0, y: 72}
-    m_SelectedIDs: e0d00200
-    m_LastClickedID: 184544
+    m_SelectedIDs: cee40000
+    m_LastClickedID: 0
     m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc50000fec5000000c6000096c900009ac900009ec90000f6be020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -957,8 +957,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e0d00200
-    m_LastClickedInstanceID: 184544
+    m_SelectedInstanceIDs: cee40000
+    m_LastClickedInstanceID: 58574
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -1073,10 +1073,10 @@ MonoBehaviour:
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
-  m_StartGridSize: 16
+  m_StartGridSize: 96
   m_LastFolders:
   - Assets/AssetsPackages/2D Platformer Tileset/Sprites/NPC/NPC_Blacksmith/Action_2
-  m_LastFoldersGridSize: 16
+  m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Projects\Repositories\RicardoPena_BGS_TASK\RicardoPena_BGS_TASK
   m_LockTracker:
     m_IsLocked: 1
@@ -1084,7 +1084,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 282}
     m_SelectedIDs: 98e40000
     m_LastClickedID: 58520
-    m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc50000fec5000000c6000096c900009ec90000a4c90000f6be0200eec2020000ca9a3b
+    m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc5000000c6000018c6000042c600004ec6000096c900009ec900006ce4000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1112,7 +1112,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc50000fec5000000c6000096c900009ec90000a4c90000f6be0200eec2020000ca9a3b
+    m_ExpandedIDs: ffffffff000000001ec4000022c4000028c400002ac400002cc400002ec4000030c4000032c40000f6c50000f8c50000fcc50000fec5000000c6000096c900009ac900009ec90000f6be020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1137,10 +1137,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: eec20200
-    m_LastClickedInstanceID: 180974
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 9cea00009ae400009ee40000a2e40000a6e40000aae40000aee40000b2e40000b6e40000bae40000bee40000c2e40000c6e40000cae40000cee40000
+    m_ExpandedInstanceIDs: 9cea0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1164,8 +1164,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
+    m_ScrollPosition: {x: 0, y: 36}
+    m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 200
 --- !u!114 &15
@@ -1187,8 +1187,8 @@ MonoBehaviour:
     y: 0
     width: 514
     height: 303
-  m_MinSize: {x: 242, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -1247,8 +1247,8 @@ MonoBehaviour:
     y: 0
     width: 378
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
