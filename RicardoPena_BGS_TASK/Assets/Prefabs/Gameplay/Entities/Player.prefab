@@ -6843,6 +6843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4286281039815262161}
   - component: {fileID: 2284573050747906331}
+  - component: {fileID: 3929424047871353489}
   m_Layer: 0
   m_Name: SpriteRenderer
   m_TagString: Untagged
@@ -6901,6 +6902,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0011064431, y: 0.016222226}
   m_Size: {x: 0.9370687, y: 0.3801688}
   m_Direction: 1
+--- !u!210 &3929424047871353489
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650157822799710285}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &5833290048468242175
 GameObject:
   m_ObjectHideFlags: 0
