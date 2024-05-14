@@ -25,12 +25,12 @@ namespace Gameplay.Environment.Decoration
 
         public void HideInteractabilityFeedback()
         {
-            decorationObjectController.ToogleInteractionText(true);
+            decorationObjectController.ToogleInteractionText(false);
         }
 
         public void ShowInteractabilityFeedback()
         {
-            decorationObjectController.ToogleInteractionText(false);
+            decorationObjectController.ToogleInteractionText(true);
         }
 
         public void Interact()
