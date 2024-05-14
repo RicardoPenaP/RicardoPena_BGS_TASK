@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 13340
+  controlID: 15882
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 13232
+  controlID: 15883
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 13233
+  controlID: 15884
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 17.326572, y: -4.751699, z: -0.09708987}
     speed: 2
-    m_Value: {x: 17.326572, y: -4.751699, z: -0.09708987}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 44.56815
     speed: 2
-    m_Value: 44.56815
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -763,8 +763,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e4faffff
-      m_LastClickedID: -1308
+      m_SelectedIDs: d6e2feff
+      m_LastClickedID: -73002
       m_ExpandedIDs: f2d7ffff58edffffe8faffff84c10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 13322
+  controlID: 15973
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art/PhysicsMaterials
+    - Assets/Prefabs/Gameplay/Environment/Decoration
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -930,23 +930,23 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e4faffff
+    m_SelectedIDs: d6e2feff
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff000000001ec4000020c4000022c4000024c4000026c4000028c400002ac400002cc400002ec4000030c4000032c4000034c40000f6c50000fcc5000096c900009ec90000a2c900001c9f010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: DecorationObject
+      m_OriginalName: DecorationObject
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 74390
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -957,8 +957,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e4faffff
-    m_LastClickedInstanceID: -1308
+    m_SelectedInstanceIDs: d6e2feff
+    m_LastClickedInstanceID: -73002
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
