@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Gameplay.Entities.Common.EntityInteractability
 {
@@ -39,7 +40,12 @@ namespace Gameplay.Entities.Common.EntityInteractability
 
         private void InteractabilityView_OnInteractableEntitiesFound(List<IInteractable> interactablesEntities)
         {
-            
+            Vector2 interactuatorPostion = interactabilityModel.GetInteractuatorPosition();
+            IInteractable closestInteractableEntity = interactablesEntities[0];
+            foreach (IInteractable interactableEntity in interactablesEntities)
+            {
+
+            }
         }
 
     }
