@@ -8,9 +8,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 731262138869246325, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 731262138869246325, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1474221
+      objectReference: {fileID: 0}
+    - target: {fileID: 731262138869246325, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0000000044839243
+      objectReference: {fileID: 0}
+    - target: {fileID: 731262138869246325, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.037613887
+      objectReference: {fileID: 0}
     - target: {fileID: 2004769486904299933, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
       propertyPath: m_Name
-      value: DecorationObject
+      value: Stone4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653326081876161338, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653326081876161338, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653326081876161338, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3116362b446e8974caa17f42cff4b61a, type: 3}
+    - target: {fileID: 8653326081876161338, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9126397843621288921, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
       propertyPath: m_LocalPosition.x
