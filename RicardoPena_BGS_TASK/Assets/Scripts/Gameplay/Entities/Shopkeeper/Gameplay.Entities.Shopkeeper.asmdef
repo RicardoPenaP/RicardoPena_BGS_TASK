@@ -1,3 +1,14 @@
 {
-	"name": "Gameplay.Entities.Shopkeeper"
+    "name": "Gameplay.Entities.Shopkeeper",
+    "rootNamespace": "Gameplay.Entities.Shopkeeper",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
