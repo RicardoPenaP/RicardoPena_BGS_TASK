@@ -6,16 +6,9 @@ namespace Gameplay.Entities.Shopkeeper
 {
     public class ShopkeeperController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        [Header("Shopkeeper Controller")]
+        [Header("References")]
+        [SerializeField] private ShopkeeperView shopkeeperView;
+        [SerializeField] private ShopkeeperModel shopkeeperModel;
     }
 }
