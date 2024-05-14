@@ -224,7 +224,7 @@ namespace Gameplay.Entities.Player
             {
                 if (currentState is PlayerState.Interacting)
                 {
-                    InterrupInteraction();
+                    FinishInteraction();
                 }                
             }
         }
@@ -254,10 +254,10 @@ namespace Gameplay.Entities.Player
                 yield return null;
             }
             currentInteractableEntity.Interact();
-            isInteracting = false;
+            FinishInteraction();
         }
 
-        private void InterrupInteraction()
+        private void FinishInteraction()
         {
             if (currentInteractingRoutine is not null)
             {

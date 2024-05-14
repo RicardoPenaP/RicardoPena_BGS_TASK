@@ -40,7 +40,7 @@ namespace Gameplay.Environment.Decoration
 
         public float GetInteractionTime()
         {
-            return 10f;
+            return 3f;
         }
     }
 }
