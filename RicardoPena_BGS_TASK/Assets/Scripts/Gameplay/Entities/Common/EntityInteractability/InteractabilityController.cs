@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gameplay.Entities.Common.EntityInteractability
 {
@@ -22,14 +23,21 @@ namespace Gameplay.Entities.Common.EntityInteractability
         private void Init()
         {
             interactabilityView.OnInteractInputUpdated += InteractabilityView_OnInteractInputUpdated;
-        }
-       
+            interactabilityView.OnInteractableEntitiesFound += InteractabilityView_OnInteractableEntitiesFound;
+        }       
+
         private void Deinit()
         {
             interactabilityView.OnInteractInputUpdated -= InteractabilityView_OnInteractInputUpdated;
+            interactabilityView.OnInteractableEntitiesFound -= InteractabilityView_OnInteractableEntitiesFound;
         }
 
         private void InteractabilityView_OnInteractInputUpdated(bool state)
+        {
+            
+        }
+
+        private void InteractabilityView_OnInteractableEntitiesFound(List<IInteractable> interactablesEntities)
         {
             
         }
