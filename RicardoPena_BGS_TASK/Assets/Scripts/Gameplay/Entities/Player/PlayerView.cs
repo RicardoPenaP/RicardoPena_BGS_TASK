@@ -65,7 +65,7 @@ namespace Gameplay.Entities.Player
             spriteRendererTransform.localScale = newLocalScale;
         }
 
-        private void UpdatePlayerAnimatorState(PlayerState currentState)
+        public void UpdatePlayerAnimatorState(PlayerState currentState)
         {
             switch (currentState)
             {

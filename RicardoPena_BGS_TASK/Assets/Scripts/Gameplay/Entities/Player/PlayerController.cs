@@ -35,7 +35,7 @@ namespace Gameplay.Entities.Player
 
         private void PlayerModel_OnCurrentStateChange(PlayerState currentPlayerState)
         {
-            
+            playerView.UpdatePlayerAnimatorState(currentPlayerState);
         }
     }
 }
