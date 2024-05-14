@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace Gameplay.Environment.Decoration
 {
@@ -6,6 +7,11 @@ namespace Gameplay.Environment.Decoration
     {
         [Header("Decoration View")]
         [Header("Reference")]
-        [SerializeField] private TextMeshPro
+        [SerializeField] private TextMeshProUGUI interactionText;
+
+        public void ToggleInteractionText(bool state)
+        {
+            interactionText.gameObject.SetActive(state);
+        }
     }
 }
