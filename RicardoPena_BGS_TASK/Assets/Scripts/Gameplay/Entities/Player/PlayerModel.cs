@@ -1,10 +1,11 @@
-﻿using Gameplay.Entities.Common.EntityMovement;
+﻿using Gameplay.Entities.Common.EntityInteractability;
+using Gameplay.Entities.Common.EntityMovement;
 using System;
 using UnityEngine;
 
 namespace Gameplay.Entities.Player
 {
-    public class PlayerModel : MonoBehaviour, IEntityMovementModel
+    public class PlayerModel : MonoBehaviour, IEntityMovementModel, IInteractabilityModel
     {
         [Header("Player Model")]
         [Header("Settings")]
