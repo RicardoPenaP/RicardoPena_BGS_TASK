@@ -72,17 +72,17 @@ namespace Gameplay.Entities.Common.EntityInteractability
 
         private void InteractorModel_OnInteractionStarted()
         {
-            throw new NotImplementedException();
+            interactorView.ShowInteractionProgressBar();
         }        
 
-        private void InteractorModel_OnInteractionInProgress(float obj)
+        private void InteractorModel_OnInteractionInProgress(float normalizedValue)
         {
-            throw new NotImplementedException();
+            interactorView.UpdateInteractionProgressBar(normalizedValue);
         }
 
         private void InteractorModel_OnInteractionFinished()
         {
-            throw new NotImplementedException();
+            interactorView.HideInteractionProgressBar();
         }
 
     }
