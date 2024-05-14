@@ -44,6 +44,7 @@ namespace Gameplay.Entities.Player
             inputReader.OnInteractInputUpdated -= InputReader_OnInteractInputUpdated;
         }
 
+        //Events subscription
         private void InputReader_OnMoveInputUpdated(Vector2 rawInput)
         {
             SetLookingDirection(rawInput.x);
@@ -57,6 +58,7 @@ namespace Gameplay.Entities.Player
             OnInteractInputUpdated?.Invoke(state);
         }
 
+        //Movement logic
         private void SetLookingDirection(float direction)
         {
             if (Mathf.Abs(direction) <= Mathf.Epsilon)
