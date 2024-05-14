@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ddc0f634f7c6648aa0f21755cfcec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopkeeperController: {fileID: 0}
+  shopkeeperController: {fileID: 1680074221811294978}
 --- !u!1 &2644843710414663700
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,3 +520,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afee8630320efb24dacd428ee4f800e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionText: {fileID: 7373832846733361838}

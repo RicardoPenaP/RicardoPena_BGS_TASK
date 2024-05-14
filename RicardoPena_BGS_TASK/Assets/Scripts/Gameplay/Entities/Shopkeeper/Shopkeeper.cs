@@ -18,7 +18,7 @@ namespace Gameplay.Entities.Shopkeeper
 
         public void HideInteractabilityFeedback()
         {
-            throw new System.NotImplementedException();
+            shopkeeperController.ToggleInteractionText(false);
         }
 
         public void Interact()
@@ -28,7 +28,7 @@ namespace Gameplay.Entities.Shopkeeper
 
         public void ShowInteractabilityFeedback()
         {
-            throw new System.NotImplementedException();
+            shopkeeperController.ToggleInteractionText(true);
         }
 
     }
