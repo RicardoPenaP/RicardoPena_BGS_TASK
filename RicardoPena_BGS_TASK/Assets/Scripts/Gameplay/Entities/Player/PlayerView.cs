@@ -19,6 +19,7 @@ namespace Gameplay.Entities.Player
 
         [Header("Settings")]
         [SerializeField] private float searchDistanceForInteractableEntities = 6f;
+        [SerializeField] private LayerMask interactableLayerMask;
 
         public event Action<Vector2> OnMoveInputDetected;
         public event Action<bool> OnRunInputDetected;
@@ -102,7 +103,7 @@ namespace Gameplay.Entities.Player
         //Interactability logic
         private void SearchInteractableEntities()
         {
-            Collider2D[] entities = Physics2D.OverlapCircleAll(transform.position, searchDistanceForInteractableEntities);
+            Collider2D[] entities = Physics2D.OverlapCircleAll(transform.position, searchDistanceForInteractableEntities, interactableLayerMask);
             List<IInteractable> interactableEntities = new List<IInteractable>();
 
             if (entities.Length == 0)

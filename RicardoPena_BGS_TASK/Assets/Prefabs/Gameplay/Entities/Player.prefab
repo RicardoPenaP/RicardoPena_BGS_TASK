@@ -48,6 +48,10 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: ece4c3d15cff2f446a0dfcee14b3382a, type: 2}
   spriteRendererTransform: {fileID: 4286281039815262161}
   playerAnimator: {fileID: 1632084114218086664}
+  searchDistanceForInteractableEntities: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1724888014862644140
 GameObject:
   m_ObjectHideFlags: 0

@@ -165,9 +165,8 @@ namespace Gameplay.Entities.Player
         //Interactability logic
         public void SetCurrentInteractableEntity(IInteractable interactableEntity)
         {
-
-            if (interactableEntity.Equals(currentInteractableEntity))
-            {
+            if (currentInteractableEntity is not null && interactableEntity.Equals(currentInteractableEntity))
+            {               
                 return;
             }
 
