@@ -1,11 +1,12 @@
-﻿using Gameplay.Entities.Common.EntityMovement;
+﻿using Gameplay.Entities.Common.EntityInteractability;
+using Gameplay.Entities.Common.EntityMovement;
 using Gameplay.Input;
 using System;
 using UnityEngine;
 
 namespace Gameplay.Entities.Player
 {
-    public class PlayerView : MonoBehaviour, IEntityMovementView
+    public class PlayerView : MonoBehaviour, IEntityMovementView, IInteractabilityView
     {
         private const string StateAnimatorParameterName = "State";
 
