@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 16779
+  controlID: 17989
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 16671
+  controlID: 17880
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 16672
+  controlID: 17881
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 1042
     height: 636
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -595,9 +595,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 17.326572, y: -4.751699, z: -0.09708987}
+    m_Target: {x: -7.0981708, y: 9.526687, z: 0.07610124}
     speed: 2
-    m_Value: {x: 0.59222126, y: 1.0312027, z: 0.07407699}
+    m_Value: {x: -7.0981708, y: 9.526687, z: 0.07610124}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -647,9 +647,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 44.56815
+    m_Target: 27.24902
     speed: 2
-    m_Value: 2.5922942
+    m_Value: 27.24902
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -719,8 +719,8 @@ MonoBehaviour:
     y: 0
     width: 271
     height: 636
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -763,9 +763,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e4faffff
-      m_LastClickedID: -1308
-      m_ExpandedIDs: f2d7ffff58edffffe4faffffe8faffff84c10000
+      m_SelectedIDs: c4eafcff
+      m_LastClickedID: -202044
+      m_ExpandedIDs: f2d7ffff58edffff3cf3ffffe4faffffe8faffff84c10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 16761
+  controlID: 17932
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Gameplay/Environment/Decoration
+    - Assets/Prefabs/Gameplay/Environment/Decoration/Stones
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -929,10 +929,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e4faffff
+    scrollPos: {x: 0, y: 48}
+    m_SelectedIDs: c4eafcff
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000001ec4000020c4000022c4000024c4000026c4000028c400002ac400002cc400002ec4000030c4000032c4000034c40000f6c50000fcc5000096c900009ec90000a2c900001c9f010000ca9a3b
+    m_ExpandedIDs: ffffffff000000001ec4000020c4000022c4000024c4000026c4000028c400002ac400002cc400002ec4000030c4000032c4000034c40000f6c50000fcc5000096c900009ec90000a2c900001c9f010052d1010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -957,8 +957,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e4faffff
-    m_LastClickedInstanceID: -1308
+    m_SelectedInstanceIDs: c4eafcff
+    m_LastClickedInstanceID: -202044
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -1067,7 +1067,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/AssetsPackages/2D Platformer Tileset/Sprites/Tileset
+    - Assets/AssetsPackages/2D Platformer Tileset/Sprites/Objects/Vegetations
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1075,16 +1075,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/AssetsPackages/2D Platformer Tileset/Sprites/Tileset
+  - Assets/AssetsPackages/2D Platformer Tileset/Sprites/Objects/Vegetations
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Projects\Repositories\RicardoPena_BGS_TASK\RicardoPena_BGS_TASK
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 250}
-    m_SelectedIDs: 54c60000
-    m_LastClickedID: 50772
-    m_ExpandedIDs: ffffffff000000001ec4000020c4000022c4000024c4000026c4000028c400002ac400002cc400002ec4000030c4000032c4000034c40000f6c50000fcc5000096c900009ec90000a2c900001c9f010000ca9a3b
+    m_SelectedIDs: f6c70000
+    m_LastClickedID: 51190
+    m_ExpandedIDs: ffffffff000000001ec4000020c4000022c4000024c4000026c4000028c400002ac400002cc400002ec4000030c4000032c4000034c40000f6c50000f8c50000fcc5000018c6000042c6000050c6000096c900009ec90000a2c9000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1137,9 +1137,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3cb6fdff
-    m_LastClickedInstanceID: -149956
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: e80cfdff
+    m_LastClickedInstanceID: -193304
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 9cea0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
