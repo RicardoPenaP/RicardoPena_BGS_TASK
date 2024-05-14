@@ -4,6 +4,7 @@ using Gameplay.Input;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.Entities.Player
 {
@@ -16,6 +17,7 @@ namespace Gameplay.Entities.Player
         [SerializeField] private InputReader inputReader;
         [SerializeField] private Transform spriteRendererTransform;
         [SerializeField] private Animator playerAnimator;
+        [SerializeField] private Image interactionProgressBar;
 
         [Header("Settings")]
         [SerializeField] private float searchDistanceForInteractableEntities = 6f;
@@ -127,6 +129,22 @@ namespace Gameplay.Entities.Player
             }
 
             OnInteractableEntitiesFound?.Invoke(interactableEntities);
+        }
+
+        public void ShowInteractionProgressBar()
+        {
+            interactionProgressBar.fillAmount = 0f;
+            interactionProgressBar.gameObject.SetActive(true);
+        }
+
+        public void HideInteractionProgressBar()
+        {
+            interactionProgressBar.gameObject.SetActive(false);
+        }
+
+        public void UpdateInteractionProgressBar(float normalizedValue)
+        {
+            interactionProgressBar.fillAmount = normalizedValue;
         }
     }
 }

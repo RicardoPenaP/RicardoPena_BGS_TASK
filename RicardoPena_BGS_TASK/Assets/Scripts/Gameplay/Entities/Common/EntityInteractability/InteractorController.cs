@@ -70,19 +70,20 @@ namespace Gameplay.Entities.Common.EntityInteractability
             interactorModel.SetCurrentInteractableEntity(closestInteractableEntity);
         }
 
-        private void InteractorModel_OnInteractionFinished()
+        private void InteractorModel_OnInteractionStarted()
         {
             throw new NotImplementedException();
-        }
+        }        
 
         private void InteractorModel_OnInteractionInProgress(float obj)
         {
             throw new NotImplementedException();
         }
 
-        private void InteractorModel_OnInteractionStarted()
+        private void InteractorModel_OnInteractionFinished()
         {
             throw new NotImplementedException();
         }
+
     }
 }
