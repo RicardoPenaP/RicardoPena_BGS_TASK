@@ -25,12 +25,12 @@ namespace Gameplay.Environment.Decoration
 
         public void HideInteractabilityFeedback()
         {
-            throw new System.NotImplementedException();
+            decorationObjectController.ToogleInteractionText(true);
         }
 
         public void ShowInteractabilityFeedback()
         {
-            throw new System.NotImplementedException();
+            decorationObjectController.ToogleInteractionText(false);
         }
 
         public void Interact()
