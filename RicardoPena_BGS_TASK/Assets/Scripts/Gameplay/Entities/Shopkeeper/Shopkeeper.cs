@@ -1,6 +1,4 @@
 using Gameplay.Entities.Common.EntityInteractability;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.Entities.Shopkeeper
