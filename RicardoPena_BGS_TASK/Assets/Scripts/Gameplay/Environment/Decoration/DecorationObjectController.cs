@@ -9,6 +9,6 @@ namespace Gameplay.Environment.Decoration
         [SerializeField] private DecorationObjectView decorationObjectView;
         [SerializeField] private DecorationObjectModel decorationObjectModel;
 
-
+        public void ToogleInteractionText(bool state) => decorationObjectView.ToggleInteractionText(state);
     }
 }
