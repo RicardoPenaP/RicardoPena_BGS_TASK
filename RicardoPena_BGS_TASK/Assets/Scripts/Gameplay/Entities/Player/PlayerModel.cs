@@ -24,9 +24,37 @@ namespace Gameplay.Entities.Player
             Init();
         }
 
+        private void Update()
+        {
+            UpdatePlayerState();
+        }
+
         private void Init()
         {
             SetPlayerState(PlayerState.Idle);
+        }
+
+        private void UpdatePlayerState()
+        {
+            switch (currentState)
+            {
+                case PlayerState.None:
+                    break;
+                case PlayerState.Idle:
+                    UpdateIdleState();
+                    break;
+                case PlayerState.Walking:
+                    UpdateWalkingState();
+                    break;
+                case PlayerState.Running:
+                    UpdateRunningState();
+                    break;
+                case PlayerState.Interacting:
+                    UpdateInteractingState();
+                    break;
+                default:
+                    break;
+            }
         }
 
 
@@ -52,13 +80,11 @@ namespace Gameplay.Entities.Player
         {
             if (isRunning)
             {
-                playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;
-                SetPlayerState(PlayerState.Running);
+                playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;                
             }
             else
             {
-                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
-                SetPlayerState(PlayerState.Walking);
+                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;                
             }
         }
 
@@ -68,5 +94,54 @@ namespace Gameplay.Entities.Player
             OnCurrentStateChange?.Invoke(currentState);
         }
 
+        private void UpdateIdleState()
+        {
+            if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
+            {
+                if (playerRigidbody.velocity.magnitude > movementSettings.WalkingSpeed)
+                {
+                    SetPlayerState(PlayerState.Running);
+                }
+                else
+                {
+                    SetPlayerState(PlayerState.Walking);
+                }
+            }
+        }
+        
+        private void UpdateWalkingState()
+        {
+            if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
+            {
+                if (playerRigidbody.velocity.magnitude > movementSettings.WalkingSpeed)
+                {
+                    SetPlayerState(PlayerState.Running);
+                }
+            }
+            else
+            {
+                SetPlayerState(PlayerState.Idle);
+            }
+        }
+
+        private void UpdateRunningState()
+        {
+            if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
+            {
+                if (playerRigidbody.velocity.magnitude < movementSettings.RunningSpeed)
+                {
+                    SetPlayerState(PlayerState.Walking);
+                }
+            }
+            else
+            {
+                SetPlayerState(PlayerState.Idle);
+            }
+        }
+
+        private void UpdateInteractingState()
+        {
+
+        }
     }
 }
