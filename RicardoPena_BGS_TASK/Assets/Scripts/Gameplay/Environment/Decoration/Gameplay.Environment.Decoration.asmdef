@@ -1,7 +1,9 @@
 {
     "name": "Gameplay.Environment.Decoration",
     "rootNamespace": "Gameplay.Environment.Decoration",
-    "references": [],
+    "references": [
+        "GUID:321d45d151db3fd48be442fe21474c62"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
