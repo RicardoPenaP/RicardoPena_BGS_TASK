@@ -186,5 +186,20 @@ namespace Gameplay.Entities.Player
         {
             return transform.position;
         }
+
+        public void ToggleInteraction(bool state)
+        {
+            if (state)
+            {
+                if (currentInteractableEntity is not null && currentState is not PlayerState.Interacting)
+                {
+                    SetPlayerState(PlayerState.Interacting);
+                }                
+            }
+            else
+            {
+                SetPlayerState(PlayerState.Idle);
+            }
+        }
     }
 }
