@@ -1,3 +1,4 @@
+using Gameplay.Entities.Common.EntityInteractability;
 using Gameplay.Entities.Common.EntityMovement;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Gameplay.Entities.Player
         [SerializeField] private PlayerModel playerModel;
 
         private EntityMovementController entityMovementController;
+        private InteractabilityController interactabilityController;
 
         private void Awake()
         {
@@ -26,6 +28,7 @@ namespace Gameplay.Entities.Player
         {
             playerModel.OnCurrentStateChange += PlayerModel_OnCurrentStateChange;
             entityMovementController = new EntityMovementController(playerView, playerModel);
+            //interactabilityController
         }
 
         private void Deinit()
