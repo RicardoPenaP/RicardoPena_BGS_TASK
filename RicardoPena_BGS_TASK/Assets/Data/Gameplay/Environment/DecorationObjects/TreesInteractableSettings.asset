@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecba50b79d6e85418ccf659dbf48eac, type: 3}
   m_Name: TreesInteractableSettings
   m_EditorClassIdentifier: 
-  interactionTime: 0
+  interactionTime: 6
