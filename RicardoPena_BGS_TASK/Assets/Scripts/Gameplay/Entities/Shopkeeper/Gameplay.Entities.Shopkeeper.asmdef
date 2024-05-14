@@ -1,7 +1,9 @@
 {
     "name": "Gameplay.Entities.Shopkeeper",
     "rootNamespace": "Gameplay.Entities.Shopkeeper",
-    "references": [],
+    "references": [
+        "GUID:321d45d151db3fd48be442fe21474c62"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
