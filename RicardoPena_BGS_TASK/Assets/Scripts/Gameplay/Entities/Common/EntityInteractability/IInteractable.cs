@@ -1,7 +1,9 @@
 ﻿namespace Gameplay.Entities.Common.EntityInteractability
 {
-    public class IInteractable
+    public interface IInteractable
     {
-
+        public void ShowInteractabilityFeedback();
+        public void HideInteractabilityFeedback();
+        public void Interact();
     }
 }
