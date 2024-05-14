@@ -39,5 +39,9 @@ namespace Gameplay.Environment.Decoration
             Destroy(gameObject);
         }
 
+        public float GetInteractionTime()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
