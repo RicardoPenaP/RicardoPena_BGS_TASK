@@ -40,6 +40,12 @@ namespace Gameplay.Entities.Common.EntityInteractability
 
         private void InteractabilityView_OnInteractableEntitiesFound(List<IInteractable> interactablesEntities)
         {
+            if (interactablesEntities is null)
+            {
+                interactabilityModel.SetCurrentInteractableEntity(null);
+                return;
+            }
+
             Vector2 interactuatorPostion = interactabilityModel.GetInteractuatorPosition();
             IInteractable closestInteractableEntity = interactablesEntities[0];
             float closestDistance = Vector2.Distance(interactuatorPostion, closestInteractableEntity.GetInteractablePosition());
