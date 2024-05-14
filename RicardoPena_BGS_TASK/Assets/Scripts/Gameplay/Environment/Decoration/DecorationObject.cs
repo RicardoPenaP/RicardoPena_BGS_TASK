@@ -12,31 +12,30 @@ namespace Gameplay.Environment.Decoration
         [Header("Settings")]
         [SerializeField] private InteractableSettings settings;
 
-        public Vector2 GetInteractablePosition()
+        public void ShowInteractabilityFeedback()
         {
-            return transform.position;
+            decorationObjectController.ToggleInteractionText(true);
         }
 
         public void HideInteractabilityFeedback()
         {
-            decorationObjectController.ToogleInteractionText(false);
-        }
-
-        public void ShowInteractabilityFeedback()
-        {
-            decorationObjectController.ToogleInteractionText(true);
+            decorationObjectController.ToggleInteractionText(false);
         }
 
         public void Interact()
         {
-            //Testing
-            //Destroy(gameObject);
             Debug.Log("Interacted with decoration object");
+        }
+
+        public Vector2 GetInteractablePosition()
+        {
+            return transform.position;
         }
 
         public float GetInteractionTime()
         {
             return settings.InteractionTime;
         }
+
     }
 }
