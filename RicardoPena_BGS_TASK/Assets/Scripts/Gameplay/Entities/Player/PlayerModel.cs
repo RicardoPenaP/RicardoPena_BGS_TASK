@@ -98,7 +98,7 @@ namespace Gameplay.Entities.Player
         {
             if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
             {
-                if (playerRigidbody.velocity.magnitude > movementSettings.WalkingSpeed)
+                if (isRunning)
                 {
                     SetPlayerState(PlayerState.Running);
                 }
@@ -113,7 +113,7 @@ namespace Gameplay.Entities.Player
         {
             if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
             {
-                if (playerRigidbody.velocity.magnitude > movementSettings.WalkingSpeed)
+                if (isRunning)
                 {
                     SetPlayerState(PlayerState.Running);
                 }
@@ -128,7 +128,7 @@ namespace Gameplay.Entities.Player
         {
             if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
             {
-                if (playerRigidbody.velocity.magnitude < movementSettings.RunningSpeed)
+                if (!isRunning)
                 {
                     SetPlayerState(PlayerState.Walking);
                 }
