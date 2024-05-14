@@ -25,7 +25,7 @@ namespace Gameplay.Entities.Common.EntityInteractability
         {
             interactabilityView.OnInteractInputUpdated += InteractabilityView_OnInteractInputUpdated;
             interactabilityView.OnInteractableEntitiesFound += InteractabilityView_OnInteractableEntitiesFound;
-        }       
+        }
 
         private void Deinit()
         {
@@ -35,17 +35,27 @@ namespace Gameplay.Entities.Common.EntityInteractability
 
         private void InteractabilityView_OnInteractInputUpdated(bool state)
         {
-            
+
         }
 
         private void InteractabilityView_OnInteractableEntitiesFound(List<IInteractable> interactablesEntities)
         {
             Vector2 interactuatorPostion = interactabilityModel.GetInteractuatorPosition();
             IInteractable closestInteractableEntity = interactablesEntities[0];
+            float closestDistance = Vector2.Distance(interactuatorPostion, closestInteractableEntity.GetInteractablePosition());
+
             foreach (IInteractable interactableEntity in interactablesEntities)
             {
-
+                Vector2 interactableEntityPosition = interactableEntity.GetInteractablePosition();
+                float newDistance = Vector2.Distance(interactuatorPostion, interactableEntityPosition);
+                if (newDistance < closestDistance)
+                {
+                    closestInteractableEntity = interactableEntity;
+                    closestDistance = newDistance;
+                }
             }
+
+            interactabilityModel.SetCurrentInteractableEntity(closestInteractableEntity);
         }
 
     }
