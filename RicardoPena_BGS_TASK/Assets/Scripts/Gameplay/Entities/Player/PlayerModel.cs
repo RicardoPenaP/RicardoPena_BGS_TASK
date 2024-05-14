@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Gameplay.Entities.Player
 {
-    public class PlayerModel : MonoBehaviour, IEntityMovementModel, IInteractabilityModel
+    public class PlayerModel : MonoBehaviour, IEntityMovementModel, IInteractorModel
     {
         [Header("Player Model")]
         [Header("Settings")]

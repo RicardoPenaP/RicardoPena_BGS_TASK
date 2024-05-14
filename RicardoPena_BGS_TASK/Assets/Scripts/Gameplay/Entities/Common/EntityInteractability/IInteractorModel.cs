@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gameplay.Entities.Common.EntityInteractability
 {
-    public interface IInteractabilityModel
+    public interface IInteractorModel
     {
         public event Action<IInteractable> OnCurrentInteractableEntityChange;
         public void SetCurrentInteractableEntity(IInteractable interactableEntity);

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Gameplay.Entities.Player
 {
-    public class PlayerView : MonoBehaviour, IEntityMovementView, IInteractabilityView
+    public class PlayerView : MonoBehaviour, IEntityMovementView, IInteractorView
     {
         private const string StateAnimatorParameterName = "State";
 

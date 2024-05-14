@@ -12,7 +12,7 @@ namespace Gameplay.Entities.Player
         [SerializeField] private PlayerModel playerModel;
 
         private EntityMovementController entityMovementController;
-        private InteractabilityController interactabilityController;
+        private InteractorController interactabilityController;
 
         private void Awake()
         {
@@ -28,7 +28,7 @@ namespace Gameplay.Entities.Player
         {
             playerModel.OnCurrentStateChange += PlayerModel_OnCurrentStateChange;
             entityMovementController = new EntityMovementController(playerView, playerModel);
-            interactabilityController = new InteractabilityController(playerView, playerModel);
+            interactabilityController = new InteractorController(playerView, playerModel);
         }
 
         private void Deinit()

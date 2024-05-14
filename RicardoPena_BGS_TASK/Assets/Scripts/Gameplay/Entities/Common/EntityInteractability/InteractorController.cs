@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Gameplay.Entities.Common.EntityInteractability
 {
-    public class InteractabilityController : IDisposable
+    public class InteractorController : IDisposable
     {
-        private readonly IInteractabilityView interactabilityView;
-        private readonly IInteractabilityModel interactabilityModel;
+        private readonly IInteractorView interactabilityView;
+        private readonly IInteractorModel interactabilityModel;
 
-        public InteractabilityController(IInteractabilityView interactabilityView, IInteractabilityModel interactabilityModel)
+        public InteractorController(IInteractorView interactabilityView, IInteractorModel interactabilityModel)
         {
             this.interactabilityView = interactabilityView;
             this.interactabilityModel = interactabilityModel;
