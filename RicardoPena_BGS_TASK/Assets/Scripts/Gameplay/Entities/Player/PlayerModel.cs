@@ -16,6 +16,9 @@ namespace Gameplay.Entities.Player
 
         public event Action<PlayerState> OnCurrentStateChange;
         public event Action<IInteractable> OnCurrentInteractableEntityChange;
+        public event Action OnInteractionStarted;
+        public event Action<float> OnInteractionInProgress;
+        public event Action OnInteractionFinished;
 
         private IInteractable currentInteractableEntity;
 
@@ -132,8 +135,7 @@ namespace Gameplay.Entities.Player
 
             if (!isInteracting)
             {
-                currentInteractingRoutine = InteractingRoutine(currentInteractableEntity.GetInteractionTime());
-                StartCoroutine(currentInteractingRoutine);
+                StartInteraction();                
             }
         }
 
@@ -227,6 +229,20 @@ namespace Gameplay.Entities.Player
             }
         }
 
+        private void StartInteraction()
+        {
+            if (currentInteractableEntity.GetInteractionTime() > 0f)
+            {
+                currentInteractingRoutine = InteractingRoutine(currentInteractableEntity.GetInteractionTime());
+                StartCoroutine(currentInteractingRoutine);
+                OnInteractionStarted?.Invoke();
+            }
+            else
+            {
+                currentInteractableEntity.Interact();
+            }            
+        }
+
         private IEnumerator InteractingRoutine(float timeOfInteraction)
         {
             isInteracting = true;
@@ -234,6 +250,7 @@ namespace Gameplay.Entities.Player
             while (timer < timeOfInteraction)
             {
                 timer += Time.deltaTime;
+                OnInteractionInProgress?.Invoke(timer / timeOfInteraction);
                 yield return null;
             }
             currentInteractableEntity.Interact();
@@ -246,7 +263,13 @@ namespace Gameplay.Entities.Player
             {
                 StopCoroutine(currentInteractingRoutine);
                 currentInteractingRoutine = null;
-            }           
+            }
+
+            if (currentInteractableEntity.GetInteractionTime() > 0)
+            {
+                OnInteractionFinished?.Invoke();
+            }
+
             isInteracting = false;
             SetPlayerState(PlayerState.Idle);
         }
