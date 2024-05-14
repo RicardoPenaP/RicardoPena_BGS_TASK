@@ -9,14 +9,12 @@ namespace Gameplay.Entities.Shopkeeper
         [Header("References")]
         [SerializeField] private ShopkeeperController shopkeeperController;
 
-        public Vector2 GetInteractablePosition()
-        {
-            return transform.position;
-        }
+        [Header("Settings")]
+        [SerializeField] private InteractableSettings settings;
 
-        public float GetInteractionTime()
+        public void ShowInteractabilityFeedback()
         {
-            return 0f;
+            shopkeeperController.ToggleInteractionText(true);
         }
 
         public void HideInteractabilityFeedback()
@@ -29,10 +27,14 @@ namespace Gameplay.Entities.Shopkeeper
             Debug.Log("Interacted with shoopkeeper");
         }
 
-        public void ShowInteractabilityFeedback()
+        public Vector2 GetInteractablePosition()
         {
-            shopkeeperController.ToggleInteractionText(true);
+            return transform.position;
         }
 
+        public float GetInteractionTime()
+        {
+            return settings.InteractionTime;
+        }
     }
 }
