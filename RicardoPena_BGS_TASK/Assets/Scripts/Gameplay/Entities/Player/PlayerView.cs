@@ -7,6 +7,8 @@ namespace Gameplay.Entities.Player
 {
     public class PlayerView : MonoBehaviour, IEntityMovementView
     {
+        private const string StateAnimatorParameterName = "State";
+
         [Header("Player View")]
         [Header("References")]
         [SerializeField] private InputReader inputReader;
@@ -67,21 +69,7 @@ namespace Gameplay.Entities.Player
 
         public void UpdatePlayerAnimatorState(PlayerState currentState)
         {
-            switch (currentState)
-            {
-                case PlayerState.None:
-                    break;
-                case PlayerState.Idle:
-                    break;
-                case PlayerState.Walking:
-                    break;
-                case PlayerState.Running:
-                    break;
-                case PlayerState.Interacting:
-                    break;
-                default:
-                    break;
-            }
+            playerAnimator.SetInteger(StateAnimatorParameterName, (int)currentState);
         }
     }
 }
