@@ -34,12 +34,13 @@ namespace Gameplay.Environment.Decoration
         public void Interact()
         {
             //Testing
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Debug.Log("Interacted with decoration object");
         }
 
         public float GetInteractionTime()
         {
-            throw new System.NotImplementedException();
+            return 3f;
         }
     }
 }

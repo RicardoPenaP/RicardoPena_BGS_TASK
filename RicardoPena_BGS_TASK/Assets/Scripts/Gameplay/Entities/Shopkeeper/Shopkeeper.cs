@@ -16,7 +16,7 @@ namespace Gameplay.Entities.Shopkeeper
 
         public float GetInteractionTime()
         {
-            throw new System.NotImplementedException();
+            return 0f;
         }
 
         public void HideInteractabilityFeedback()
@@ -26,7 +26,7 @@ namespace Gameplay.Entities.Shopkeeper
 
         public void Interact()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Interacted with shoopkeeper");
         }
 
         public void ShowInteractabilityFeedback()

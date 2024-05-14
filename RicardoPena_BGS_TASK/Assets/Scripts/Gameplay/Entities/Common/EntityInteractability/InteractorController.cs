@@ -6,13 +6,13 @@ namespace Gameplay.Entities.Common.EntityInteractability
 {
     public class InteractorController : IDisposable
     {
-        private readonly IInteractorView interactabilityView;
-        private readonly IInteractorModel interactabilityModel;
+        private readonly IInteractorView interactorView;
+        private readonly IInteractorModel interactorModel;
 
         public InteractorController(IInteractorView interactabilityView, IInteractorModel interactabilityModel)
         {
-            this.interactabilityView = interactabilityView;
-            this.interactabilityModel = interactabilityModel;
+            this.interactorView = interactabilityView;
+            this.interactorModel = interactabilityModel;
             Init();
         }
 
@@ -23,30 +23,30 @@ namespace Gameplay.Entities.Common.EntityInteractability
 
         private void Init()
         {
-            interactabilityView.OnInteractInputUpdated += InteractabilityView_OnInteractInputUpdated;
-            interactabilityView.OnInteractableEntitiesFound += InteractabilityView_OnInteractableEntitiesFound;
+            interactorView.OnInteractInputUpdated += InteractabilityView_OnInteractInputUpdated;
+            interactorView.OnInteractableEntitiesFound += InteractabilityView_OnInteractableEntitiesFound;
         }
 
         private void Deinit()
         {
-            interactabilityView.OnInteractInputUpdated -= InteractabilityView_OnInteractInputUpdated;
-            interactabilityView.OnInteractableEntitiesFound -= InteractabilityView_OnInteractableEntitiesFound;
+            interactorView.OnInteractInputUpdated -= InteractabilityView_OnInteractInputUpdated;
+            interactorView.OnInteractableEntitiesFound -= InteractabilityView_OnInteractableEntitiesFound;
         }
 
         private void InteractabilityView_OnInteractInputUpdated(bool state)
         {
-
+            interactorModel.ToggleInteraction(state);
         }
 
         private void InteractabilityView_OnInteractableEntitiesFound(List<IInteractable> interactablesEntities)
         {
             if (interactablesEntities is null)
             {
-                interactabilityModel.SetCurrentInteractableEntity(null);
+                interactorModel.SetCurrentInteractableEntity(null);
                 return;
             }
 
-            Vector2 interactuatorPostion = interactabilityModel.GetInteractuatorPosition();
+            Vector2 interactuatorPostion = interactorModel.GetInteractuatorPosition();
             IInteractable closestInteractableEntity = interactablesEntities[0];
             float closestDistance = Vector2.Distance(interactuatorPostion, closestInteractableEntity.GetInteractablePosition());
 
@@ -61,7 +61,7 @@ namespace Gameplay.Entities.Common.EntityInteractability
                 }
             }
 
-            interactabilityModel.SetCurrentInteractableEntity(closestInteractableEntity);
+            interactorModel.SetCurrentInteractableEntity(closestInteractableEntity);
         }
 
     }
