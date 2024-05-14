@@ -28,6 +28,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree4
       objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.x
+      value: 5.9728837
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.38410485
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.15968086
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.05702841
+      objectReference: {fileID: 0}
     - target: {fileID: 8653326081876161338, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
       propertyPath: m_Size.x
       value: 9.35

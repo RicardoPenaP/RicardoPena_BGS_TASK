@@ -28,6 +28,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone2
       objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0297061
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.121262714
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0012903174
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586843634493751027, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.034841437
+      objectReference: {fileID: 0}
     - target: {fileID: 8653326081876161338, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
       propertyPath: m_Size.x
       value: 1.03
