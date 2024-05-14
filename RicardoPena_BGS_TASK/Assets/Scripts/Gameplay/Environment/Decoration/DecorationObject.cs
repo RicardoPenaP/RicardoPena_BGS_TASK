@@ -5,16 +5,12 @@ namespace Gameplay.Environment.Decoration
 {
     public class DecorationObject : MonoBehaviour, IInteractable
     {
-        private DecorationObjectController decorationObjectController;
-        private void Awake()
-        {
-            Init();
-        }
+        [Header("Decoration Object")]
+        [Header("References")]
+        [SerializeField] private DecorationObjectController decorationObjectController;
 
-        private void Init()
-        {
-            decorationObjectController = GetComponentInChildren<DecorationObjectController>();
-        }
+        [Header("Settings")]
+        [SerializeField] private InteractableSettings settings;
 
         public Vector2 GetInteractablePosition()
         {
@@ -40,7 +36,7 @@ namespace Gameplay.Environment.Decoration
 
         public float GetInteractionTime()
         {
-            return 3f;
+            return settings.InteractionTime;
         }
     }
 }
