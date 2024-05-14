@@ -7,6 +7,17 @@ namespace Gameplay.Environment.Decoration
 {
     public class DecorationObject : MonoBehaviour, IInteractable
     {
+        private DecorationObjectController decorationObjectController;
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void Init()
+        {
+            decorationObjectController = GetComponentInChildren<DecorationObjectController>();
+        }
+
         public Vector2 GetInteractablePosition()
         {
             return transform.position;
