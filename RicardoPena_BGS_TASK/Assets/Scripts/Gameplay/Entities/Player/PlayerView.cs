@@ -107,6 +107,7 @@ namespace Gameplay.Entities.Player
 
             if (entities.Length == 0)
             {
+                OnInteractableEntitiesFound?.Invoke(null);
                 return;
             }
 
@@ -120,6 +121,7 @@ namespace Gameplay.Entities.Player
 
             if (interactableEntities.Count == 0)
             {
+                OnInteractableEntitiesFound?.Invoke(null);
                 return;
             }
 
