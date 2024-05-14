@@ -28,12 +28,13 @@ namespace Gameplay.Entities.Player
         {
             playerModel.OnCurrentStateChange += PlayerModel_OnCurrentStateChange;
             entityMovementController = new EntityMovementController(playerView, playerModel);
-            //interactabilityController
+            interactabilityController = new InteractabilityController(playerView, playerModel);
         }
 
         private void Deinit()
         {
             entityMovementController.Dispose();
+            interactabilityController.Dispose();
         }
 
         private void PlayerModel_OnCurrentStateChange(PlayerState currentPlayerState)
