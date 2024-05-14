@@ -25,12 +25,18 @@ namespace Gameplay.Entities.Common.EntityInteractability
         {
             interactorView.OnInteractInputUpdated += InteractabilityView_OnInteractInputUpdated;
             interactorView.OnInteractableEntitiesFound += InteractabilityView_OnInteractableEntitiesFound;
+            interactorModel.OnInteractionStarted += InteractorModel_OnInteractionStarted;
+            interactorModel.OnInteractionInProgress += InteractorModel_OnInteractionInProgress;
+            interactorModel.OnInteractionFinished += InteractorModel_OnInteractionFinished;
         }
 
         private void Deinit()
         {
             interactorView.OnInteractInputUpdated -= InteractabilityView_OnInteractInputUpdated;
             interactorView.OnInteractableEntitiesFound -= InteractabilityView_OnInteractableEntitiesFound;
+            interactorModel.OnInteractionStarted -= InteractorModel_OnInteractionStarted;
+            interactorModel.OnInteractionInProgress -= InteractorModel_OnInteractionInProgress;
+            interactorModel.OnInteractionFinished -= InteractorModel_OnInteractionFinished;
         }
 
         private void InteractabilityView_OnInteractInputUpdated(bool state)
@@ -64,5 +70,19 @@ namespace Gameplay.Entities.Common.EntityInteractability
             interactorModel.SetCurrentInteractableEntity(closestInteractableEntity);
         }
 
+        private void InteractorModel_OnInteractionFinished()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractorModel_OnInteractionInProgress(float obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractorModel_OnInteractionStarted()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
