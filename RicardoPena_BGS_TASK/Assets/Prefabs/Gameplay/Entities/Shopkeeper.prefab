@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopkeeperController: {fileID: 1680074221811294978}
+  settings: {fileID: 11400000, guid: 6cd6fa988a40a05419e9b00bf60850d9, type: 2}
 --- !u!1 &2644843710414663700
 GameObject:
   m_ObjectHideFlags: 0
