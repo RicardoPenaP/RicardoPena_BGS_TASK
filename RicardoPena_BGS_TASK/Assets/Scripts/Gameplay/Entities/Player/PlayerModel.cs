@@ -19,7 +19,9 @@ namespace Gameplay.Entities.Player
 
         private IInteractable currentInteractableEntity;
 
-        private PlayerState currentState = PlayerState.None;
+        [SerializeField] private PlayerState currentState = PlayerState.None;
+
+        private IEnumerator currentInteractingRoutine;
 
         private bool isRunning = false;
         private bool isInteracting = false;
@@ -127,10 +129,11 @@ namespace Gameplay.Entities.Player
             {
                 StopMovement();
             }
-           
+
             if (!isInteracting)
             {
-                StartCoroutine(InteractingRoutine(currentInteractableEntity.GetInteractionTime()));
+                currentInteractingRoutine = InteractingRoutine(currentInteractableEntity.GetInteractionTime());
+                StartCoroutine(currentInteractingRoutine);
             }
         }
 
@@ -146,6 +149,10 @@ namespace Gameplay.Entities.Player
 
         public void MoveTowards(Vector2 movementDirection)
         {
+            if (currentState is PlayerState.Interacting)
+            {
+                return;
+            }
             this.movementDirection = movementDirection;
         }
 
@@ -162,6 +169,11 @@ namespace Gameplay.Entities.Player
 
         private void Move()
         {
+            if (currentState is PlayerState.Interacting)
+            {
+                return;
+            }
+
             if (isRunning)
             {
                 playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;
@@ -180,7 +192,7 @@ namespace Gameplay.Entities.Player
                 if (currentInteractableEntity.Equals(interactableEntity))
                 {
                     return;
-                }                
+                }
             }
 
             currentInteractableEntity?.HideInteractabilityFeedback();
@@ -204,15 +216,14 @@ namespace Gameplay.Entities.Player
                 if (currentInteractableEntity is not null && currentState is not PlayerState.Interacting)
                 {
                     SetPlayerState(PlayerState.Interacting);
-                }                
+                }
             }
             else
             {
                 if (currentState is PlayerState.Interacting)
                 {
                     InterrupInteraction();
-                }
-                SetPlayerState(PlayerState.Idle);
+                }                
             }
         }
 
@@ -231,8 +242,13 @@ namespace Gameplay.Entities.Player
 
         private void InterrupInteraction()
         {
-            StopCoroutine(InteractingRoutine(0));
+            if (currentInteractingRoutine is not null)
+            {
+                StopCoroutine(currentInteractingRoutine);
+                currentInteractingRoutine = null;
+            }           
             isInteracting = false;
+            SetPlayerState(PlayerState.Idle);
         }
     }
 }
