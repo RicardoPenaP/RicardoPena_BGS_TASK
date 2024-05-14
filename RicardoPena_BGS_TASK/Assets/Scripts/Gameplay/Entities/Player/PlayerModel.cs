@@ -25,8 +25,13 @@ namespace Gameplay.Entities.Player
         }
 
         private void Update()
-        {
+        {            
             UpdatePlayerState();
+        }
+
+        private void FixedUpdate()
+        {
+            UpdatePlayerMovement();
         }
 
         private void Init()
@@ -57,34 +62,42 @@ namespace Gameplay.Entities.Player
             }
         }
 
+        private void UpdatePlayerMovement()
+        {
+            if (movementDirection.Equals(Vector2.zero))
+            {
+                return;
+            }
+            Move();
+        }
 
         public void MoveTowards(Vector2 movementDirection)
         {
             this.movementDirection = movementDirection;
-            Move();
-        }      
+            //Move();
+        }
 
         public void StopMovement()
         {
             this.movementDirection = Vector2.zero;
-            Move();
+            //Move();
         }
 
         public void SetIsRunning(bool state)
         {
             isRunning = state;
-            Move();
+            //Move();
         }
 
         private void Move()
         {
             if (isRunning)
             {
-                playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;                
+                playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;
             }
             else
             {
-                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;                
+                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
             }
         }
 
@@ -108,7 +121,7 @@ namespace Gameplay.Entities.Player
                 }
             }
         }
-        
+
         private void UpdateWalkingState()
         {
             if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
