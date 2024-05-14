@@ -64,5 +64,24 @@ namespace Gameplay.Entities.Player
             newLocalScale.x = normalizedDirection;
             spriteRendererTransform.localScale = newLocalScale;
         }
+
+        private void UpdatePlayerAnimatorState(PlayerState currentState)
+        {
+            switch (currentState)
+            {
+                case PlayerState.None:
+                    break;
+                case PlayerState.Idle:
+                    break;
+                case PlayerState.Walking:
+                    break;
+                case PlayerState.Running:
+                    break;
+                case PlayerState.Interacting:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

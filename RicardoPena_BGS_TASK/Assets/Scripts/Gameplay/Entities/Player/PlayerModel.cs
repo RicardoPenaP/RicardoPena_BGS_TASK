@@ -29,11 +29,6 @@ namespace Gameplay.Entities.Player
             SetPlayerState(PlayerState.Idle);
         }
 
-        public void SetPlayerState(PlayerState state)
-        {
-            currentState = state;
-            OnCurrentStateChange?.Invoke(currentState);
-        }
 
         public void MoveTowards(Vector2 movementDirection)
         {
@@ -67,6 +62,11 @@ namespace Gameplay.Entities.Player
             }
         }
 
+        public void SetPlayerState(PlayerState state)
+        {
+            currentState = state;
+            OnCurrentStateChange?.Invoke(currentState);
+        }
 
     }
 }
