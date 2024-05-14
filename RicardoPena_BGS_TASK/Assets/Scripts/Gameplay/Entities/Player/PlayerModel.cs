@@ -65,7 +65,7 @@ namespace Gameplay.Entities.Player
         private void UpdatePlayerMovement()
         {
             if (movementDirection.Equals(Vector2.zero))
-            {
+            {                
                 return;
             }
             Move();
@@ -73,20 +73,18 @@ namespace Gameplay.Entities.Player
 
         public void MoveTowards(Vector2 movementDirection)
         {
-            this.movementDirection = movementDirection;
-            //Move();
+            this.movementDirection = movementDirection;            
         }
 
         public void StopMovement()
         {
-            this.movementDirection = Vector2.zero;
-            //Move();
+            movementDirection = Vector2.zero;            
+            Move();
         }
 
         public void SetIsRunning(bool state)
         {
-            isRunning = state;
-            //Move();
+            isRunning = state;            
         }
 
         private void Move()
