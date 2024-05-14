@@ -1,6 +1,7 @@
 ﻿using Gameplay.Entities.Common.EntityInteractability;
 using Gameplay.Entities.Common.EntityMovement;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gameplay.Entities.Player
@@ -21,6 +22,7 @@ namespace Gameplay.Entities.Player
         private PlayerState currentState = PlayerState.None;
 
         private bool isRunning = false;
+        private bool isInteracting = false;
         private Vector2 movementDirection;
 
         private void Awake()
@@ -121,7 +123,15 @@ namespace Gameplay.Entities.Player
 
         private void UpdateInteractingState()
         {
-
+            if (playerRigidbody.velocity.magnitude > Mathf.Epsilon)
+            {
+                StopMovement();
+            }
+           
+            if (!isInteracting)
+            {
+                StartCoroutine(InteractingRoutine(currentInteractableEntity.GetInteractionTime()));
+            }
         }
 
         //Movement logic
@@ -198,8 +208,31 @@ namespace Gameplay.Entities.Player
             }
             else
             {
+                if (currentState is PlayerState.Interacting)
+                {
+                    InterrupInteraction();
+                }
                 SetPlayerState(PlayerState.Idle);
             }
+        }
+
+        private IEnumerator InteractingRoutine(float timeOfInteraction)
+        {
+            isInteracting = true;
+            float timer = 0;
+            while (timer < timeOfInteraction)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            currentInteractableEntity.Interact();
+            isInteracting = false;
+        }
+
+        private void InterrupInteraction()
+        {
+            StopCoroutine(InteractingRoutine(0));
+            isInteracting = false;
         }
     }
 }
