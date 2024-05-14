@@ -2,6 +2,7 @@
 using Gameplay.Entities.Common.EntityMovement;
 using Gameplay.Input;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.Entities.Player
@@ -16,13 +17,28 @@ namespace Gameplay.Entities.Player
         [SerializeField] private Transform spriteRendererTransform;
         [SerializeField] private Animator playerAnimator;
 
+        [Header("Settings")]
+        [SerializeField] private float searchDistanceForInteractableEntities = 6f;
+
         public event Action<Vector2> OnMoveInputDetected;
         public event Action<bool> OnRunInputDetected;
         public event Action<bool> OnInteractInputUpdated;
+        public event Action<List<IInteractable>> OnInteractableEntitiesFound;
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, searchDistanceForInteractableEntities);
+        }
 
         private void Awake()
         {
             Init();
+        }
+
+        private void Update()
+        {
+            SearchInteractableEntities();
         }
 
         private void OnDestroy()
@@ -81,6 +97,33 @@ namespace Gameplay.Entities.Player
         public void UpdatePlayerAnimatorState(PlayerState currentState)
         {
             playerAnimator.SetInteger(StateAnimatorParameterName, (int)currentState);
+        }
+
+        //Interactability logic
+        private void SearchInteractableEntities()
+        {
+            Collider2D[] entities = Physics2D.OverlapCircleAll(transform.position, searchDistanceForInteractableEntities);
+            List<IInteractable> interactableEntities = new List<IInteractable>();
+
+            if (entities.Length == 0)
+            {
+                return;
+            }
+
+            foreach (Collider2D entity in entities)
+            {
+                if (entity.TryGetComponent(out IInteractable interactableEntity))
+                {
+                    interactableEntities.Add(interactableEntity);
+                }                
+            }
+
+            if (interactableEntities.Count == 0)
+            {
+                return;
+            }
+
+            OnInteractableEntitiesFound?.Invoke(interactableEntities);
         }
     }
 }
