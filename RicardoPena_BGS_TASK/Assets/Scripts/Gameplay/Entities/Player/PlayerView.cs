@@ -18,6 +18,7 @@ namespace Gameplay.Entities.Player
 
         public event Action<Vector2> OnMoveInputDetected;
         public event Action<bool> OnRunInputDetected;
+        public event Action<bool> OnInteractInputUpdated;
 
         private void Awake()
         {
@@ -33,12 +34,14 @@ namespace Gameplay.Entities.Player
         {
             inputReader.OnMoveInputUpdated += InputReader_OnMoveInputUpdated;
             inputReader.OnRunInputUpdated += InputReader_OnRunInputUpdated;
-        }      
+            inputReader.OnInteractInputUpdated += InputReader_OnInteractInputUpdated;
+        }
 
         private void Deinit()
         {
             inputReader.OnMoveInputUpdated -= InputReader_OnMoveInputUpdated;
             inputReader.OnRunInputUpdated -= InputReader_OnRunInputUpdated;
+            inputReader.OnInteractInputUpdated -= InputReader_OnInteractInputUpdated;
         }
 
         private void InputReader_OnMoveInputUpdated(Vector2 rawInput)
@@ -48,6 +51,11 @@ namespace Gameplay.Entities.Player
         }
 
         private void InputReader_OnRunInputUpdated(bool state) => OnRunInputDetected?.Invoke(state);
+
+        private void InputReader_OnInteractInputUpdated(bool state)
+        {
+            OnInteractInputUpdated?.Invoke(state);
+        }
 
         private void SetLookingDirection(float direction)
         {
