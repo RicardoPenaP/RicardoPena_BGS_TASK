@@ -12,8 +12,28 @@ namespace Gameplay.Entities.Player
         [Header("References")]
         [SerializeField] private Rigidbody2D playerRigidbody;
 
+        public event Action<PlayerState> OnCurrentStateChange;
+
+        private PlayerState currentState = PlayerState.None;
+
         private bool isRunning = false;
         private Vector2 movementDirection;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void Init()
+        {
+            SetPlayerState(PlayerState.Idle);
+        }
+
+        public void SetPlayerState(PlayerState state)
+        {
+            currentState = state;
+            OnCurrentStateChange?.Invoke(currentState);
+        }
 
         public void MoveTowards(Vector2 movementDirection)
         {
@@ -38,10 +58,12 @@ namespace Gameplay.Entities.Player
             if (isRunning)
             {
                 playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;
+                SetPlayerState(PlayerState.Running);
             }
             else
             {
                 playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
+                SetPlayerState(PlayerState.Walking);
             }
         }
 
