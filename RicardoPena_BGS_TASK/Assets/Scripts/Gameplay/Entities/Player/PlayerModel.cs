@@ -14,6 +14,9 @@ namespace Gameplay.Entities.Player
         [SerializeField] private Rigidbody2D playerRigidbody;
 
         public event Action<PlayerState> OnCurrentStateChange;
+        public event Action<IInteractable> OnCurrentInteractableEntityChange;
+
+        private IInteractable currentInteractableEntity;
 
         private PlayerState currentState = PlayerState.None;
 
@@ -26,7 +29,7 @@ namespace Gameplay.Entities.Player
         }
 
         private void Update()
-        {            
+        {
             UpdatePlayerState();
         }
 
@@ -40,6 +43,7 @@ namespace Gameplay.Entities.Player
             SetPlayerState(PlayerState.Idle);
         }
 
+        //Player state logic
         private void UpdatePlayerState()
         {
             switch (currentState)
@@ -60,43 +64,6 @@ namespace Gameplay.Entities.Player
                     break;
                 default:
                     break;
-            }
-        }
-
-        private void UpdatePlayerMovement()
-        {
-            if (movementDirection.Equals(Vector2.zero))
-            {                
-                return;
-            }
-            Move();
-        }
-
-        public void MoveTowards(Vector2 movementDirection)
-        {
-            this.movementDirection = movementDirection;            
-        }
-
-        public void StopMovement()
-        {
-            movementDirection = Vector2.zero;            
-            Move();
-        }
-
-        public void SetIsRunning(bool state)
-        {
-            isRunning = state;            
-        }
-
-        private void Move()
-        {
-            if (isRunning)
-            {
-                playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;
-            }
-            else
-            {
-                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
             }
         }
 
@@ -155,5 +122,50 @@ namespace Gameplay.Entities.Player
         {
 
         }
+
+        //Movement logic
+        private void UpdatePlayerMovement()
+        {
+            if (movementDirection.Equals(Vector2.zero))
+            {
+                return;
+            }
+            Move();
+        }
+
+        public void MoveTowards(Vector2 movementDirection)
+        {
+            this.movementDirection = movementDirection;
+        }
+
+        public void StopMovement()
+        {
+            movementDirection = Vector2.zero;
+            Move();
+        }
+
+        public void SetIsRunning(bool state)
+        {
+            isRunning = state;
+        }
+
+        private void Move()
+        {
+            if (isRunning)
+            {
+                playerRigidbody.velocity = movementDirection * movementSettings.RunningSpeed;
+            }
+            else
+            {
+                playerRigidbody.velocity = movementDirection * movementSettings.WalkingSpeed;
+            }
+        }
+
+        //Interactability logic
+        public void SetCurrentInteractableEntity(IInteractable interactableEntity)
+        {
+            currentInteractableEntity = interactableEntity;
+        }
+
     }
 }
