@@ -21,12 +21,18 @@ namespace Gameplay.Entities.Common.EntityInteractability
 
         private void Init()
         {
-
+            interactabilityView.OnInteractInputUpdated += InteractabilityView_OnInteractInputUpdated;
         }
-
+       
         private void Deinit()
         {
-
+            interactabilityView.OnInteractInputUpdated -= InteractabilityView_OnInteractInputUpdated;
         }
+
+        private void InteractabilityView_OnInteractInputUpdated(bool state)
+        {
+            
+        }
+
     }
 }
