@@ -41,6 +41,7 @@ namespace Gameplay.Entities.Player
         private void Init()
         {
             SetPlayerState(PlayerState.Idle);
+            SetCurrentInteractableEntity(null);
         }
 
         //Player state logic
@@ -165,7 +166,12 @@ namespace Gameplay.Entities.Player
         public void SetCurrentInteractableEntity(IInteractable interactableEntity)
         {
             currentInteractableEntity = interactableEntity;
+            OnCurrentInteractableEntityChange?.Invoke(currentInteractableEntity);
         }
 
+        public Vector2 GetInteractuatorPosition()
+        {
+            return transform.position;
+        }
     }
 }
