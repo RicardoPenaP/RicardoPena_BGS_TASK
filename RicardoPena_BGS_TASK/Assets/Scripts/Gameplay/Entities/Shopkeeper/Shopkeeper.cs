@@ -16,6 +16,11 @@ namespace Gameplay.Entities.Shopkeeper
             return transform.position;
         }
 
+        public float GetInteractionTime()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void HideInteractabilityFeedback()
         {
             shopkeeperController.ToggleInteractionText(false);
