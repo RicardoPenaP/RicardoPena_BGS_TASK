@@ -1,0 +1,14 @@
+{
+    "name": "Gameplay.Environment.Decoration",
+    "rootNamespace": "Gameplay.Environment.Decoration",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
