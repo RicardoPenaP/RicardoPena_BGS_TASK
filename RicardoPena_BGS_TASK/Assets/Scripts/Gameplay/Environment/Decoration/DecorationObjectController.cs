@@ -1,4 +1,5 @@
 using Gameplay.Entities.Common.EntityInteractability;
+using Gameplay.Items;
 using UnityEngine;
 
 namespace Gameplay.Environment.Decoration
@@ -12,5 +13,7 @@ namespace Gameplay.Environment.Decoration
 
         public void ToggleInteractionText(bool state) => decorationObjectView.ToggleInteractionText(state);
         public InteractableSettings GetSettings() => decorationObjectModel.GetSettings();
+        public Item GetInteractionReward() => decorationObjectModel.GetInteractionReward();
+        public int GetRewardAmount() => decorationObjectModel.GetRewardAmount();
     }
 }

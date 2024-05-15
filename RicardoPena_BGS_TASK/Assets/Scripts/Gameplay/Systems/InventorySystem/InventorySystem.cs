@@ -6,7 +6,7 @@ namespace Gameplay.Systems.InventorySystem
     public class InventorySystem : MonoBehaviour
     {
         private static InventorySystem instance;
-        private static InventorySystem Instance => instance;
+        public static InventorySystem Instance => instance;
 
         [Header("Inventory System")]
         [Header("References")]
