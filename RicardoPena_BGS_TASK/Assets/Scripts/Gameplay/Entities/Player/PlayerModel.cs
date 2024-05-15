@@ -132,11 +132,6 @@ namespace Gameplay.Entities.Player
             {
                 StopMovement();
             }
-
-            if (!isInteracting)
-            {
-                StartInteraction();                
-            }
         }
 
         //Movement logic
@@ -161,7 +156,8 @@ namespace Gameplay.Entities.Player
         public void StopMovement()
         {
             movementDirection = Vector2.zero;
-            Move();
+            playerRigidbody.velocity = Vector2.zero;
+            playerRigidbody.Sleep();            
         }
 
         public void SetIsRunning(bool state)
@@ -217,7 +213,8 @@ namespace Gameplay.Entities.Player
             {
                 if (currentInteractableEntity is not null && currentState is not PlayerState.Interacting)
                 {
-                    SetPlayerState(PlayerState.Interacting);
+                   
+                    StartInteraction();
                 }
             }
             else
@@ -231,6 +228,8 @@ namespace Gameplay.Entities.Player
 
         private void StartInteraction()
         {
+            StopMovement();
+            SetPlayerState(PlayerState.Interacting);
             if (currentInteractableEntity.GetInteractionTime() > 0f)
             {
                 currentInteractingRoutine = InteractingRoutine(currentInteractableEntity.GetInteractionTime());
