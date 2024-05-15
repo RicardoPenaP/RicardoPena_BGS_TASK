@@ -19,6 +19,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private InventorySlot[] inventorySlots;
         private CosmecticEquiper cosmecticEquiper;
+        private IEquipable equipedCosmetic;
 
         private int goldAmount;
 
@@ -125,6 +126,14 @@ namespace Gameplay.Systems.InventorySystem
 
         public void SellItem(Item selectedItem, int index)
         {
+            if (equipedCosmetic is not null)
+            {
+                if (inventorySlots[index].CurrentItem.Equals(equipedCosmetic))
+                {
+                    return;
+                }
+            }
+
             if (inventorySlots[index].CurrentItem.Equals(selectedItem))
             {
                 AddGold(inventorySlots[index].CurrentItem.GetSellPrice() * inventorySlots[index].ItemAmount);
@@ -141,7 +150,8 @@ namespace Gameplay.Systems.InventorySystem
 
         public void EquipItem(Item selectedItem, int index)
         {
-            cosmecticEquiper.SetCosmetic(selectedItem as IEquipable);
+            equipedCosmetic = selectedItem as IEquipable;
+            cosmecticEquiper.SetCosmetic(equipedCosmetic);
         }
     }
 }

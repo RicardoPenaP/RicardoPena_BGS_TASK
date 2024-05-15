@@ -16,4 +16,16 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: caef759273f97b148965e7b94f03ccfa, type: 3}
   sellPrice: 150
   buyPrice: 250
-  itemSprite: {fileID: 0}
+  itemParts:
+  - {fileID: 11400000, guid: fd097fc4eb7c6074d8d47cb5c56e5bfd, type: 2}
+  - {fileID: 11400000, guid: 017da0275885ce240ac0be65e0723b85, type: 2}
+  - {fileID: 11400000, guid: 3b8826bff4d36314b9a607799ad4d5e9, type: 2}
+  - {fileID: 11400000, guid: fb15a1db7c178654ba0a0a682d91361d, type: 2}
+  - {fileID: 11400000, guid: 03e6925c13b8d7040bc44c5648c9b7ad, type: 2}
+  - {fileID: 11400000, guid: 46edb800a6c8dff46b3bd3f6a6fdd5c6, type: 2}
+  - {fileID: 11400000, guid: 45c4adda044d79b45bac1f96252049bd, type: 2}
+  - {fileID: 11400000, guid: 4cae2c8ecc67ef84bb5398f71e664c7f, type: 2}
+  - {fileID: 11400000, guid: 0cb3e69d021e1c7409a5d8cf66e06fb7, type: 2}
+  - {fileID: 11400000, guid: 83f2bbf6c2261b442b755d0a533fb50c, type: 2}
+  - {fileID: 11400000, guid: 3d6f11c304372954e95844c9b5a0f1dc, type: 2}
+  - {fileID: 11400000, guid: ef5c5476dd7cd2c4b9e623d147e92b37, type: 2}
