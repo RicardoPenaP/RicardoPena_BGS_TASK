@@ -14,6 +14,12 @@ namespace Gameplay.Systems.ShopSystem
         {
             this.shopModel = shopModel;
             shopView.SetShopSlotsVisual(this.shopModel.GetShopSlots());
+            shopView.ToggleShopView(true);
+        }
+
+        public void CloseShop()
+        {
+            shopView.ToggleShopView(false);
         }
     }
 }
