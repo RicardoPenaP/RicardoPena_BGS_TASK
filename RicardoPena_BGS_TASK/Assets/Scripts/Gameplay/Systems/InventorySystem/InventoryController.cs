@@ -26,12 +26,14 @@ namespace Gameplay.Systems.InventorySystem
         {
             inventoryModel.OnInventoryModelInitialized += InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated += InventoryModel_OnInventorySlotUpdated;
+            inventoryModel.OnGoldAmountChanged += InventoryModel_OnGoldAmountChanged;
         }
 
         private void Deinit()
         {
             inventoryModel.OnInventoryModelInitialized -= InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated -= InventoryModel_OnInventorySlotUpdated;
+            inventoryModel.OnGoldAmountChanged -= InventoryModel_OnGoldAmountChanged;
         }
 
         private void InventoryModel_OnInventoryModelInitialized()
@@ -44,14 +46,17 @@ namespace Gameplay.Systems.InventorySystem
             inventoryView.UpdateInventoySlotVisual(inventorySlot, index);
         }
 
+        private void InventoryModel_OnGoldAmountChanged(int goldAmount)
+        {
+            inventoryView.UpdateGoldText(goldAmount);
+        }
+
         public bool TryToAddItem(Item item, int amount = 1) => inventoryModel.TryToAddItem(item, amount);
 
         public void ToggleInventory() => inventoryView.ToggleInventoryView(!inventoryView.gameObject.activeInHierarchy);
 
-        public void AddGold(int amount)
-        {
-
-        }
+        public void AddGold(int amount) => inventoryModel.AddGold(amount);
+        
     }
 }
 

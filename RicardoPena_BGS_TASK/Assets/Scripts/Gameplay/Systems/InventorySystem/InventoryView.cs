@@ -143,5 +143,9 @@ namespace Gameplay.Systems.InventorySystem
             ToggleSellPanel(true);
         }
         
+        public void UpdateGoldText(int amount)
+        {
+            goldText.text = $"{amount}";
+        }
     }
 }
