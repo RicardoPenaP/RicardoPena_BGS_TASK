@@ -12,6 +12,8 @@ namespace Gameplay.Entities.Shopkeeper
         [Header("References")]
         [SerializeField] private Item[] sellableItems;
 
+        private ShopSlot[] shopSlots;
+
         private void Awake()
         {
             Init();
@@ -19,12 +21,17 @@ namespace Gameplay.Entities.Shopkeeper
 
         private void Init()
         {
-            throw new NotImplementedException();
+            shopSlots = new ShopSlot[sellableItems.Length];
+            for (int i = 0; i < shopSlots.Length; i++)
+            {
+                shopSlots[i] = new ShopSlot();
+                shopSlots[i].SetCurrentItem(sellableItems[i]);
+            }
         }
 
         public ShopSlot[] GetShopSlots()
         {
-            throw new System.NotImplementedException();
+            return shopSlots;
         }
     }
 }
