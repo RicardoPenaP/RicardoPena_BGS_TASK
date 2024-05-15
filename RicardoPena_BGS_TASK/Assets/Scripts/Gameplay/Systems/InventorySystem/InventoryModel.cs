@@ -155,6 +155,16 @@ namespace Gameplay.Systems.InventorySystem
 
         public void EquipItem(Item selectedItem, int index)
         {
+            if (equipedItem is not null)
+            {
+                if (index.Equals(equipedItemIndex))
+                {
+                    equipedItem = null;
+                    equipedItemIndex = 0;
+                    cosmecticEquiper.UnequipCosmetic();
+                    return;
+                }
+            }
             equipedItem = selectedItem as IEquipable;
             equipedItemIndex = index;
             cosmecticEquiper.SetCosmetic(equipedItem);

@@ -15,6 +15,7 @@ namespace Gameplay.Systems.InventorySystem.Common
         [SerializeField] private Image icon;
         [SerializeField] private Image frame;
         [SerializeField] private TextMeshProUGUI stackText;
+        [SerializeField] private Image equipedIcon;
 
         private int itemAmount;
         private Item currentItem;
@@ -66,6 +67,11 @@ namespace Gameplay.Systems.InventorySystem.Common
         public void SlotVisualPressed()
         {
             OnAnySlotVisualSelected?.Invoke(this);
+        }
+
+        public void ToggleEquipedIcon(bool state)
+        {
+            equipedIcon.gameObject.SetActive(state);
         }
     }
 }
