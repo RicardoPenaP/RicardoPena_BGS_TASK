@@ -27,6 +27,11 @@ namespace Gameplay.Systems.ShopSystem.Common
             costText.text = $"{currentItem.GetBuyPrice()}";
         }
 
+        public void ToggleFrame(bool state)
+        {
+            frame.gameObject.SetActive(state);
+        }
+
         public void SlotSelected()
         {
             OnAnyShopSlotVisualSelected?.Invoke(this);

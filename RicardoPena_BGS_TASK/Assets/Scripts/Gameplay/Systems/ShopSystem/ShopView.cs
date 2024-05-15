@@ -16,6 +16,7 @@ namespace Gameplay.Systems.ShopSystem
         public event Action OnCloseButtonPressed;
 
         private ShopSlotVisual[] shopSlotsVisual;
+        private ShopSlotVisual selectedShopSlotVisual;
 
         private void Awake()
         {
@@ -29,12 +30,19 @@ namespace Gameplay.Systems.ShopSystem
 
         private void Init()
         {
+            ShopSlotVisual.OnAnyShopSlotVisualSelected += ShopSlotVisual_OnAnyShopSlotVisualSelected;
             closeButton.onClick.AddListener(CloseButtonPressed);
         }
 
         private void Deinit()
         {
+            ShopSlotVisual.OnAnyShopSlotVisualSelected += ShopSlotVisual_OnAnyShopSlotVisualSelected;
             closeButton.onClick.RemoveListener(CloseButtonPressed);
+        }
+
+        private void ShopSlotVisual_OnAnyShopSlotVisualSelected(ShopSlotVisual obj)
+        {
+            throw new NotImplementedException();
         }
 
         private void CloseButtonPressed()
@@ -63,6 +71,11 @@ namespace Gameplay.Systems.ShopSystem
         public void ToggleShopView(bool state)
         {
             gameObject.SetActive(state);
+        }
+
+        private void SetSelectedShopSlotVisual(ShopSlotVisual shopSlotVisual)
+        {
+            
         }
     }
 }
