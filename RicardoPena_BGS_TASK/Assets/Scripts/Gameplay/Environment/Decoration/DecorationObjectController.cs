@@ -1,3 +1,4 @@
+using Gameplay.Entities.Common.EntityInteractability;
 using UnityEngine;
 
 namespace Gameplay.Environment.Decoration
@@ -10,5 +11,6 @@ namespace Gameplay.Environment.Decoration
         [SerializeField] private DecorationObjectModel decorationObjectModel;
 
         public void ToggleInteractionText(bool state) => decorationObjectView.ToggleInteractionText(state);
+        public InteractableSettings GetSettings() => decorationObjectModel.GetSettings();
     }
 }

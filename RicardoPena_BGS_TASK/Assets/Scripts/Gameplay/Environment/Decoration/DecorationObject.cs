@@ -9,9 +9,6 @@ namespace Gameplay.Environment.Decoration
         [Header("References")]
         [SerializeField] private DecorationObjectController decorationObjectController;
 
-        [Header("Settings")]
-        [SerializeField] private InteractableSettings settings;
-
         public void ShowInteractabilityFeedback()
         {
             decorationObjectController.ToggleInteractionText(true);
@@ -34,7 +31,7 @@ namespace Gameplay.Environment.Decoration
 
         public float GetInteractionTime()
         {
-            return settings.InteractionTime;
+            return decorationObjectController.GetSettings().InteractionTime;
         }
 
     }
