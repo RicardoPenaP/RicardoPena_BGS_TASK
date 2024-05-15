@@ -21,7 +21,7 @@ namespace Gameplay.Systems.ShopSystem.Common
             currentItem = shopSlot.CurrentItem;
             icon.sprite = currentItem.Icon;
             nameText.text = currentItem.ItemName;
-            costText.text = currentItem.
+            costText.text = $"{currentItem.GetBuyPrice()}";
         }
     }
 }
