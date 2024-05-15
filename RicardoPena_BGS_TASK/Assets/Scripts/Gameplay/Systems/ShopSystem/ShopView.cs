@@ -44,6 +44,14 @@ namespace Gameplay.Systems.ShopSystem
 
         public void SetShopSlotsVisual(ShopSlot[] shopSlots)
         {
+            if (shopSlotsVisual is not null)
+            {                
+                foreach (ShopSlotVisual shopSlotsVisual in shopSlotsVisual)
+                {
+                    Destroy(shopSlotsVisual.gameObject);
+                }
+            }            
+
             shopSlotsVisual = new ShopSlotVisual[shopSlots.Length];
             for (int i = 0; i < shopSlotsVisual.Length; i++)
             {
