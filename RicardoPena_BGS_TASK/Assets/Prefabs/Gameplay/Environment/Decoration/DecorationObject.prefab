@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "F" to interact
+  m_text: Hold "F" to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decorationObjectController: {fileID: 4617413794334402951}
-  settings: {fileID: 0}
 --- !u!70 &3586843634493751027
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -528,3 +527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d95ca693b2284e934481f64231fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionReward: {fileID: 0}
+  rewardAmount: 0
+  settings: {fileID: 0}
