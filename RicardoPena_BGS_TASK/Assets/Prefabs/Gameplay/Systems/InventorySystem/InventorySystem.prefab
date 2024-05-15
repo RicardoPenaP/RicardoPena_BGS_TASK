@@ -834,7 +834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7049535812883107323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2352332110398963874
 Transform:
   m_ObjectHideFlags: 0
@@ -1249,6 +1249,8 @@ MonoBehaviour:
   sellButton: {fileID: 3835919628649513660}
   equipButton: {fileID: 4665118671614051825}
   goldText: {fileID: 4804377572638969100}
+  sellPriceText: {fileID: 2639256266743862444}
+  sellPanel: {fileID: 5699079332211646167}
   inventorySlotVisualPrefab: {fileID: 7304222112149046981, guid: 12c1ddde03448224cb833ee4bb2e1138, type: 3}
   inventorySlotsGridLayout: {fileID: 7165734432809290201}
 --- !u!1 &7467407849095251867
@@ -1618,7 +1620,7 @@ GameObject:
   - component: {fileID: 6873167874358841258}
   - component: {fileID: 2639256266743862444}
   m_Layer: 0
-  m_Name: SellPriceAmountText
+  m_Name: SellPriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,6 +15,8 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private Button sellButton;
         [SerializeField] private Button equipButton;
         [SerializeField] private TextMeshProUGUI goldText;
+        [SerializeField] private TextMeshProUGUI sellPriceText;
+        [SerializeField] private GameObject sellPanel;
         [SerializeField] private InventorySlotVisual inventorySlotVisualPrefab;
         [SerializeField] private Transform inventorySlotsGridLayout;
 
@@ -82,9 +84,9 @@ namespace Gameplay.Systems.InventorySystem
             gameObject.SetActive(state);
         }
 
-        public void ToggleSellButton(bool state)
+        private void ToggleSellPanel(bool state)
         {
-            sellButton.gameObject.SetActive(state);
+            sellPanel.gameObject.SetActive(state);
         }
 
         public void ToggleEquipButton(bool state)
@@ -121,18 +123,24 @@ namespace Gameplay.Systems.InventorySystem
         {
             if (selectedInventorySlotVisual is null)
             {
-                ToggleSellButton(false);
+                ToggleSellPanel(false);
                 return;
             }
 
             if (selectedInventorySlotVisual.GetCurrentItem() is null)
             {
-                ToggleSellButton(false);
+                ToggleSellPanel(false);
                 return;
             }
 
-            
-            ToggleSellButton(selectedInventorySlotVisual.GetCurrentItem() is ISellable);
+            if (selectedInventorySlotVisual.GetCurrentItem() is not ISellable)
+            {
+                ToggleSellPanel(false);
+                return;
+            }
+
+            sellPriceText.text = $"{10}";
+            ToggleSellPanel(true);
         }
         
     }
