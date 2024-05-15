@@ -50,6 +50,11 @@ namespace Gameplay.Systems.InventorySystem
         {            
             foreach (InventorySlot inventorySlot in inventorySlots)
             {
+                if (inventorySlot.CurrentItem is null)
+                {
+                    continue;
+                }
+
                 if (inventorySlot.CurrentItem.ItemName.Equals(item.ItemName))
                 {
                     if (inventorySlot.TryToStackItem(item, amount))
