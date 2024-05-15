@@ -656,6 +656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopSlotVisualPrefab: {fileID: 3733145514644640625, guid: 06bf06e25722cd444b20ab158a4f15f4, type: 3}
   slotLayout: {fileID: 5603096960511652870}
+  closeButton: {fileID: 4737916511313951992}
 --- !u!1 &4625618969929392678
 GameObject:
   m_ObjectHideFlags: 0

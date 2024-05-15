@@ -2,8 +2,9 @@
 
 namespace Gameplay.Systems.ShopSystem
 {
-    public interface IShopModel 
+    public interface IShopModel
     {
         public ShopSlot[] GetShopSlots();
+        public void SetShopOpen(bool state);
     }
 }
