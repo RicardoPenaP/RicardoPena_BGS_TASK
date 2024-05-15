@@ -40,10 +40,17 @@ namespace Gameplay.Systems.InventorySystem.Common
 
         private void SetStackText()
         {
-            stackText.text = $"{itemAmount}";
-            if (!stackText.gameObject.activeInHierarchy)
+            if (currentItem is not IStackable)
             {
-                stackText.gameObject.SetActive(true);
+                stackText.gameObject.SetActive(false);
+            }
+            else
+            {
+                stackText.text = $"{itemAmount}";
+                if (!stackText.gameObject.activeInHierarchy)
+                {
+                    stackText.gameObject.SetActive(true);
+                }
             }
         }
 

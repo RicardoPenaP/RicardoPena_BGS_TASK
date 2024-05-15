@@ -62,6 +62,7 @@ namespace Gameplay.Systems.ShopSystem
 
         public void SetShopSlotsVisual(ShopSlot[] shopSlots)
         {
+            selectedShopSlotVisual = null;
             if (shopSlotsVisual is not null)
             {                
                 foreach (ShopSlotVisual shopSlotsVisual in shopSlotsVisual)

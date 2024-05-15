@@ -129,6 +129,7 @@ namespace Gameplay.Systems.InventorySystem
             selectedInventorySlotVisual?.ToggleFrame(true);
 
             HandleSellVisuals();
+            HandleEquipVisuals();
         }
 
         private void HandleSellVisuals()
@@ -173,6 +174,29 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         public void SetCanSell(bool state) => canSell = state;
+
+        private void HandleEquipVisuals()
+        {
+            if (selectedInventorySlotVisual is null)
+            {
+                ToggleEquipButton(false);
+                return;
+            }
+
+            if (selectedInventorySlotVisual.GetCurrentItem() is null)
+            {
+                ToggleEquipButton(false);
+                return;
+            }
+
+            if (selectedInventorySlotVisual.GetCurrentItem() is not IEquipable)
+            {
+                ToggleEquipButton(false);
+                return;
+            }
+
+            ToggleEquipButton(true);
+        }
 
     }
 }
