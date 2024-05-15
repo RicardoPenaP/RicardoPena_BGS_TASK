@@ -22,6 +22,7 @@ namespace Gameplay.Environment.Decoration
         public void Interact()
         {
             Debug.Log("Interacted with decoration object");
+
         }
 
         public Vector2 GetInteractablePosition()
