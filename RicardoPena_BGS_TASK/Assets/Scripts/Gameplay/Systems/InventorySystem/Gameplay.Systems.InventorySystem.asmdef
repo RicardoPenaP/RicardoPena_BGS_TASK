@@ -3,7 +3,8 @@
     "rootNamespace": "Gameplay.Systems.InventorySystem",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:bd0bc8fba265ee540ad4610ed953b311"
+        "GUID:bd0bc8fba265ee540ad4610ed953b311",
+        "GUID:74f1646b2a39bd14eb23b9f7db02b526"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

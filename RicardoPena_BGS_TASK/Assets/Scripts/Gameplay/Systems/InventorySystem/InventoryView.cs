@@ -16,6 +16,7 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private TextMeshProUGUI goldText;
         [SerializeField] private InventorySlotVisual inventorySlotVisualPrefab;
         [SerializeField] private Transform inventorySlotsGridLayout;
+        [SerializeField] private InputReader
 
         public event Action OnCloseButtonPressed;
         public event Action OnSellButtonPressed;
