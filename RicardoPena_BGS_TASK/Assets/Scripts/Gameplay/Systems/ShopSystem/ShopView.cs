@@ -20,5 +20,10 @@ namespace Gameplay.Systems.ShopSystem
                 shopSlotsVisual[i] = Instantiate(shopSlotVisualPrefab, slotLayout.position, Quaternion.identity, slotLayout);
             }
         }
+
+        public void ToggleShopView(bool state)
+        {
+            gameObject.SetActive(state);
+        }
     }
 }
