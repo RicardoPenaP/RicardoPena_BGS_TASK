@@ -15,10 +15,13 @@ namespace Gameplay.Systems.InventorySystem
         public event Action OnInventoryModelInitialized;
         public event Action<InventorySlot, int> OnInventorySlotUpdated;
         public event Action<int> OnGoldAmountChanged;
+        public event Action<bool> OnCanSellChanged;
 
         private InventorySlot[] inventorySlots;
 
         private int goldAmount;
+
+        private bool canSell = false;
 
         private void Awake()
         {
@@ -135,5 +138,8 @@ namespace Gameplay.Systems.InventorySystem
                 OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
             }
         }
+
+        public void SetCanSell(bool state) => canSell = state;
+
     }
 }
