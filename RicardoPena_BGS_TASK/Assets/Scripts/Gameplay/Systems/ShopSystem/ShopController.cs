@@ -14,12 +14,14 @@ namespace Gameplay.Systems.ShopSystem
         {
             this.shopModel = shopModel;
             shopView.SetShopSlotsVisual(this.shopModel.GetShopSlots());
-            shopView.ToggleShopView(true);            
+            shopView.ToggleShopView(true);
+            InventorySystem.InventorySystem.Instance.OpenInventory();
         }
 
         public void CloseShop()
         {
             shopView.ToggleShopView(false);
+            InventorySystem.InventorySystem.Instance.CloseInventory();
         }
     }
 }

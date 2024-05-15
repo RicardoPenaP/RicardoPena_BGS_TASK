@@ -33,7 +33,7 @@ namespace Gameplay.Systems.InventorySystem
 
         public void ToggleInventory() => inventoryController.ToggleInventory();
 
-        public void OpenInventorry() => inventoryController.OpenInventory();
+        public void OpenInventory() => inventoryController.OpenInventory();
 
         public void CloseInventory() => inventoryController.CloseInventory();
 
