@@ -9,5 +9,16 @@ namespace Gameplay.Systems.ShopSystem
         [Header("References")]
         [SerializeField] private ShopSlotVisual shopSlotVisualPrefab;
         [SerializeField] private Transform slotLayout;
+
+        private ShopSlotVisual[] shopSlotsVisual;
+
+        public void SetShopSlotsVisual(ShopSlot[] shopSlots)
+        {
+            shopSlotsVisual = new ShopSlotVisual[shopSlots.Length];
+            for (int i = 0; i < shopSlotsVisual.Length; i++)
+            {
+                shopSlotsVisual[i] = Instantiate(shopSlotVisualPrefab, slotLayout.position, Quaternion.identity, slotLayout);
+            }
+        }
     }
 }
