@@ -9,7 +9,7 @@ namespace Gameplay.Systems.ShopSystem
 
         [Header("Inventory System")]
         [Header("References")]
-        [SerializeField] private GameObject inventoryController;
+        [SerializeField] private ShopController shopController;
 
         private void Awake()
         {
