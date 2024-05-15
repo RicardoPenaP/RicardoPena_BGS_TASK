@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class InventoryController : MonoBehaviour
+namespace Gameplay.Systems.InventorySystem
 {
-    
+    public class InventoryController : MonoBehaviour
+    {
+
+    }
 }
+
