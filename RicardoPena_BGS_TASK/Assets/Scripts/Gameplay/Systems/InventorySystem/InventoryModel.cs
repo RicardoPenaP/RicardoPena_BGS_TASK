@@ -12,6 +12,7 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private int amountOfInventorySlots = 25;
 
         public event Action OnInventoryModelInitialized;
+        public event Action<InventorySlot> OnInventorySlotUpdated;
 
         private InventorySlot[] inventorySlots;
 
@@ -46,13 +47,14 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         private bool TryStackItem(Item item, int amount)
-        {
+        {            
             foreach (InventorySlot inventorySlot in inventorySlots)
             {
                 if (inventorySlot.CurrentItem.ItemName.Equals(item.ItemName))
                 {
                     if (inventorySlot.TryToStackItem(item, amount))
                     {
+                        OnInventorySlotUpdated?.Invoke(inventorySlot);
                         return true;
                     }
                 }
@@ -70,6 +72,7 @@ namespace Gameplay.Systems.InventorySystem
                     continue;
                 }
                 inventorySlot.SetCurrentItem(item, amount);
+                OnInventorySlotUpdated?.Invoke(inventorySlot);
                 return true;
             }
             return false;
