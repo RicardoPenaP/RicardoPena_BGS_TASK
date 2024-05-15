@@ -31,6 +31,8 @@ namespace Gameplay.Systems.InventorySystem
 
         public bool TryToAddItem(Item item, int amount = 1) => inventoryController.TryToAddItem(item, amount);
         public void ToggleInventory() => inventoryController.ToggleInventory();
+
+        public void AddGold(int amount) => inventoryController.AddGold(amount);
     }
 }
 
