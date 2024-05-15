@@ -19,7 +19,9 @@ namespace Gameplay.Systems.InventorySystem
 
         private InventorySlot[] inventorySlots;
         private CosmecticEquiper cosmecticEquiper;
-        private IEquipable equipedCosmetic;
+
+        private IEquipable equipedItem;
+        private int equipedItemIndex;
 
         private int goldAmount;
 
@@ -126,13 +128,16 @@ namespace Gameplay.Systems.InventorySystem
 
         public void SellItem(Item selectedItem, int index)
         {
-            if (equipedCosmetic is not null)
+            if (equipedItem is not null)
             {
-                if (inventorySlots[index].CurrentItem.Equals(equipedCosmetic))
+                if (index.Equals(equipedItemIndex))
                 {
-                    return;
+                    equipedItem = null;
+                    equipedItemIndex = 0;
+                    cosmecticEquiper.UnequipCosmetic();
                 }
             }
+
 
             if (inventorySlots[index].CurrentItem.Equals(selectedItem))
             {
@@ -150,8 +155,9 @@ namespace Gameplay.Systems.InventorySystem
 
         public void EquipItem(Item selectedItem, int index)
         {
-            equipedCosmetic = selectedItem as IEquipable;
-            cosmecticEquiper.SetCosmetic(equipedCosmetic);
+            equipedItem = selectedItem as IEquipable;
+            equipedItemIndex = index;
+            cosmecticEquiper.SetCosmetic(equipedItem);
         }
     }
 }

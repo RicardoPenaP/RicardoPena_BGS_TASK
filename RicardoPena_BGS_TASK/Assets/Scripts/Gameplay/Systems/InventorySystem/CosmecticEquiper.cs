@@ -21,6 +21,8 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private SpriteRenderer shinR;
         [SerializeField] private SpriteRenderer sleeveR;
         [SerializeField] private SpriteRenderer torso;
+
+        [SerializeField] private EquipableItem defaultEquipment;
         
         public void SetCosmetic(IEquipable equipableItem)
         {
@@ -75,6 +77,25 @@ namespace Gameplay.Systems.InventorySystem
 
                 targetSpriteRenderer.sprite = itemPart.PartSprite;
             }
+        }
+
+        public void UnequipCosmetic()
+        {
+            SetCosmetic(defaultEquipment);
+            //armL.sprite = null;
+            //armR.sprite = null;
+            //finger.sprite = null;
+            //forearmL.sprite = null;
+            //forearmR.sprite = null;
+            //handL.sprite = null;
+            //handR.sprite = null;
+            //legL.sprite = null;
+            //legR.sprite = null;
+            //pelvis.sprite = null;
+            //shinL.sprite = null;
+            //shinR.sprite = null;
+            //sleeveR.sprite = null;
+            //torso.sprite = null;
         }
     }
 }
