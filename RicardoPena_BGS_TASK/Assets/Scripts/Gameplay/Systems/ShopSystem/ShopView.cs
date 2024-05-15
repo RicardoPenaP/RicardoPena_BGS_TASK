@@ -40,9 +40,9 @@ namespace Gameplay.Systems.ShopSystem
             closeButton.onClick.RemoveListener(CloseButtonPressed);
         }
 
-        private void ShopSlotVisual_OnAnyShopSlotVisualSelected(ShopSlotVisual obj)
+        private void ShopSlotVisual_OnAnyShopSlotVisualSelected(ShopSlotVisual selectedShopSlotVisual)
         {
-            throw new NotImplementedException();
+            SetSelectedShopSlotVisual(selectedShopSlotVisual);
         }
 
         private void CloseButtonPressed()
@@ -75,7 +75,9 @@ namespace Gameplay.Systems.ShopSystem
 
         private void SetSelectedShopSlotVisual(ShopSlotVisual shopSlotVisual)
         {
-            
+            selectedShopSlotVisual?.ToggleFrame(false);
+            selectedShopSlotVisual = shopSlotVisual;
+            selectedShopSlotVisual?.ToggleFrame(true);
         }
     }
 }
