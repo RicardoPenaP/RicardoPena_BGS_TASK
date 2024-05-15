@@ -25,7 +25,7 @@ namespace Gameplay.Environment.Decoration
             if (InventorySystem.Instance.TryToAddItem(decorationObjectController.GetInteractionReward(), decorationObjectController.GetRewardAmount()))
             {
                 Debug.Log("Interacted with decoration object");
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
 

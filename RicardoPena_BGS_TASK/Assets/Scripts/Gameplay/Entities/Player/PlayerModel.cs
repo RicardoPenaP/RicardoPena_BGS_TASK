@@ -239,6 +239,7 @@ namespace Gameplay.Entities.Player
             else
             {
                 currentInteractableEntity.Interact();
+                SetCurrentInteractableEntity(null);
             }            
         }
 
@@ -252,6 +253,7 @@ namespace Gameplay.Entities.Player
                 yield return null;
             }
             currentInteractableEntity.Interact();
+            SetCurrentInteractableEntity(null);
             FinishInteraction();
         }
 
@@ -263,11 +265,8 @@ namespace Gameplay.Entities.Player
                 currentInteractingRoutine = null;
             }
 
-            if (currentInteractableEntity.GetInteractionTime() > 0)
-            {
-                OnInteractionFinished?.Invoke();
-            }
-            
+            OnInteractionFinished?.Invoke();
+
             SetPlayerState(PlayerState.Idle);
         }
     }
