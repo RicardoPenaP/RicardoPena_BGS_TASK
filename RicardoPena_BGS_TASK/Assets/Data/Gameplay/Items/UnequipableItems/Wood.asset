@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   itemName: Wood
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d23bfebc501794f448d2d3f4a506433b, type: 3}
   sellGoldValue: 10
   buyGoldValue: 5
   isStackable: 1
