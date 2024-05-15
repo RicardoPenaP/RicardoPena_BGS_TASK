@@ -1,39 +1,23 @@
-﻿namespace Gameplay.Systems.ShopSystem.Common
+﻿using Gameplay.Items;
+
+namespace Gameplay.Systems.ShopSystem.Common
 {
     public class ShopSlot 
     {
-        private Item currentItem;
-        private int itemAmount;
+        private Item currentItem;       
 
         public Item CurrentItem => currentItem;
-        public int ItemAmount => itemAmount;
+        
 
-        public InventorySlot()
+        public ShopSlot()
         {
-            currentItem = null;
-            itemAmount = 0;
+            currentItem = null;           
         }
 
-        public void SetCurrentItem(Item item, int itemAmount = 1)
+        public void SetCurrentItem(Item item)
         {
-            currentItem = item;
-            this.itemAmount = itemAmount;
+            currentItem = item;            
         }
 
-        public bool TryToStackItem(Item item, int itemAmount)
-        {
-            if (currentItem is not IStackable)
-            {
-                return false;
-            }
-
-            if ((currentItem as IStackable).GetMaxStackAmount() < this.itemAmount + itemAmount)
-            {
-                return false;
-            }
-
-            this.itemAmount += itemAmount;
-            return true;
-        }
     }
 }
