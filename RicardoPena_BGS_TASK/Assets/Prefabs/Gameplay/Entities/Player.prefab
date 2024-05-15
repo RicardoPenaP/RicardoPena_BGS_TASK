@@ -4245,6 +4245,7 @@ MonoBehaviour:
   shinR: {fileID: 3262674358787816132}
   sleeveR: {fileID: 1515053411871352186}
   torso: {fileID: 1513683704931041480}
+  defaultEquipment: {fileID: 11400000, guid: ac593f988891078498d81b456aa05221, type: 2}
 --- !u!1 &1726628480421040928
 GameObject:
   m_ObjectHideFlags: 0
