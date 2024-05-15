@@ -1,4 +1,5 @@
 using Gameplay.Entities.Common.EntityInteractability;
+using Gameplay.Systems.InventorySystem;
 using UnityEngine;
 
 namespace Gameplay.Environment.Decoration
@@ -21,8 +22,11 @@ namespace Gameplay.Environment.Decoration
 
         public void Interact()
         {
-            Debug.Log("Interacted with decoration object");
-
+            if (InventorySystem.Instance.TryToAddItem(decorationObjectController.GetInteractionReward(), decorationObjectController.GetRewardAmount()))
+            {
+                Debug.Log("Interacted with decoration object");
+                Destroy(gameObject);
+            }
         }
 
         public Vector2 GetInteractablePosition()
