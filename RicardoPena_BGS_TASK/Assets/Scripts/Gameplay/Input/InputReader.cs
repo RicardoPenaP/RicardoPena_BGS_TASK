@@ -11,6 +11,7 @@ namespace Gameplay.Input
         public event Action<bool> OnInteractInputUpdated;
         public event Action<Vector2> OnMoveInputUpdated;
         public event Action<bool> OnRunInputUpdated;
+        public event Action OnToggleInventoryInputUpdated;
 
         private Controls controls;
 
@@ -36,6 +37,14 @@ namespace Gameplay.Input
         public void OnRun(InputAction.CallbackContext context)
         {
             OnRunInputUpdated?.Invoke(context.ReadValueAsButton());
+        }
+
+        public void OnToggleInventoy(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton())
+            {
+                OnToggleInventoryInputUpdated?.Invoke();
+            }
         }
     }
 }

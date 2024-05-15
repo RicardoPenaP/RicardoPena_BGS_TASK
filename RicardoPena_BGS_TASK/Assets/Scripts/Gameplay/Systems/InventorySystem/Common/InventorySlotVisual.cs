@@ -29,6 +29,7 @@ namespace Gameplay.Systems.InventorySystem.Common
             }
 
             currentItem = inventorySlot.CurrentItem;
+            itemAmount = inventorySlot.ItemAmount;
             SetStackText();
             icon.sprite = inventorySlot.CurrentItem.Icon;
             icon.gameObject.SetActive(true);

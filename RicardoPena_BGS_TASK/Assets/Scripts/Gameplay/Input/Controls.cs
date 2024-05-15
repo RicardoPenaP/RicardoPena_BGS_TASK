@@ -55,6 +55,15 @@ namespace Gameplay.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleInventoy"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e85c6da-0d97-4182-8912-8ad96487b844"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -134,6 +143,17 @@ namespace Gameplay.Input
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""066a955d-6986-4dd6-a227-f90937629110"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleInventoy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -162,6 +182,7 @@ namespace Gameplay.Input
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
+            m_Player_ToggleInventoy = m_Player.FindAction("ToggleInventoy", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -226,6 +247,7 @@ namespace Gameplay.Input
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Run;
+        private readonly InputAction m_Player_ToggleInventoy;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -233,6 +255,7 @@ namespace Gameplay.Input
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @Run => m_Wrapper.m_Player_Run;
+            public InputAction @ToggleInventoy => m_Wrapper.m_Player_ToggleInventoy;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -251,6 +274,9 @@ namespace Gameplay.Input
                 @Run.started += instance.OnRun;
                 @Run.performed += instance.OnRun;
                 @Run.canceled += instance.OnRun;
+                @ToggleInventoy.started += instance.OnToggleInventoy;
+                @ToggleInventoy.performed += instance.OnToggleInventoy;
+                @ToggleInventoy.canceled += instance.OnToggleInventoy;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -264,6 +290,9 @@ namespace Gameplay.Input
                 @Run.started -= instance.OnRun;
                 @Run.performed -= instance.OnRun;
                 @Run.canceled -= instance.OnRun;
+                @ToggleInventoy.started -= instance.OnToggleInventoy;
+                @ToggleInventoy.performed -= instance.OnToggleInventoy;
+                @ToggleInventoy.canceled -= instance.OnToggleInventoy;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -295,6 +324,7 @@ namespace Gameplay.Input
             void OnMove(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
             void OnRun(InputAction.CallbackContext context);
+            void OnToggleInventoy(InputAction.CallbackContext context);
         }
     }
 }
