@@ -45,6 +45,8 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         public bool TryToAddItem(Item item, int amount = 1) => inventoryModel.TryToAddItem(item, amount);
+
+        public void ToggleInventory() => inventoryView.ToggleInventoryView(!inventoryView.gameObject.activeInHierarchy);
     }
 }
 

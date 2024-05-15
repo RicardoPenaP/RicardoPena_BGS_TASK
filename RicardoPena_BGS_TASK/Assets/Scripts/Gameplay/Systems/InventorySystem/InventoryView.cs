@@ -1,3 +1,4 @@
+using Gameplay.Input;
 using Gameplay.Systems.InventorySystem.Common;
 using System;
 using TMPro;
@@ -16,7 +17,6 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private TextMeshProUGUI goldText;
         [SerializeField] private InventorySlotVisual inventorySlotVisualPrefab;
         [SerializeField] private Transform inventorySlotsGridLayout;
-        [SerializeField] private InputReader
 
         public event Action OnCloseButtonPressed;
         public event Action OnSellButtonPressed;
@@ -35,14 +35,14 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         private void Init()
-        {
+        {            
             closeButton.onClick.AddListener(CloseButton_OnClick);
             sellButton.onClick.AddListener(SellButton_OnClick);
-            equipButton.onClick.AddListener(EquipButton_OnClick);
-        }
+            equipButton.onClick.AddListener(EquipButton_OnClick);            
+        }       
 
         private void Deinit()
-        {
+        {            
             closeButton.onClick.RemoveListener(CloseButton_OnClick);
             sellButton.onClick.RemoveListener(SellButton_OnClick);
             equipButton.onClick.RemoveListener(EquipButton_OnClick);
@@ -51,6 +51,7 @@ namespace Gameplay.Systems.InventorySystem
         private void CloseButton_OnClick()
         {
             OnCloseButtonPressed?.Invoke();
+            ToggleInventoryView(false);
         }
 
         private void SellButton_OnClick()
@@ -61,6 +62,11 @@ namespace Gameplay.Systems.InventorySystem
         private void EquipButton_OnClick()
         {
             OnEquipButtonPressed?.Invoke();
+        }
+
+        public void ToggleInventoryView(bool state)
+        {
+            gameObject.SetActive(state);
         }
 
         public void ToggleSellButton(bool state)

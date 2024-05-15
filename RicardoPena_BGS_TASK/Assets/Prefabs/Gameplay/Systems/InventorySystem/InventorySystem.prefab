@@ -1138,6 +1138,7 @@ MonoBehaviour:
   goldText: {fileID: 4804377572638969100}
   inventorySlotVisualPrefab: {fileID: 7304222112149046981, guid: 12c1ddde03448224cb833ee4bb2e1138, type: 3}
   inventorySlotsGridLayout: {fileID: 7165734432809290201}
+  inputReader: {fileID: 11400000, guid: ece4c3d15cff2f446a0dfcee14b3382a, type: 2}
 --- !u!1 &7467407849095251867
 GameObject:
   m_ObjectHideFlags: 0
