@@ -1,3 +1,4 @@
+using Gameplay.Systems.InventorySystem.Common;
 using System;
 using TMPro;
 using UnityEngine;
@@ -13,10 +14,14 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private Button sellButton;
         [SerializeField] private Button equipButton;
         [SerializeField] private TextMeshProUGUI goldText;
+        [SerializeField] private InventorySlotVisual inventorySlotVisualPrefab;
+        [SerializeField] private Transform inventorySlotsGridLayout;
 
         public event Action OnCloseButtonPressed;
         public event Action OnSellButtonPressed;
         public event Action OnEquipButtonPressed;
+
+        private InventorySlotVisual[] inventorySlotVisuals;
 
         private void Awake()
         {
@@ -65,6 +70,17 @@ namespace Gameplay.Systems.InventorySystem
         public void ToggleEquipButton(bool state)
         {
             equipButton.gameObject.SetActive(state);
+        }
+
+        public void SetInvetorySlotsVisual(InventorySlot[] inventorySlots)
+        {
+            inventorySlotVisuals = new InventorySlotVisual[inventorySlots.Length];
+            for (int i = 0; i < inventorySlotVisuals.Length; i++)
+            {
+                inventorySlotVisuals[i] = Instantiate(inventorySlotVisualPrefab, inventorySlotsGridLayout.position,
+                                                      Quaternion.identity, inventorySlotsGridLayout);
+                inventorySlotVisuals[i].SetSlotVisuals(inventorySlots[i]);
+            }
         }
     }
 }
