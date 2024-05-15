@@ -1,4 +1,5 @@
-﻿using Gameplay.Systems.ShopSystem.Common;
+﻿using Gameplay.Items;
+using Gameplay.Systems.ShopSystem.Common;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ namespace Gameplay.Systems.ShopSystem
         [SerializeField] private Button buyButton;
 
         public event Action OnCloseButtonPressed;
+        public event Action<Item> OnBuyButtonPressed;
 
         private ShopSlotVisual[] shopSlotsVisual;
         private ShopSlotVisual selectedShopSlotVisual;
@@ -33,12 +35,14 @@ namespace Gameplay.Systems.ShopSystem
         {
             ShopSlotVisual.OnAnyShopSlotVisualSelected += ShopSlotVisual_OnAnyShopSlotVisualSelected;
             closeButton.onClick.AddListener(CloseButtonPressed);
+            buyButton.onClick.AddListener(BuyButtonPressed);
         }
 
         private void Deinit()
         {
             ShopSlotVisual.OnAnyShopSlotVisualSelected += ShopSlotVisual_OnAnyShopSlotVisualSelected;
             closeButton.onClick.RemoveListener(CloseButtonPressed);
+            buyButton.onClick.RemoveListener(BuyButtonPressed);
         }
 
         private void ShopSlotVisual_OnAnyShopSlotVisualSelected(ShopSlotVisual selectedShopSlotVisual)
@@ -49,6 +53,11 @@ namespace Gameplay.Systems.ShopSystem
         private void CloseButtonPressed()
         {            
             OnCloseButtonPressed?.Invoke();
+        }
+
+        private void BuyButtonPressed()
+        {
+            OnBuyButtonPressed?.Invoke(selectedShopSlotVisual.CurrentItem);
         }
 
         public void SetShopSlotsVisual(ShopSlot[] shopSlots)

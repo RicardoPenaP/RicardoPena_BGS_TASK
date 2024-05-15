@@ -42,6 +42,8 @@ namespace Gameplay.Systems.InventorySystem
         public int GetCurrentGold() => inventoryController.GetCurrentGold();
 
         public void SetCanSell(bool state) => inventoryController.SetCanSell(state);
+
+        public bool HasFreeSlot() => inventoryController.HasFreeSlot();
     }
 }
 

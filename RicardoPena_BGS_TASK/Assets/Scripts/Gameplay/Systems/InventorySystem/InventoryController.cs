@@ -80,6 +80,8 @@ namespace Gameplay.Systems.InventorySystem
         public int GetCurrentGold() => inventoryModel.GetGoldAmount();
 
         public void SetCanSell(bool state) => inventoryModel.SetCanSell(state);
+
+        public bool HasFreeSlot() => inventoryModel.HasFreeSlot();
     }
 }
 

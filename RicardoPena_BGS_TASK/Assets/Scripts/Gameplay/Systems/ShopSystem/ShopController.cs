@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gameplay.Items;
+using System;
 using UnityEngine;
 
 namespace Gameplay.Systems.ShopSystem
@@ -24,11 +25,19 @@ namespace Gameplay.Systems.ShopSystem
         private void Init()
         {
             shopView.OnCloseButtonPressed += () => CloseShop();
+            shopView.OnBuyButtonPressed += ShopView_OnBuyButtonPressed;
         }
+
 
         private void Deinit()
         {
             shopView.OnCloseButtonPressed -= () => CloseShop();
+            shopView.OnBuyButtonPressed -= ShopView_OnBuyButtonPressed;
+        }
+
+        private void ShopView_OnBuyButtonPressed(Item selectedItem)
+        {
+            throw new NotImplementedException();
         }
 
         public void OpenShop(IShopModel shopModel)
