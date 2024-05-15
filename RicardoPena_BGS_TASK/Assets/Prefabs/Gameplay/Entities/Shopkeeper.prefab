@@ -178,6 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b6fe82c15ba23428b1937d89a58d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sellableItems:
+  - {fileID: 11400000, guid: 31dc1efdd16ac2449bfc1e8e24ff67ce, type: 2}
+  - {fileID: 11400000, guid: 6c7e32fe19d4bd143942c69d7748d596, type: 2}
+  - {fileID: 11400000, guid: 3cd2280c8ac2bd347b875a98f7fc37f5, type: 2}
 --- !u!1 &1302731124380100839
 GameObject:
   m_ObjectHideFlags: 0
