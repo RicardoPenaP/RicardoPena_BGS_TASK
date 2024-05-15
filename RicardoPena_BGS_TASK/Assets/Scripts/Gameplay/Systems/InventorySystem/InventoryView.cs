@@ -43,7 +43,7 @@ namespace Gameplay.Systems.InventorySystem
             InventorySlotVisual.OnAnySlotVisualSelected += InventorySlotVisual_OnAnySlotVisualSelected;
             closeButton.onClick.AddListener(CloseButton_OnClick);
             sellButton.onClick.AddListener(SellButton_OnClick);
-            equipButton.onClick.AddListener(EquipButton_OnClick);            
+            equipButton.onClick.AddListener(EquipButton_OnClick);
         }
 
         private void Deinit()
@@ -103,11 +103,11 @@ namespace Gameplay.Systems.InventorySystem
                                                       Quaternion.identity, inventorySlotsGridLayout);
                 inventorySlotsVisual[i].SetSlotVisuals(inventorySlots[i]);
             }
-        }        
+        }
 
         public void UpdateInventoySlotVisual(InventorySlot inventorySlot, int index)
         {
-            inventorySlotsVisual[index].SetSlotVisuals(inventorySlot);            
+            inventorySlotsVisual[index].SetSlotVisuals(inventorySlot);
         }
 
         private void SetSelectedInventorySlotVisual(InventorySlotVisual slotVisual)
@@ -139,13 +139,18 @@ namespace Gameplay.Systems.InventorySystem
                 return;
             }
 
-            sellPriceText.text = $"{10}";
+            UpdateSellText(selectedInventorySlotVisual.GetCurrentItem());
             ToggleSellPanel(true);
         }
-        
+
         public void UpdateGoldText(int amount)
         {
             goldText.text = $"{amount}";
+        }
+
+        public void UpdateSellText(ISellable sellableItem)
+        {
+            sellPriceText.text = $"{sellableItem.GetSellPrice()}";
         }
     }
 }
