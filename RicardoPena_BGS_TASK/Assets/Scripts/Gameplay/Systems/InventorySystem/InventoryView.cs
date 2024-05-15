@@ -85,18 +85,7 @@ namespace Gameplay.Systems.InventorySystem
 
         public void UpdateInventoySlotVisual(InventorySlot inventorySlot, int index)
         {
-            foreach (InventorySlotVisual inventorySlotVisual in inventorySlotsVisual)
-            {
-                if (inventorySlotVisual.GetCurrentItem() is null)
-                {
-                    continue;
-                }
-
-                if (inventorySlotVisual.GetCurrentItem().Equals(inventorySlot.CurrentItem))
-                {
-                    inventorySlotVisual.SetSlotVisuals(inventorySlot);
-                }
-            }
+            inventorySlotsVisual[index].SetSlotVisuals(inventorySlot);            
         }
     }
 }
