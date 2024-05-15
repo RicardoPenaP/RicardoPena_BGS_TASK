@@ -27,7 +27,7 @@ namespace Gameplay.Entities.Player
         private IEnumerator currentInteractingRoutine;
 
         private bool isRunning = false;
-        private bool isInteracting = false;
+        //private bool isInteracting = false;
         private Vector2 movementDirection;
 
         private void Awake()
@@ -243,8 +243,7 @@ namespace Gameplay.Entities.Player
         }
 
         private IEnumerator InteractingRoutine(float timeOfInteraction)
-        {
-            isInteracting = true;
+        {            
             float timer = 0;
             while (timer < timeOfInteraction)
             {
@@ -268,8 +267,7 @@ namespace Gameplay.Entities.Player
             {
                 OnInteractionFinished?.Invoke();
             }
-
-            isInteracting = false;
+            
             SetPlayerState(PlayerState.Idle);
         }
     }
