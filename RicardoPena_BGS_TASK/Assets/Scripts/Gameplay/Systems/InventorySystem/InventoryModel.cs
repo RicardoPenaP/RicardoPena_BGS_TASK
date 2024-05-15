@@ -18,6 +18,7 @@ namespace Gameplay.Systems.InventorySystem
         public event Action<bool> OnCanSellChanged;
 
         private InventorySlot[] inventorySlots;
+        private CosmecticEquiper cosmecticEquiper;
 
         private int goldAmount;
 
@@ -30,6 +31,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void Init()
         {
+            cosmecticEquiper = FindAnyObjectByType<CosmecticEquiper>();
             SetGoldAmount(20000);
             inventorySlots = new InventorySlot[amountOfInventorySlots];
             for (int i = 0; i < inventorySlots.Length; i++)
@@ -139,7 +141,7 @@ namespace Gameplay.Systems.InventorySystem
 
         public void EquipItem(Item selectedItem, int index)
         {
-
+            cosmecticEquiper.SetCosmetic(selectedItem as IEquipable);
         }
     }
 }
