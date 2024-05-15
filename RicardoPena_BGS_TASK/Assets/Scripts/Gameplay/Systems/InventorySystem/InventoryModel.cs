@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.Systems.InventorySystem.Common;
+using UnityEngine;
 
 namespace Gameplay.Systems.InventorySystem
 {
@@ -6,6 +7,6 @@ namespace Gameplay.Systems.InventorySystem
     {
         [Header("Inventory Model")]
         [Header("References")]
-        [SerializeField] private GameObject[] itemSlots;
+        [SerializeField] private InventorySlot[] invetorySlots;
     }
 }
