@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 12998
+  controlID: 15047
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 12999
+  controlID: 15048
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 12897
+  controlID: 14931
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -595,9 +595,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1330.1815, y: 686.0403, z: 9.0982}
+    m_Target: {x: 1556.7552, y: 336.32623, z: 8.052275}
     speed: 2
-    m_Value: {x: 1333.0817, y: 688.9404, z: 9.180722}
+    m_Value: {x: 1561.758, y: 331.0635, z: 8.179836}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -647,9 +647,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 191.63391
+    m_Target: 296.22617
     speed: 2
-    m_Value: 183.38173
+    m_Value: 283.47
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -763,9 +763,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2e72ffff
-      m_LastClickedID: -36306
-      m_ExpandedIDs: a864fffff27ffffff296ffffc2acfffffafaffff0ec2000050c20000
+      m_SelectedIDs: 7e2bffff
+      m_LastClickedID: -54402
+      m_ExpandedIDs: 7e2bffff003cfffff296ffffc2acfffffafaffff0ec2000050c20000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 13000
+  controlID: 15049
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art/Atlas
+    - Assets/Prefabs/Gameplay/UI/Systems/InventorySystem
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -929,10 +929,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2e72ffff
+    scrollPos: {x: 0, y: 36}
+    m_SelectedIDs: 7e2bffff
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000084c9000000ca9a3b
+    m_ExpandedIDs: ffffffff0000000084c9000098c900009cc9000010cf00000c6a0100106a010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -957,8 +957,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2e72ffff
-    m_LastClickedInstanceID: -36306
+    m_SelectedInstanceIDs: 7e2bffff
+    m_LastClickedInstanceID: -54402
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
