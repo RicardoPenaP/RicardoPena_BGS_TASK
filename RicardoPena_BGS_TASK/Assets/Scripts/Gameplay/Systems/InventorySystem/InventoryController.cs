@@ -52,7 +52,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void InventoryView_OnEquipButtonPressed(Item selectedItem, int? index)
         {
-            inventoryModel.EquipItem(selectedItem, (int)index);
+            inventoryModel.EquipUnequipItem(selectedItem, (int)index);
         }
 
         private void InventoryModel_OnInventoryModelInitialized()

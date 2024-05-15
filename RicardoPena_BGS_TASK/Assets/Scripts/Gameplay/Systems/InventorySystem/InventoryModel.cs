@@ -16,6 +16,7 @@ namespace Gameplay.Systems.InventorySystem
         public event Action<InventorySlot, int> OnInventorySlotUpdated;
         public event Action<int> OnGoldAmountChanged;
         public event Action<bool> OnCanSellChanged;
+        public event Action<Item, int> OnEquipedItemChanged;
 
         private InventorySlot[] inventorySlots;
         private CosmecticEquiper cosmecticEquiper;
@@ -144,7 +145,7 @@ namespace Gameplay.Systems.InventorySystem
                 AddGold(inventorySlots[index].CurrentItem.GetSellPrice() * inventorySlots[index].ItemAmount);
                 inventorySlots[index].SetCurrentItem(null);
                 OnInventorySlotUpdated?.Invoke(inventorySlots[index], index);
-            }            
+            }
         }
 
         public void SetCanSell(bool state)
@@ -153,7 +154,7 @@ namespace Gameplay.Systems.InventorySystem
             OnCanSellChanged?.Invoke(canSell);
         }
 
-        public void EquipItem(Item selectedItem, int index)
+        public void EquipUnequipItem(Item selectedItem, int index)
         {
             if (equipedItem is not null)
             {
@@ -162,12 +163,14 @@ namespace Gameplay.Systems.InventorySystem
                     equipedItem = null;
                     equipedItemIndex = 0;
                     cosmecticEquiper.UnequipCosmetic();
+                    OnEquipedItemChanged?.Invoke(selectedItem, equipedItemIndex);
                     return;
                 }
             }
             equipedItem = selectedItem as IEquipable;
             equipedItemIndex = index;
             cosmecticEquiper.SetCosmetic(equipedItem);
+            OnEquipedItemChanged?.Invoke(selectedItem, equipedItemIndex);
         }
     }
 }
