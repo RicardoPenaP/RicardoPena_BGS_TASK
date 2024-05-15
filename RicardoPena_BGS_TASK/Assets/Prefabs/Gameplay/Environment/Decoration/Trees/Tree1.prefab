@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367038034228209993, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: a13fa2346bb1efd4381db397fff639d6, type: 2}
+    - target: {fileID: 367038034228209993, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: rewardAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 367038034228209993, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
+      propertyPath: interactionReward
+      value: 
+      objectReference: {fileID: 11400000, guid: 3427e4c86654afc47a891771892403de, type: 2}
     - target: {fileID: 731262138869246325, guid: 046b4c3d7e25ecb4e8af0ef549e27dc4, type: 3}
       propertyPath: m_Size.x
       value: 4.649099
