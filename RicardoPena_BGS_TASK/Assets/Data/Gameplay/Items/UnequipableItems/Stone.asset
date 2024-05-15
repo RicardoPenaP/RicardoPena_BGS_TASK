@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stone
   icon: {fileID: 21300000, guid: edacb408b81bd7e4c9ca767d06a26495, type: 3}
-  sellGoldValue: 15
-  buyGoldValue: 10
-  isStackable: 1
+  sellPrice: 10
+  buyPrice: 15
   maxStackAmount: 25

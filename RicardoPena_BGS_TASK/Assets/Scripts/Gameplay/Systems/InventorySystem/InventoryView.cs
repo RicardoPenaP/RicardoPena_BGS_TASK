@@ -21,7 +21,7 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private Transform inventorySlotsGridLayout;
 
         public event Action OnCloseButtonPressed;
-        public event Action OnSellButtonPressed;
+        public event Action<Item> OnSellButtonPressed;
         public event Action OnEquipButtonPressed;
 
         private InventorySlotVisual[] inventorySlotsVisual;
@@ -67,7 +67,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void SellButton_OnClick()
         {
-            OnSellButtonPressed?.Invoke();
+            OnSellButtonPressed?.Invoke(selectedInventorySlotVisual.GetCurrentItem());
         }
 
         private void EquipButton_OnClick()
@@ -108,6 +108,13 @@ namespace Gameplay.Systems.InventorySystem
         public void UpdateInventoySlotVisual(InventorySlot inventorySlot, int index)
         {
             inventorySlotsVisual[index].SetSlotVisuals(inventorySlot);
+            if (selectedInventorySlotVisual is not null)
+            {
+                if (inventorySlotsVisual[index].Equals(selectedInventorySlotVisual))
+                {
+                    HandleSellVisuals();
+                }
+            }
         }
 
         private void SetSelectedInventorySlotVisual(InventorySlotVisual slotVisual)
@@ -138,8 +145,9 @@ namespace Gameplay.Systems.InventorySystem
                 ToggleSellPanel(false);
                 return;
             }
-            //int sellPrice = selectedInventorySlotVisual.GetCurrentItem().GetSellPrice()* selectedInventorySlotVisual.
-            //UpdateSellText(sellPrice);
+
+            int sellPrice = selectedInventorySlotVisual.GetCurrentItem().GetSellPrice() * selectedInventorySlotVisual.GetItemAmount();
+            UpdateSellText(sellPrice);
             ToggleSellPanel(true);
         }
 
