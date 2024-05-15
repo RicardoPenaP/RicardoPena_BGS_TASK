@@ -18,7 +18,7 @@ namespace Gameplay.Systems.InventorySystem.Common
 
         public void SetSlotVisuals(InventorySlot inventorySlot)
         {
-            if (inventorySlot is null)
+            if (inventorySlot.CurrentItem is null)
             {
                 itemAmount = 0;
                 currentItem = null;
