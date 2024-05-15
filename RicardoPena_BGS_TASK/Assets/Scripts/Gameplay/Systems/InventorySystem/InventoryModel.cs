@@ -118,7 +118,7 @@ namespace Gameplay.Systems.InventorySystem
             OnGoldAmountChanged?.Invoke(goldAmount);
         }
 
-        public void SellItem(Item selectecItem)
+        public void SellItem(Item selectedItem)
         {
             for (int i = 0; i < inventorySlots.Length; i++)
             {
@@ -126,7 +126,7 @@ namespace Gameplay.Systems.InventorySystem
                 {
                     continue;
                 }
-                if (inventorySlots[i].CurrentItem.Equals(selectecItem))
+                if (inventorySlots[i].CurrentItem.Equals(selectedItem))
                 {
                     AddGold(inventorySlots[i].CurrentItem.GetSellPrice() * inventorySlots[i].ItemAmount);
 

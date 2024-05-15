@@ -67,8 +67,8 @@ namespace Gameplay.Systems.InventorySystem
 
         private void SellButton_OnClick()
         {
-            SetSelectedInventorySlotVisual(null);
             OnSellButtonPressed?.Invoke(selectedInventorySlotVisual.GetCurrentItem());
+            SetSelectedInventorySlotVisual(null);
         }
 
         private void EquipButton_OnClick()

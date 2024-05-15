@@ -43,7 +43,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void InventoryView_OnSellButtonPressed(Item selectedItem)
         {
-            throw new NotImplementedException();
+            inventoryModel.SellItem(selectedItem);
         }
 
         private void InventoryModel_OnInventoryModelInitialized()
