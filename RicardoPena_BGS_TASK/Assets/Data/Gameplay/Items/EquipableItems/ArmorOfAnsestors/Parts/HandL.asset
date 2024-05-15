@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8b3b08d26abd3459d0f8aacfa9548d, type: 3}
   m_Name: HandL
   m_EditorClassIdentifier: 
-  partId: 
-  partSprite: {fileID: 0}
+  partId: HandL
+  partSprite: {fileID: 21300034, guid: 35d78db6c0614980b9c5afe74d64ba77, type: 3}

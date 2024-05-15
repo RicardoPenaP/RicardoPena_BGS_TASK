@@ -4231,18 +4231,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129a038c6c05bf34abcdff6bc509cd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armL: {fileID: 0}
-  armR: {fileID: 0}
-  finger: {fileID: 0}
-  forearmL: {fileID: 0}
-  forearmR: {fileID: 0}
-  handL: {fileID: 0}
-  handR: {fileID: 0}
-  leg: {fileID: 0}
-  pelvis: {fileID: 0}
-  shin: {fileID: 0}
-  sleeveR: {fileID: 0}
-  torso: {fileID: 0}
+  armL: {fileID: 1515362342550563168}
+  armR: {fileID: 1513710168866210202}
+  finger: {fileID: 1515358171463708124}
+  forearmL: {fileID: 1513670514387004314}
+  forearmR: {fileID: 1514462229698603452}
+  handL: {fileID: 1515085112160334936}
+  handR: {fileID: 1513663205887590964}
+  legL: {fileID: 1515424076355923376}
+  legR: {fileID: 3261885077271894756}
+  pelvis: {fileID: 1515011316709436674}
+  shinL: {fileID: 1514436323233797850}
+  shinR: {fileID: 3262674358787816132}
+  sleeveR: {fileID: 1515053411871352186}
+  torso: {fileID: 1513683704931041480}
 --- !u!1 &1726628480421040928
 GameObject:
   m_ObjectHideFlags: 0
