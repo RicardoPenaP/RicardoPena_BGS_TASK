@@ -19,11 +19,6 @@ namespace Gameplay.Systems.InventorySystem.Common
         private int itemAmount;
         private Item currentItem;
 
-        private void OnMouseDown()
-        {
-            OnAnySlotVisualSelected?.Invoke(this);
-        }
-
         public void SetSlotVisuals(InventorySlot inventorySlot)
         {
             if (inventorySlot.CurrentItem is null)
@@ -59,5 +54,9 @@ namespace Gameplay.Systems.InventorySystem.Common
             frame.gameObject.SetActive(state);
         }
         
+        public void SlotVisualPressed()
+        {
+            OnAnySlotVisualSelected?.Invoke(this);
+        }
     }
 }

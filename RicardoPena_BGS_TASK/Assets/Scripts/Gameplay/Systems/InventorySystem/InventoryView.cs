@@ -23,6 +23,8 @@ namespace Gameplay.Systems.InventorySystem
 
         private InventorySlotVisual[] inventorySlotsVisual;
 
+        private InventorySlotVisual selectedInventorySlotVisual;
+
         private void Awake()
         {
             Init();
@@ -34,17 +36,24 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         private void Init()
-        {            
+        {
+            InventorySlotVisual.OnAnySlotVisualSelected += InventorySlotVisual_OnAnySlotVisualSelected;
             closeButton.onClick.AddListener(CloseButton_OnClick);
             sellButton.onClick.AddListener(SellButton_OnClick);
             equipButton.onClick.AddListener(EquipButton_OnClick);            
-        }       
+        }
 
         private void Deinit()
-        {            
+        {
+            InventorySlotVisual.OnAnySlotVisualSelected -= InventorySlotVisual_OnAnySlotVisualSelected;
             closeButton.onClick.RemoveListener(CloseButton_OnClick);
             sellButton.onClick.RemoveListener(SellButton_OnClick);
             equipButton.onClick.RemoveListener(EquipButton_OnClick);
+        }
+
+        private void InventorySlotVisual_OnAnySlotVisualSelected(InventorySlotVisual selectedInventorySlotVisual)
+        {
+            SetSelectedInventorySlotVisual(selectedInventorySlotVisual);
         }
 
         private void CloseButton_OnClick()
@@ -65,6 +74,10 @@ namespace Gameplay.Systems.InventorySystem
 
         public void ToggleInventoryView(bool state)
         {
+            if (!state)
+            {
+                SetSelectedInventorySlotVisual(null);
+            }
             gameObject.SetActive(state);
         }
 
@@ -92,6 +105,13 @@ namespace Gameplay.Systems.InventorySystem
         public void UpdateInventoySlotVisual(InventorySlot inventorySlot, int index)
         {
             inventorySlotsVisual[index].SetSlotVisuals(inventorySlot);            
+        }
+
+        private void SetSelectedInventorySlotVisual(InventorySlotVisual slotVisual)
+        {
+            selectedInventorySlotVisual?.ToggleFrame(false);
+            selectedInventorySlotVisual = slotVisual;
+            selectedInventorySlotVisual?.ToggleFrame(true);
         }
     }
 }
