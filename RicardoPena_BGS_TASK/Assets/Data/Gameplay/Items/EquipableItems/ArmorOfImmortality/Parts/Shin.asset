@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Shin
   m_EditorClassIdentifier: 
   partId: Shin
-  partSprite: {fileID: 5278265719106483438, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300032, guid: e3f589005dd43c34385486289741b462, type: 3}

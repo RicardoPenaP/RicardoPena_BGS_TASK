@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Finger
   m_EditorClassIdentifier: 
   partId: Finger
-  partSprite: {fileID: 878777441990743753, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300040, guid: e3f589005dd43c34385486289741b462, type: 3}

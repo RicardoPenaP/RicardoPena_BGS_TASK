@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Torso
   m_EditorClassIdentifier: 
   partId: Torso
-  partSprite: {fileID: -2912605832241475739, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300000, guid: e3f589005dd43c34385486289741b462, type: 3}

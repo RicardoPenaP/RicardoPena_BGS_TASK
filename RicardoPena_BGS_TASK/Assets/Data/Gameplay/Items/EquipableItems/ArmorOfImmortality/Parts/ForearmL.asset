@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ForearmL
   m_EditorClassIdentifier: 
   partId: ForearmL
-  partSprite: {fileID: 8477010410430503746, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300028, guid: e3f589005dd43c34385486289741b462, type: 3}

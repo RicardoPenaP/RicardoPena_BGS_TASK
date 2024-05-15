@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Leg
   m_EditorClassIdentifier: 
   partId: Leg
-  partSprite: {fileID: -524195514793821918, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300030, guid: e3f589005dd43c34385486289741b462, type: 3}

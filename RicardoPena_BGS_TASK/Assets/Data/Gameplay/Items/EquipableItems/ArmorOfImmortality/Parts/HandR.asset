@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HandR
   m_EditorClassIdentifier: 
   partId: HandR
-  partSprite: {fileID: 9055856234324719921, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300036, guid: e3f589005dd43c34385486289741b462, type: 3}

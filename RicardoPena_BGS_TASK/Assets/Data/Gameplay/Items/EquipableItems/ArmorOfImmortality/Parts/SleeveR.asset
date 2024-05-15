@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SleeveR
   m_EditorClassIdentifier: 
   partId: SleeveR
-  partSprite: {fileID: -5895514436886505396, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
+  partSprite: {fileID: 21300038, guid: e3f589005dd43c34385486289741b462, type: 3}
