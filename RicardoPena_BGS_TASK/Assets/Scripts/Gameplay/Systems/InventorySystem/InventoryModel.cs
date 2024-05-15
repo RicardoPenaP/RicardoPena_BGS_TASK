@@ -10,11 +10,15 @@ namespace Gameplay.Systems.InventorySystem
         [Header("Inventory Model")]
         [Header("Settings")]
         [SerializeField] private int amountOfInventorySlots = 25;
+        [SerializeField] private int maxGoldAmount = 100000000;
 
         public event Action OnInventoryModelInitialized;
         public event Action<InventorySlot, int> OnInventorySlotUpdated;
+        public event Action<int> OnGoldAmountChanged;
 
         private InventorySlot[] inventorySlots;
+
+        private int goldAmount;
 
         private void Awake()
         {
@@ -23,6 +27,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void Init()
         {
+            SetGoldAmount(0);
             inventorySlots = new InventorySlot[amountOfInventorySlots];
             for (int i = 0; i < inventorySlots.Length; i++)
             {
@@ -85,5 +90,32 @@ namespace Gameplay.Systems.InventorySystem
 
         public InventorySlot[] GetInventorySlots() => inventorySlots;
 
+        public void AddGold(int amount)
+        {
+            SetGoldAmount(goldAmount + Mathf.Abs(amount));
+        }
+
+        public bool TryToGetGold(int amount)
+        {
+            if (Mathf.Abs(amount) > goldAmount)
+            {
+                return false;
+            }
+            SetGoldAmount(goldAmount - Mathf.Abs(amount));
+            return true;
+        }
+
+        public bool HaveEnoughGold(int amount)
+        {
+            return Mathf.Abs(amount) <= goldAmount;
+        }
+
+        public int GetGoldAmount() => goldAmount;
+
+        private void SetGoldAmount(int value)
+        {
+            goldAmount = Mathf.Clamp(value, 0, maxGoldAmount);
+            OnGoldAmountChanged?.Invoke(goldAmount);
+        }
     }
 }
