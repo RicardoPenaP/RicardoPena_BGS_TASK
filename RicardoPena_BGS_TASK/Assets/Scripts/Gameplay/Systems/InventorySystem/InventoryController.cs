@@ -70,6 +70,8 @@ namespace Gameplay.Systems.InventorySystem
         public void CloseInventory() => inventoryView.ToggleInventoryView(false);
 
         public void AddGold(int amount) => inventoryModel.AddGold(amount);
+
+        public int GetCurrentGold() => inventoryModel.GetGoldAmount();
         
     }
 }

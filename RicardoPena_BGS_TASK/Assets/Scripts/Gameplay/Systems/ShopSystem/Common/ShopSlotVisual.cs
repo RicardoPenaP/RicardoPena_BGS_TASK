@@ -19,6 +19,7 @@ namespace Gameplay.Systems.ShopSystem.Common
 
         private Item currentItem;
 
+        public Item CurrentItem => currentItem;
         public void SetSlotVisuals(ShopSlot shopSlot)
         {
             currentItem = shopSlot.CurrentItem;

@@ -427,7 +427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1936010724941311870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -657,6 +657,7 @@ MonoBehaviour:
   shopSlotVisualPrefab: {fileID: 3733145514644640625, guid: 06bf06e25722cd444b20ab158a4f15f4, type: 3}
   slotLayout: {fileID: 5603096960511652870}
   closeButton: {fileID: 4737916511313951992}
+  buyButton: {fileID: 6598065216616581506}
 --- !u!1 &4625618969929392678
 GameObject:
   m_ObjectHideFlags: 0

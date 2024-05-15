@@ -27,7 +27,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void Init()
         {
-            SetGoldAmount(0);
+            SetGoldAmount(20000);
             inventorySlots = new InventorySlot[amountOfInventorySlots];
             for (int i = 0; i < inventorySlots.Length; i++)
             {

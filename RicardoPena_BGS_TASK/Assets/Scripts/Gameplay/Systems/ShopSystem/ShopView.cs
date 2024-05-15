@@ -12,6 +12,7 @@ namespace Gameplay.Systems.ShopSystem
         [SerializeField] private ShopSlotVisual shopSlotVisualPrefab;
         [SerializeField] private Transform slotLayout;
         [SerializeField] private Button closeButton;
+        [SerializeField] private Button buyButton;
 
         public event Action OnCloseButtonPressed;
 
@@ -78,6 +79,35 @@ namespace Gameplay.Systems.ShopSystem
             selectedShopSlotVisual?.ToggleFrame(false);
             selectedShopSlotVisual = shopSlotVisual;
             selectedShopSlotVisual?.ToggleFrame(true);
+            HandleBuyVisuals();
+        }
+
+        private void HandleBuyVisuals()
+        {
+            if (selectedShopSlotVisual is null)
+            {
+                ToggleBuyButton(false);
+                return;
+            }
+
+            if (selectedShopSlotVisual.CurrentItem is null)
+            {
+                ToggleBuyButton(false);
+                return;
+            }
+
+            if (selectedShopSlotVisual.CurrentItem.GetBuyPrice() > InventorySystem.InventorySystem.Instance.GetCurrentGold())
+            {
+                ToggleBuyButton(false);
+                return;
+            }
+
+            ToggleBuyButton(true);
+        }
+
+        private void ToggleBuyButton(bool state)
+        {
+            buyButton.gameObject.SetActive(state);
         }
     }
 }
