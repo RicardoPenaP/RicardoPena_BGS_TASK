@@ -8,7 +8,7 @@ namespace Gameplay.Systems.InventorySystem
         private static InventorySystem instance;
         public static InventorySystem Instance => instance;
 
-        [Header("Inventory System")]
+        [Header("Shop System")]
         [Header("References")]
         [SerializeField] private InventoryController inventoryController;
 
