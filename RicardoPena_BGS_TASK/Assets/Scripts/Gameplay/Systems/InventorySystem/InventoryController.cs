@@ -25,16 +25,19 @@ namespace Gameplay.Systems.InventorySystem
         private void Init()
         {
             inventoryView.OnSellButtonPressed += InventoryView_OnSellButtonPressed;
+            inventoryView.OnEquipButtonPressed += InventoryView_OnEquipButtonPressed;
 
             inventoryModel.OnInventoryModelInitialized += InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated += InventoryModel_OnInventorySlotUpdated;
             inventoryModel.OnGoldAmountChanged += InventoryModel_OnGoldAmountChanged;
             inventoryModel.OnCanSellChanged += InventoryModel_OnCanSellChanged;
+            
         }
 
         private void Deinit()
         {
             inventoryView.OnSellButtonPressed -= InventoryView_OnSellButtonPressed;
+            inventoryView.OnEquipButtonPressed -= InventoryView_OnEquipButtonPressed;
 
             inventoryModel.OnInventoryModelInitialized -= InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated -= InventoryModel_OnInventorySlotUpdated;
@@ -45,6 +48,11 @@ namespace Gameplay.Systems.InventorySystem
         private void InventoryView_OnSellButtonPressed(Item selectedItem, int? index)
         {
             inventoryModel.SellItem(selectedItem,(int)index);
+        }
+
+        private void InventoryView_OnEquipButtonPressed(Item selectedItem, int? index)
+        {
+            inventoryModel.EquipItem(selectedItem, (int)index);
         }
 
         private void InventoryModel_OnInventoryModelInitialized()

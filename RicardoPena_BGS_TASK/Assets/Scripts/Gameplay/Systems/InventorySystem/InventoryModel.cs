@@ -128,22 +128,7 @@ namespace Gameplay.Systems.InventorySystem
                 AddGold(inventorySlots[index].CurrentItem.GetSellPrice() * inventorySlots[index].ItemAmount);
                 inventorySlots[index].SetCurrentItem(null);
                 OnInventorySlotUpdated?.Invoke(inventorySlots[index], index);
-            }
-            //for (int i = 0; i < inventorySlots.Length; i++)
-            //{
-            //    if (inventorySlots[i].CurrentItem is null)
-            //    {
-            //        continue;
-            //    }
-            //    if (inventorySlots[i].CurrentItem.Equals(selectedItem))
-            //    {
-            //        AddGold(inventorySlots[i].CurrentItem.GetSellPrice() * inventorySlots[i].ItemAmount);
-
-            //    }
-            //    inventorySlots[i].SetCurrentItem(null);
-            //    OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
-            //    return;
-            //}
+            }            
         }
 
         public void SetCanSell(bool state)
@@ -152,5 +137,9 @@ namespace Gameplay.Systems.InventorySystem
             OnCanSellChanged?.Invoke(canSell);
         }
 
+        public void EquipItem(Item selectedItem, int index)
+        {
+
+        }
     }
 }

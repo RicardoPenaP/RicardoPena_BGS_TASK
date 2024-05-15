@@ -22,7 +22,7 @@ namespace Gameplay.Systems.InventorySystem
 
         public event Action OnCloseButtonPressed;
         public event Action<Item, int?> OnSellButtonPressed;
-        public event Action OnEquipButtonPressed;
+        public event Action<Item, int?> OnEquipButtonPressed;
 
         private InventorySlotVisual[] inventorySlotsVisual;
 
@@ -76,7 +76,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void EquipButton_OnClick()
         {
-            OnEquipButtonPressed?.Invoke();
+            OnEquipButtonPressed?.Invoke(selectedInventorySlotVisual.GetCurrentItem(), selectedInventorySlotVisualIndex);
         }
 
         public void ToggleInventoryView(bool state)
