@@ -1,4 +1,3 @@
-using Gameplay.Input;
 using Gameplay.Systems.InventorySystem.Common;
 using System;
 using TMPro;
