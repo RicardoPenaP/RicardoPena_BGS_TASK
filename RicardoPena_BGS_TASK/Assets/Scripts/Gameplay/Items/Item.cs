@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Gameplay.Items
 {    
-    public abstract class Item : ScriptableObject
+    public abstract class Item : ScriptableObject, ISellable
     {
         [Header("Item")]
         [SerializeField] protected string itemName;
