@@ -71,6 +71,8 @@ namespace Gameplay.Systems.InventorySystem
             }
             return false;
         }
-        
+
+        public InventorySlot[] GetInventorySlots() => inventorySlots;
+
     }
 }
