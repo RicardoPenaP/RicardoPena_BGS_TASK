@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gameplay.Systems.ShopSystem
 {
@@ -9,6 +10,26 @@ namespace Gameplay.Systems.ShopSystem
         [SerializeField] private ShopView shopView;
 
         private IShopModel shopModel;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void OnDestroy()
+        {
+            Deinit();
+        }
+
+        private void Init()
+        {
+            shopView.OnCloseButtonPressed += () => InventorySystem.InventorySystem.Instance.CloseInventory();
+        }
+
+        private void Deinit()
+        {
+            shopView.OnCloseButtonPressed -= () => InventorySystem.InventorySystem.Instance.CloseInventory();
+        }
 
         public void OpenShop(IShopModel shopModel)
         {
