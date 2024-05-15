@@ -65,6 +65,10 @@ namespace Gameplay.Systems.InventorySystem
 
         public void ToggleInventory() => inventoryView.ToggleInventoryView(!inventoryView.gameObject.activeInHierarchy);
 
+        public void OpenInventory() => inventoryView.ToggleInventoryView(true);
+
+        public void CloseInventory() => inventoryView.ToggleInventoryView(false);
+
         public void AddGold(int amount) => inventoryModel.AddGold(amount);
         
     }
