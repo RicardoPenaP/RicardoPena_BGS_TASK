@@ -19,8 +19,10 @@ namespace Gameplay.Entities.Shopkeeper
         private ShopSlot[] shopSlots;
 
         private bool canInteract = true;
+        private bool shopOpen = false;
 
         public bool CanInteract => canInteract;
+        public bool ShopOpen => shopOpen;
 
         private void Awake()
         {
@@ -47,7 +49,7 @@ namespace Gameplay.Entities.Shopkeeper
             if (!canInteract)
             {
                 return;
-            }
+            }            
             StartCoroutine(InteractionCooldownRoutine());
         }
 
@@ -61,6 +63,11 @@ namespace Gameplay.Entities.Shopkeeper
                 yield return null;
             }
             canInteract = true;
+        }
+
+        public void SetShopOpen(bool state)
+        {
+            shopOpen = state;
         }
     }
 }

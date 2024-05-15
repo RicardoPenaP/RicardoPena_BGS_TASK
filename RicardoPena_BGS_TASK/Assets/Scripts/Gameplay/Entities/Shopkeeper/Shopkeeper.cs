@@ -20,11 +20,12 @@ namespace Gameplay.Entities.Shopkeeper
         public void HideInteractabilityFeedback()
         {
             shopkeeperController.ToggleInteractionText(false);
+            shopkeeperController.CloseShop();
         }
 
         public void Interact()
         {
-            shopkeeperController.Interact();
+            shopkeeperController.OpenShop();
         }
 
         public Vector2 GetInteractablePosition()

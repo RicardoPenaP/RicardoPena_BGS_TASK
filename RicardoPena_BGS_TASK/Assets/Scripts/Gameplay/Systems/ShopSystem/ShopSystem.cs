@@ -30,6 +30,6 @@ namespace Gameplay.Systems.ShopSystem
 
         public void OpenShop(IShopModel shopModel) => shopController.OpenShop(shopModel);
 
-        public void CloseShop(IShopModel shopModel) => shopController.CloseShop();
+        public void CloseShop() => shopController.CloseShop();
     }
 }
