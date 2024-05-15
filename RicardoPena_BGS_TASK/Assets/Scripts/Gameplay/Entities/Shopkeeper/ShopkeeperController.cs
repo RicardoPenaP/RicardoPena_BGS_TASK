@@ -12,5 +12,10 @@ namespace Gameplay.Entities.Shopkeeper
         [SerializeField] private ShopkeeperModel shopkeeperModel;
 
         public void ToggleInteractionText(bool state) => shopkeeperView.ToggleInteractionText(state);
+
+        public void Interact()
+        {
+
+        }
     }
 }

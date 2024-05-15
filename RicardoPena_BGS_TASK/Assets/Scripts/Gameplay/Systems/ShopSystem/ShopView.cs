@@ -18,6 +18,7 @@ namespace Gameplay.Systems.ShopSystem
             for (int i = 0; i < shopSlotsVisual.Length; i++)
             {
                 shopSlotsVisual[i] = Instantiate(shopSlotVisualPrefab, slotLayout.position, Quaternion.identity, slotLayout);
+                shopSlotsVisual[i].SetSlotVisuals(shopSlots[i]);
             }
         }
 

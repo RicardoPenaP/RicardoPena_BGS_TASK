@@ -24,7 +24,7 @@ namespace Gameplay.Entities.Shopkeeper
 
         public void Interact()
         {
-            Debug.Log("Interacted with shoopkeeper");
+            shopkeeperController.Interact();
         }
 
         public Vector2 GetInteractablePosition()

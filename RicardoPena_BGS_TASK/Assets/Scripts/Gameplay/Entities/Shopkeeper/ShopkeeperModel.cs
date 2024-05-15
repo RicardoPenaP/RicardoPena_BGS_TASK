@@ -2,6 +2,7 @@ using Gameplay.Items;
 using Gameplay.Systems.ShopSystem;
 using Gameplay.Systems.ShopSystem.Common;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gameplay.Entities.Shopkeeper
@@ -12,7 +13,14 @@ namespace Gameplay.Entities.Shopkeeper
         [Header("References")]
         [SerializeField] private Item[] sellableItems;
 
+        [Header("Settings")]
+        [SerializeField] private float interactionCooldown = 0.2f;
+
         private ShopSlot[] shopSlots;
+
+        private bool canInteract = true;
+
+        public bool CanInteract => canInteract;
 
         private void Awake()
         {
@@ -32,6 +40,27 @@ namespace Gameplay.Entities.Shopkeeper
         public ShopSlot[] GetShopSlots()
         {
             return shopSlots;
+        }
+
+        public void StartInteraction()
+        {
+            if (!canInteract)
+            {
+                return;
+            }
+            StartCoroutine(InteractionCooldownRoutine());
+        }
+
+        private IEnumerator InteractionCooldownRoutine()
+        {
+            canInteract = false;
+            float timer = 0f;
+            while (timer < interactionCooldown)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            canInteract = true;
         }
     }
 }
