@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041490224680416096}
   m_Layer: 0
-  m_Name: ItemSlot
+  m_Name: InventorySlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
