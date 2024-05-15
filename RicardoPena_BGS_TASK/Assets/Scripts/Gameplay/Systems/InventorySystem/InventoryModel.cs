@@ -1,5 +1,6 @@
 ﻿using Gameplay.Items;
 using Gameplay.Systems.InventorySystem.Common;
+using System;
 using UnityEngine;
 
 namespace Gameplay.Systems.InventorySystem
@@ -7,8 +8,24 @@ namespace Gameplay.Systems.InventorySystem
     public class InventoryModel : MonoBehaviour
     {
         [Header("Inventory Model")]
-        [Header("References")]
-        [SerializeField] private InventorySlot[] invetorySlots;
+        [Header("Settings")]
+        [SerializeField] private int amountOfInventorySlots = 25;
+
+        private InventorySlot[] inventorySlots;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void Init()
+        {
+            inventorySlots = new InventorySlot[amountOfInventorySlots];
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                inventorySlots[i] = new InventorySlot();
+            }            
+        }
 
         public bool TryToAddItem(Item item, int amount = 1)
         {
@@ -27,7 +44,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private bool TryStackItem(Item item, int amount)
         {
-            foreach (InventorySlot inventorySlot in invetorySlots)
+            foreach (InventorySlot inventorySlot in inventorySlots)
             {
                 if (inventorySlot.CurrentItem.ItemName.Equals(item.ItemName))
                 {
@@ -43,7 +60,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private bool TryToAddToNewSlot(Item item, int amount)
         {
-            foreach (InventorySlot inventorySlot in invetorySlots)
+            foreach (InventorySlot inventorySlot in inventorySlots)
             {
                 if (inventorySlot.CurrentItem is not null)
                 {
