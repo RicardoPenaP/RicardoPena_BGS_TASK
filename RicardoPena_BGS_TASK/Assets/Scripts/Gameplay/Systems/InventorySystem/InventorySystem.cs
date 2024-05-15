@@ -1,3 +1,4 @@
+using Gameplay.Items;
 using UnityEngine;
 
 namespace Gameplay.Systems.InventorySystem
@@ -27,6 +28,8 @@ namespace Gameplay.Systems.InventorySystem
                 instance = this;
             }
         }
+
+        public bool TryToAddItem(Item item, int amount = 1) => inventoryController.TryToAddItem(item, amount);
     }
 }
 
