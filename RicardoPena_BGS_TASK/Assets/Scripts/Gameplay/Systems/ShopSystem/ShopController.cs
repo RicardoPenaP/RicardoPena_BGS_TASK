@@ -37,7 +37,10 @@ namespace Gameplay.Systems.ShopSystem
 
         private void ShopView_OnBuyButtonPressed(Item selectedItem)
         {
-            throw new NotImplementedException();
+            if (InventorySystem.InventorySystem.Instance.TryToAddItem(selectedItem))
+            {
+                //InventorySystem.InventorySystem.Instance.try
+            }
         }
 
         public void OpenShop(IShopModel shopModel)

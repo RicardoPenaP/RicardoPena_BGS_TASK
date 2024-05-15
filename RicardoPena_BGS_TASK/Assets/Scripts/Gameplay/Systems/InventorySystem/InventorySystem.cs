@@ -43,7 +43,7 @@ namespace Gameplay.Systems.InventorySystem
 
         public void SetCanSell(bool state) => inventoryController.SetCanSell(state);
 
-        public bool HasFreeSlot() => inventoryController.HasFreeSlot();
+        public bool TryToGetGold(int amount) => inventoryController.TryToGetGold(amount);
     }
 }
 

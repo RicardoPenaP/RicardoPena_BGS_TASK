@@ -145,17 +145,5 @@ namespace Gameplay.Systems.InventorySystem
             OnCanSellChanged?.Invoke(canSell);
         }
 
-        public bool HasFreeSlot()
-        {
-            foreach (InventorySlot inventorySlot in inventorySlots)
-            {
-                if (inventorySlot.CurrentItem is not null)
-                {
-                    continue;
-                }
-                return true;
-            }
-            return false;
-        }
     }
 }
