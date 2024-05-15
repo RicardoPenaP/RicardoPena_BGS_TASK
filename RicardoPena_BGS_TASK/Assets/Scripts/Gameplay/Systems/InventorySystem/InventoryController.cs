@@ -24,16 +24,26 @@ namespace Gameplay.Systems.InventorySystem
 
         private void Init()
         {
+            inventoryView.OnSellButtonPressed += InventoryView_OnSellButtonPressed;
+
             inventoryModel.OnInventoryModelInitialized += InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated += InventoryModel_OnInventorySlotUpdated;
             inventoryModel.OnGoldAmountChanged += InventoryModel_OnGoldAmountChanged;
         }
 
+
         private void Deinit()
         {
+            inventoryView.OnSellButtonPressed -= InventoryView_OnSellButtonPressed;
+
             inventoryModel.OnInventoryModelInitialized -= InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated -= InventoryModel_OnInventorySlotUpdated;
             inventoryModel.OnGoldAmountChanged -= InventoryModel_OnGoldAmountChanged;
+        }
+
+        private void InventoryView_OnSellButtonPressed(Item selectedItem)
+        {
+            throw new NotImplementedException();
         }
 
         private void InventoryModel_OnInventoryModelInitialized()

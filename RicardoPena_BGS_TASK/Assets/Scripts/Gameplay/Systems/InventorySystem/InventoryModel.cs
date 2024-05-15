@@ -117,5 +117,23 @@ namespace Gameplay.Systems.InventorySystem
             goldAmount = Mathf.Clamp(value, 0, maxGoldAmount);
             OnGoldAmountChanged?.Invoke(goldAmount);
         }
+
+        public void SellItem(Item selectecItem)
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                if (inventorySlots[i].CurrentItem is null)
+                {
+                    continue;
+                }
+                if (inventorySlots[i].CurrentItem.Equals(selectecItem))
+                {
+                    AddGold(inventorySlots[i].CurrentItem.GetSellPrice() * inventorySlots[i].ItemAmount);
+
+                }
+                inventorySlots[i].SetCurrentItem(null);
+                OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
+            }
+        }
     }
 }
