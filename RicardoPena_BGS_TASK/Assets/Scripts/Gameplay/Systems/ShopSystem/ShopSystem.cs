@@ -27,5 +27,7 @@ namespace Gameplay.Systems.ShopSystem
                 instance = this;
             }
         }
+
+        public void OpenShop(IShopModel shopModel) => shopController.OpenShop(shopModel);
     }
 }
