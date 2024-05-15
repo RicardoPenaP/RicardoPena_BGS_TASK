@@ -28,6 +28,8 @@ namespace Gameplay.Systems.InventorySystem
 
         private InventorySlotVisual selectedInventorySlotVisual;
 
+        private bool canSell = false;
+
         private void Awake()
         {
             Init();
@@ -129,6 +131,12 @@ namespace Gameplay.Systems.InventorySystem
 
         private void HandleSellVisuals()
         {
+            if (!canSell)
+            {
+                ToggleSellPanel(false);
+                return;
+            }
+
             if (selectedInventorySlotVisual is null)
             {
                 ToggleSellPanel(false);
@@ -161,5 +169,7 @@ namespace Gameplay.Systems.InventorySystem
         {
             sellPriceText.text = $"{sellPrice}";
         }
+
+        public void SetCanSell(bool state) => canSell = state;
     }
 }

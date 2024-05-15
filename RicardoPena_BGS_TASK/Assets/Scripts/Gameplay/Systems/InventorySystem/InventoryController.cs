@@ -29,8 +29,8 @@ namespace Gameplay.Systems.InventorySystem
             inventoryModel.OnInventoryModelInitialized += InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated += InventoryModel_OnInventorySlotUpdated;
             inventoryModel.OnGoldAmountChanged += InventoryModel_OnGoldAmountChanged;
+            inventoryModel.OnCanSellChanged += InventoryModel_OnCanSellChanged;
         }
-
 
         private void Deinit()
         {
@@ -39,6 +39,7 @@ namespace Gameplay.Systems.InventorySystem
             inventoryModel.OnInventoryModelInitialized -= InventoryModel_OnInventoryModelInitialized;
             inventoryModel.OnInventorySlotUpdated -= InventoryModel_OnInventorySlotUpdated;
             inventoryModel.OnGoldAmountChanged -= InventoryModel_OnGoldAmountChanged;
+            inventoryModel.OnCanSellChanged -= InventoryModel_OnCanSellChanged;
         }
 
         private void InventoryView_OnSellButtonPressed(Item selectedItem)
@@ -59,6 +60,11 @@ namespace Gameplay.Systems.InventorySystem
         private void InventoryModel_OnGoldAmountChanged(int goldAmount)
         {
             inventoryView.UpdateGoldText(goldAmount);
+        }
+
+        private void InventoryModel_OnCanSellChanged(bool state)
+        {
+            inventoryView.SetCanSell(state);
         }
 
         public bool TryToAddItem(Item item, int amount = 1) => inventoryModel.TryToAddItem(item, amount);
