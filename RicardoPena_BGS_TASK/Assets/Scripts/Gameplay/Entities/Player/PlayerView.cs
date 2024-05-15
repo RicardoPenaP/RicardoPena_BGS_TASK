@@ -26,6 +26,7 @@ namespace Gameplay.Entities.Player
         public event Action<Vector2> OnMoveInputDetected;
         public event Action<bool> OnRunInputDetected;
         public event Action<bool> OnInteractInputUpdated;
+        public event Action OnToggleInventoryInputUpdated;
         public event Action<List<IInteractable>> OnInteractableEntitiesFound;
 
         private void OnDrawGizmosSelected()
@@ -54,13 +55,15 @@ namespace Gameplay.Entities.Player
             inputReader.OnMoveInputUpdated += InputReader_OnMoveInputUpdated;
             inputReader.OnRunInputUpdated += InputReader_OnRunInputUpdated;
             inputReader.OnInteractInputUpdated += InputReader_OnInteractInputUpdated;
-        }
+            inputReader.OnToggleInventoryInputUpdated += InputReader_OnToggleInventoryInputUpdated;
+        }        
 
         private void Deinit()
         {
             inputReader.OnMoveInputUpdated -= InputReader_OnMoveInputUpdated;
             inputReader.OnRunInputUpdated -= InputReader_OnRunInputUpdated;
             inputReader.OnInteractInputUpdated -= InputReader_OnInteractInputUpdated;
+            inputReader.OnToggleInventoryInputUpdated -= InputReader_OnToggleInventoryInputUpdated;
         }
 
         //Events subscription
@@ -75,6 +78,11 @@ namespace Gameplay.Entities.Player
         private void InputReader_OnInteractInputUpdated(bool state)
         {
             OnInteractInputUpdated?.Invoke(state);
+        }
+
+        private void InputReader_OnToggleInventoryInputUpdated()
+        {
+            OnToggleInventoryInputUpdated?.Invoke();
         }
 
         //Movement logic

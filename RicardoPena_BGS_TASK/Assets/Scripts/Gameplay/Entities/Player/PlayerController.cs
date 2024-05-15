@@ -1,5 +1,6 @@
 using Gameplay.Entities.Common.EntityInteractability;
 using Gameplay.Entities.Common.EntityMovement;
+using Gameplay.Systems.InventorySystem;
 using UnityEngine;
 
 namespace Gameplay.Entities.Player
@@ -27,12 +28,15 @@ namespace Gameplay.Entities.Player
         private void Init()
         {
             playerModel.OnCurrentStateChange += PlayerModel_OnCurrentStateChange;
+            playerView.OnToggleInventoryInputUpdated += PlayerView_OnToggleInventoryInputUpdated;
             entityMovementController = new EntityMovementController(playerView, playerModel);
             interactabilityController = new InteractorController(playerView, playerModel);
         }
 
         private void Deinit()
         {
+            playerModel.OnCurrentStateChange -= PlayerModel_OnCurrentStateChange;
+            playerView.OnToggleInventoryInputUpdated -= PlayerView_OnToggleInventoryInputUpdated;
             entityMovementController.Dispose();
             interactabilityController.Dispose();
         }
@@ -41,5 +45,11 @@ namespace Gameplay.Entities.Player
         {
             playerView.UpdatePlayerAnimatorState(currentPlayerState);
         }
+
+        private void PlayerView_OnToggleInventoryInputUpdated()
+        {
+            InventorySystem.Instance.ToggleInventory();
+        }
+
     }
 }
