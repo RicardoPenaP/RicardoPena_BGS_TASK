@@ -21,7 +21,7 @@ namespace Gameplay.Systems.InventorySystem
         public event Action OnSellButtonPressed;
         public event Action OnEquipButtonPressed;
 
-        private InventorySlotVisual[] inventorySlotVisuals;
+        private InventorySlotVisual[] inventorySlotsVisual;
 
         private void Awake()
         {
@@ -74,12 +74,28 @@ namespace Gameplay.Systems.InventorySystem
 
         public void SetInvetorySlotsVisual(InventorySlot[] inventorySlots)
         {
-            inventorySlotVisuals = new InventorySlotVisual[inventorySlots.Length];
-            for (int i = 0; i < inventorySlotVisuals.Length; i++)
+            inventorySlotsVisual = new InventorySlotVisual[inventorySlots.Length];
+            for (int i = 0; i < inventorySlotsVisual.Length; i++)
             {
-                inventorySlotVisuals[i] = Instantiate(inventorySlotVisualPrefab, inventorySlotsGridLayout.position,
+                inventorySlotsVisual[i] = Instantiate(inventorySlotVisualPrefab, inventorySlotsGridLayout.position,
                                                       Quaternion.identity, inventorySlotsGridLayout);
-                inventorySlotVisuals[i].SetSlotVisuals(inventorySlots[i]);
+                inventorySlotsVisual[i].SetSlotVisuals(inventorySlots[i]);
+            }
+        }
+
+        public void UpdateInventoySlotVisual(InventorySlot inventorySlot)
+        {
+            foreach (InventorySlotVisual inventorySlotVisual in inventorySlotsVisual)
+            {
+                if (inventorySlotVisual.GetCurrentItem() is null)
+                {
+                    continue;
+                }
+
+                if (inventorySlotVisual.GetCurrentItem().Equals(inventorySlot.CurrentItem))
+                {
+                    inventorySlotVisual.SetSlotVisuals(inventorySlot);
+                }
             }
         }
     }

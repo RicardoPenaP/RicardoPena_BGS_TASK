@@ -1,4 +1,5 @@
 using Gameplay.Items;
+using Gameplay.Systems.InventorySystem.Common;
 using System;
 using UnityEngine;
 
@@ -24,16 +25,23 @@ namespace Gameplay.Systems.InventorySystem
         private void Init()
         {
             inventoryModel.OnInventoryModelInitialized += InventoryModel_OnInventoryModelInitialized;
-        }       
+            inventoryModel.OnInventorySlotUpdated += InventoryModel_OnInventorySlotUpdated;
+        }
 
         private void Deinit()
         {
             inventoryModel.OnInventoryModelInitialized -= InventoryModel_OnInventoryModelInitialized;
+            inventoryModel.OnInventorySlotUpdated -= InventoryModel_OnInventorySlotUpdated;
         }
 
         private void InventoryModel_OnInventoryModelInitialized()
         {
             inventoryView.SetInvetorySlotsVisual(inventoryModel.GetInventorySlots());
+        }
+
+        private void InventoryModel_OnInventorySlotUpdated(InventorySlot inventorySlot)
+        {
+            inventoryView.UpdateInventoySlotVisual(inventorySlot);
         }
 
         public bool TryToAddItem(Item item, int amount = 1) => inventoryModel.TryToAddItem(item, amount);
