@@ -126,7 +126,8 @@ namespace Gameplay.Systems.InventorySystem
             if (inventorySlots[index].CurrentItem.Equals(selectedItem))
             {
                 AddGold(inventorySlots[index].CurrentItem.GetSellPrice() * inventorySlots[index].ItemAmount);
-
+                inventorySlots[index].SetCurrentItem(null);
+                OnInventorySlotUpdated?.Invoke(inventorySlots[index], index);
             }
             //for (int i = 0; i < inventorySlots.Length; i++)
             //{
