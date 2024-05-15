@@ -1,3 +1,4 @@
+using Gameplay.Items;
 using Gameplay.Systems.InventorySystem.Common;
 using System;
 using TMPro;
@@ -112,6 +113,27 @@ namespace Gameplay.Systems.InventorySystem
             selectedInventorySlotVisual?.ToggleFrame(false);
             selectedInventorySlotVisual = slotVisual;
             selectedInventorySlotVisual?.ToggleFrame(true);
+
+            HandleSellVisuals();
         }
+
+        private void HandleSellVisuals()
+        {
+            if (selectedInventorySlotVisual is null)
+            {
+                ToggleSellButton(false);
+                return;
+            }
+
+            if (selectedInventorySlotVisual.GetCurrentItem() is null)
+            {
+                ToggleSellButton(false);
+                return;
+            }
+
+            
+            ToggleSellButton(selectedInventorySlotVisual.GetCurrentItem() is ISellable);
+        }
+        
     }
 }
