@@ -39,9 +39,9 @@ namespace Gameplay.Systems.InventorySystem
             inventoryView.SetInvetorySlotsVisual(inventoryModel.GetInventorySlots());
         }
 
-        private void InventoryModel_OnInventorySlotUpdated(InventorySlot inventorySlot)
+        private void InventoryModel_OnInventorySlotUpdated(InventorySlot inventorySlot, int index)
         {
-            inventoryView.UpdateInventoySlotVisual(inventorySlot);
+            inventoryView.UpdateInventoySlotVisual(inventorySlot, index);
         }
 
         public bool TryToAddItem(Item item, int amount = 1) => inventoryModel.TryToAddItem(item, amount);
