@@ -207,6 +207,7 @@ MonoBehaviour:
   icon: {fileID: 4787747737373734547}
   frame: {fileID: 8152057293693460085}
   stackText: {fileID: 6114417836961300504}
+  equipedIcon: {fileID: 9170466257724493101}
 --- !u!114 &8959136661762183401
 MonoBehaviour:
   m_ObjectHideFlags: 0

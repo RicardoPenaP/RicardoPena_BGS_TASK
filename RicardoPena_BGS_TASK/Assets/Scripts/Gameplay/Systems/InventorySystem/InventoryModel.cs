@@ -136,9 +136,9 @@ namespace Gameplay.Systems.InventorySystem
                     equipedItem = null;
                     equipedItemIndex = 0;
                     cosmecticEquiper.UnequipCosmetic();
+                    OnEquipedItemChanged?.Invoke(equipedItem as Item, equipedItemIndex);
                 }
             }
-
 
             if (inventorySlots[index].CurrentItem.Equals(selectedItem))
             {
@@ -163,14 +163,14 @@ namespace Gameplay.Systems.InventorySystem
                     equipedItem = null;
                     equipedItemIndex = 0;
                     cosmecticEquiper.UnequipCosmetic();
-                    OnEquipedItemChanged?.Invoke(selectedItem, equipedItemIndex);
+                    OnEquipedItemChanged?.Invoke(equipedItem as Item, equipedItemIndex);
                     return;
                 }
             }
             equipedItem = selectedItem as IEquipable;
             equipedItemIndex = index;
             cosmecticEquiper.SetCosmetic(equipedItem);
-            OnEquipedItemChanged?.Invoke(selectedItem, equipedItemIndex);
+            OnEquipedItemChanged?.Invoke(equipedItem as Item, equipedItemIndex);
         }
     }
 }

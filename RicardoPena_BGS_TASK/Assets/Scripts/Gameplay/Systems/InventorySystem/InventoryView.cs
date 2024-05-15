@@ -198,5 +198,23 @@ namespace Gameplay.Systems.InventorySystem
             ToggleEquipButton(true);
         }
 
+        public void SetEquipedItemIcon(Item equipedItem, int idex)
+        {            
+            foreach (InventorySlotVisual inventorySlotVisual in inventorySlotsVisual)
+            {
+                inventorySlotVisual.ToggleEquipedIcon(false);
+            }
+
+            if (equipedItem is null)
+            {
+                return;
+            }
+
+            if (inventorySlotsVisual[idex].GetCurrentItem() is null)
+            {
+                return;
+            }
+            inventorySlotsVisual[idex].ToggleEquipedIcon(true);
+        }
     }
 }
