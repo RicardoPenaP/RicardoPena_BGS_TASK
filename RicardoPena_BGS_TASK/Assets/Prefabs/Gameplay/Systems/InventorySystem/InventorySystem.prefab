@@ -1103,7 +1103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2352332110398963874
 Transform:
   m_ObjectHideFlags: 0
@@ -1138,7 +1138,6 @@ MonoBehaviour:
   goldText: {fileID: 4804377572638969100}
   inventorySlotVisualPrefab: {fileID: 7304222112149046981, guid: 12c1ddde03448224cb833ee4bb2e1138, type: 3}
   inventorySlotsGridLayout: {fileID: 7165734432809290201}
-  inputReader: {fileID: 11400000, guid: ece4c3d15cff2f446a0dfcee14b3382a, type: 2}
 --- !u!1 &7467407849095251867
 GameObject:
   m_ObjectHideFlags: 0

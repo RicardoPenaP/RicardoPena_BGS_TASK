@@ -1,4 +1,5 @@
 using Gameplay.Items;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ namespace Gameplay.Systems.InventorySystem.Common
 {
     public class InventorySlotVisual : MonoBehaviour
     {
+        public static event Action<InventorySlotVisual> OnAnySlotVisualSelected;
+
         [Header("Inventory Slot")]
         [Header("References")]
         [SerializeField] private Image icon;
@@ -15,6 +18,11 @@ namespace Gameplay.Systems.InventorySystem.Common
 
         private int itemAmount;
         private Item currentItem;
+
+        private void OnMouseDown()
+        {
+            OnAnySlotVisualSelected?.Invoke(this);
+        }
 
         public void SetSlotVisuals(InventorySlot inventorySlot)
         {
@@ -45,5 +53,11 @@ namespace Gameplay.Systems.InventorySystem.Common
         }
 
         public Item GetCurrentItem() => currentItem;
+
+        public void ToggleFrame(bool state)
+        {
+            frame.gameObject.SetActive(state);
+        }
+        
     }
 }

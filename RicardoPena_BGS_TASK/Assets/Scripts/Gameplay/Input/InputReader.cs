@@ -41,7 +41,7 @@ namespace Gameplay.Input
 
         public void OnToggleInventoy(InputAction.CallbackContext context)
         {
-            if (context.ReadValueAsButton())
+            if (context.started)
             {
                 OnToggleInventoryInputUpdated?.Invoke();
             }
