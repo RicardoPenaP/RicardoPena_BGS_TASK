@@ -1136,6 +1136,8 @@ MonoBehaviour:
   sellButton: {fileID: 3835919628649513660}
   equipButton: {fileID: 4665118671614051825}
   goldText: {fileID: 4804377572638969100}
+  inventorySlotVisualPrefab: {fileID: 7304222112149046981, guid: 12c1ddde03448224cb833ee4bb2e1138, type: 3}
+  inventorySlotsGridLayout: {fileID: 7165734432809290201}
 --- !u!1 &7467407849095251867
 GameObject:
   m_ObjectHideFlags: 0
