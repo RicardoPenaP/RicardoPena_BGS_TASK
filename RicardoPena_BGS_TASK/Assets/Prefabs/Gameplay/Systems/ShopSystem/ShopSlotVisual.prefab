@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180456101738948186}
   - component: {fileID: 3733145514644640625}
+  - component: {fileID: -5890524768651969679}
   m_Layer: 0
   m_Name: ShopSlotVisual
   m_TagString: Untagged
@@ -53,6 +54,36 @@ MonoBehaviour:
   frame: {fileID: 588017026370462163}
   nameText: {fileID: 3331353939842272162}
   costText: {fileID: 4749878039389621926}
+--- !u!114 &-5890524768651969679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15620528007587130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3733145514644640625}
+          m_TargetAssemblyTypeName: Gameplay.Systems.ShopSystem.Common.ShopSlotVisual,
+            Gameplay.Systems.ShopSystem
+          m_MethodName: SlotSelected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &651142205018138712
 GameObject:
   m_ObjectHideFlags: 0
