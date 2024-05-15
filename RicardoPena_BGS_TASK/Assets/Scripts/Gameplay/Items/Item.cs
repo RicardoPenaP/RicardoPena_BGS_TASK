@@ -15,9 +15,5 @@ namespace Gameplay.Items
 
         public int GetSellPrice() => sellPrice;
 
-        public void Sell()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
