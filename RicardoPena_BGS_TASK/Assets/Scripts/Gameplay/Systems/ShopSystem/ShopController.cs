@@ -36,10 +36,10 @@ namespace Gameplay.Systems.ShopSystem
         }
 
         private void ShopView_OnBuyButtonPressed(Item selectedItem)
-        {
+        {            
             if (InventorySystem.InventorySystem.Instance.TryToAddItem(selectedItem))
             {
-                //InventorySystem.InventorySystem.Instance.try
+                InventorySystem.InventorySystem.Instance.TryToGetGold(selectedItem.GetBuyPrice());
             }
         }
 

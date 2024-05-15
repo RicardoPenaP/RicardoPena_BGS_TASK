@@ -42,9 +42,9 @@ namespace Gameplay.Systems.InventorySystem
             inventoryModel.OnCanSellChanged -= InventoryModel_OnCanSellChanged;
         }
 
-        private void InventoryView_OnSellButtonPressed(Item selectedItem)
+        private void InventoryView_OnSellButtonPressed(Item selectedItem, int? index)
         {
-            inventoryModel.SellItem(selectedItem);
+            inventoryModel.SellItem(selectedItem,(int)index);
         }
 
         private void InventoryModel_OnInventoryModelInitialized()

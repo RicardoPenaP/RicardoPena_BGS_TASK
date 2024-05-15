@@ -121,22 +121,28 @@ namespace Gameplay.Systems.InventorySystem
             OnGoldAmountChanged?.Invoke(goldAmount);
         }
 
-        public void SellItem(Item selectedItem)
+        public void SellItem(Item selectedItem, int index)
         {
-            for (int i = 0; i < inventorySlots.Length; i++)
+            if (inventorySlots[index].CurrentItem.Equals(selectedItem))
             {
-                if (inventorySlots[i].CurrentItem is null)
-                {
-                    continue;
-                }
-                if (inventorySlots[i].CurrentItem.Equals(selectedItem))
-                {
-                    AddGold(inventorySlots[i].CurrentItem.GetSellPrice() * inventorySlots[i].ItemAmount);
+                AddGold(inventorySlots[index].CurrentItem.GetSellPrice() * inventorySlots[index].ItemAmount);
 
-                }
-                inventorySlots[i].SetCurrentItem(null);
-                OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
             }
+            //for (int i = 0; i < inventorySlots.Length; i++)
+            //{
+            //    if (inventorySlots[i].CurrentItem is null)
+            //    {
+            //        continue;
+            //    }
+            //    if (inventorySlots[i].CurrentItem.Equals(selectedItem))
+            //    {
+            //        AddGold(inventorySlots[i].CurrentItem.GetSellPrice() * inventorySlots[i].ItemAmount);
+
+            //    }
+            //    inventorySlots[i].SetCurrentItem(null);
+            //    OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
+            //    return;
+            //}
         }
 
         public void SetCanSell(bool state)

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732df0969d787b0428c4f99cdc7b4eba, type: 3}
   m_Name: GrimReaperRobe
   m_EditorClassIdentifier: 
-  itemName: Armor Of Ansestors
-  icon: {fileID: 21300000, guid: c4b7f10eb36d63640956578da5b662ce, type: 3}
-  sellPrice: 50
-  buyPrice: 100
+  itemName: Grim Reaper Robe
+  icon: {fileID: 21300000, guid: caef759273f97b148965e7b94f03ccfa, type: 3}
+  sellPrice: 150
+  buyPrice: 250
   itemSprite: {fileID: 0}

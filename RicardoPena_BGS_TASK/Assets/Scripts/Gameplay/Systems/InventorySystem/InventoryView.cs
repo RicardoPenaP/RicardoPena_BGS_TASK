@@ -21,12 +21,13 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private Transform inventorySlotsGridLayout;
 
         public event Action OnCloseButtonPressed;
-        public event Action<Item> OnSellButtonPressed;
+        public event Action<Item, int?> OnSellButtonPressed;
         public event Action OnEquipButtonPressed;
 
         private InventorySlotVisual[] inventorySlotsVisual;
 
         private InventorySlotVisual selectedInventorySlotVisual;
+        private int? selectedInventorySlotVisualIndex = 0;
 
         private bool canSell = false;
 
@@ -69,7 +70,7 @@ namespace Gameplay.Systems.InventorySystem
 
         private void SellButton_OnClick()
         {
-            OnSellButtonPressed?.Invoke(selectedInventorySlotVisual.GetCurrentItem());
+            OnSellButtonPressed?.Invoke(selectedInventorySlotVisual.GetCurrentItem(), selectedInventorySlotVisualIndex);
             SetSelectedInventorySlotVisual(null);
         }
 
@@ -124,6 +125,7 @@ namespace Gameplay.Systems.InventorySystem
         {
             selectedInventorySlotVisual?.ToggleFrame(false);
             selectedInventorySlotVisual = slotVisual;
+            selectedInventorySlotVisualIndex = selectedInventorySlotVisual?.transform.GetSiblingIndex();
             selectedInventorySlotVisual?.ToggleFrame(true);
 
             HandleSellVisuals();
@@ -171,5 +173,6 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         public void SetCanSell(bool state) => canSell = state;
+
     }
 }
