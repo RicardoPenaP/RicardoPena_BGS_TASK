@@ -1,5 +1,7 @@
 ﻿using Gameplay.Systems.ShopSystem.Common;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.Systems.ShopSystem
 {
@@ -9,8 +11,37 @@ namespace Gameplay.Systems.ShopSystem
         [Header("References")]
         [SerializeField] private ShopSlotVisual shopSlotVisualPrefab;
         [SerializeField] private Transform slotLayout;
+        [SerializeField] private Button closeButton;
+
+        public event Action OnCloseButtonPressed;
 
         private ShopSlotVisual[] shopSlotsVisual;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void OnDestroy()
+        {
+            Deinit();
+        }
+
+        private void Init()
+        {
+            closeButton.onClick.AddListener(CloseButtonPressed);
+        }
+
+        private void Deinit()
+        {
+            closeButton.onClick.RemoveListener(CloseButtonPressed);
+        }
+
+        private void CloseButtonPressed()
+        {
+            ToggleShopView(false);
+            OnCloseButtonPressed?.Invoke();
+        }
 
         public void SetShopSlotsVisual(ShopSlot[] shopSlots)
         {
