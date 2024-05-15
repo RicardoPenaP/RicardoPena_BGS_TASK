@@ -49,6 +49,8 @@ namespace Gameplay.Systems.InventorySystem.Common
 
         public Item GetCurrentItem() => currentItem;
 
+        public int GetItemAmount() => itemAmount;
+
         public void ToggleFrame(bool state)
         {
             frame.gameObject.SetActive(state);

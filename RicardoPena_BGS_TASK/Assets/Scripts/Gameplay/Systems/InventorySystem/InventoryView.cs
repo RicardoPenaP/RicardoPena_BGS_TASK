@@ -138,8 +138,8 @@ namespace Gameplay.Systems.InventorySystem
                 ToggleSellPanel(false);
                 return;
             }
-
-            UpdateSellText(selectedInventorySlotVisual.GetCurrentItem());
+            //int sellPrice = selectedInventorySlotVisual.GetCurrentItem().GetSellPrice()* selectedInventorySlotVisual.
+            //UpdateSellText(sellPrice);
             ToggleSellPanel(true);
         }
 
@@ -148,9 +148,9 @@ namespace Gameplay.Systems.InventorySystem
             goldText.text = $"{amount}";
         }
 
-        public void UpdateSellText(ISellable sellableItem)
+        public void UpdateSellText(int sellPrice)
         {
-            sellPriceText.text = $"{sellableItem.GetSellPrice()}";
+            sellPriceText.text = $"{sellPrice}";
         }
     }
 }
