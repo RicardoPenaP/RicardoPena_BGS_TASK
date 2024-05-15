@@ -1,3 +1,4 @@
+using Gameplay.Items;
 using System;
 using UnityEngine;
 
@@ -34,6 +35,8 @@ namespace Gameplay.Systems.InventorySystem
         {
             inventoryView.SetInvetorySlotsVisual(inventoryModel.GetInventorySlots());
         }
+
+        public bool TryToAddItem(Item item, int amount = 1) => inventoryModel.TryToAddItem(item, amount);
     }
 }
 
