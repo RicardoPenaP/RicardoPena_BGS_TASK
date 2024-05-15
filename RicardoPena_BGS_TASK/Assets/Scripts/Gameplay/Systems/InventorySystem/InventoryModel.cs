@@ -12,7 +12,7 @@ namespace Gameplay.Systems.InventorySystem
         [SerializeField] private int amountOfInventorySlots = 25;
 
         public event Action OnInventoryModelInitialized;
-        public event Action<InventorySlot> OnInventorySlotUpdated;
+        public event Action<InventorySlot, int> OnInventorySlotUpdated;
 
         private InventorySlot[] inventorySlots;
 
@@ -33,12 +33,12 @@ namespace Gameplay.Systems.InventorySystem
 
         public bool TryToAddItem(Item item, int amount = 1)
         {
-            if (TryStackItem(item,amount))
+            if (TryStackItem(item, amount))
             {
                 return true;
             }
 
-            if (TryToAddToNewSlot(item,amount))
+            if (TryToAddToNewSlot(item, amount))
             {
                 return true;
             }
@@ -47,19 +47,19 @@ namespace Gameplay.Systems.InventorySystem
         }
 
         private bool TryStackItem(Item item, int amount)
-        {            
-            foreach (InventorySlot inventorySlot in inventorySlots)
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlot.CurrentItem is null)
+                if (inventorySlots[i].CurrentItem is null)
                 {
                     continue;
                 }
 
-                if (inventorySlot.CurrentItem.ItemName.Equals(item.ItemName))
+                if (inventorySlots[i].CurrentItem.ItemName.Equals(item.ItemName))
                 {
-                    if (inventorySlot.TryToStackItem(item, amount))
+                    if (inventorySlots[i].TryToStackItem(item, amount))
                     {
-                        OnInventorySlotUpdated?.Invoke(inventorySlot);
+                        OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
                         return true;
                     }
                 }
@@ -70,16 +70,16 @@ namespace Gameplay.Systems.InventorySystem
 
         private bool TryToAddToNewSlot(Item item, int amount)
         {
-            foreach (InventorySlot inventorySlot in inventorySlots)
+            for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlot.CurrentItem is not null)
+                if (inventorySlots[i].CurrentItem is not null)
                 {
                     continue;
                 }
-                inventorySlot.SetCurrentItem(item, amount);
-                OnInventorySlotUpdated?.Invoke(inventorySlot);
+                inventorySlots[i].SetCurrentItem(item, amount);
+                OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
                 return true;
-            }
+            }            
             return false;
         }
 

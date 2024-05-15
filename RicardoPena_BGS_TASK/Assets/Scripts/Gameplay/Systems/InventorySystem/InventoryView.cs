@@ -81,9 +81,9 @@ namespace Gameplay.Systems.InventorySystem
                                                       Quaternion.identity, inventorySlotsGridLayout);
                 inventorySlotsVisual[i].SetSlotVisuals(inventorySlots[i]);
             }
-        }
+        }        
 
-        public void UpdateInventoySlotVisual(InventorySlot inventorySlot)
+        public void UpdateInventoySlotVisual(InventorySlot inventorySlot, int index)
         {
             foreach (InventorySlotVisual inventorySlotVisual in inventorySlotsVisual)
             {
