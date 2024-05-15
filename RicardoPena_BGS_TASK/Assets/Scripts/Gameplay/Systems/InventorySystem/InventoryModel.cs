@@ -11,6 +11,8 @@ namespace Gameplay.Systems.InventorySystem
         [Header("Settings")]
         [SerializeField] private int amountOfInventorySlots = 25;
 
+        public event Action OnInventoryModelInitialized;
+
         private InventorySlot[] inventorySlots;
 
         private void Awake()
@@ -24,7 +26,8 @@ namespace Gameplay.Systems.InventorySystem
             for (int i = 0; i < inventorySlots.Length; i++)
             {
                 inventorySlots[i] = new InventorySlot();
-            }            
+            }
+            OnInventoryModelInitialized?.Invoke();
         }
 
         public bool TryToAddItem(Item item, int amount = 1)
