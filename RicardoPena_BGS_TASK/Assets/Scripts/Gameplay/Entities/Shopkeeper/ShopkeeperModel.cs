@@ -19,7 +19,7 @@ namespace Gameplay.Entities.Shopkeeper
         private ShopSlot[] shopSlots;
 
         private bool canInteract = true;
-        private bool shopOpen = false;
+        [SerializeField] private bool shopOpen = false;
 
         public bool CanInteract => canInteract;
         public bool ShopOpen => shopOpen;

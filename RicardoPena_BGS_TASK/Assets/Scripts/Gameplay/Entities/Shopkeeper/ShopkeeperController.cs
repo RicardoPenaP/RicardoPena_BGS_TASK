@@ -17,8 +17,7 @@ namespace Gameplay.Entities.Shopkeeper
             if (shopkeeperModel.CanInteract && !shopkeeperModel.ShopOpen)
             {
                 shopkeeperModel.StartInteraction();
-                ShopSystem.Instance.OpenShop(shopkeeperModel);
-                shopkeeperModel.SetShopOpen(true);
+                ShopSystem.Instance.OpenShop(shopkeeperModel);                
             }
         }
 
@@ -26,8 +25,7 @@ namespace Gameplay.Entities.Shopkeeper
         {
             if (shopkeeperModel.ShopOpen)
             {
-                ShopSystem.Instance.CloseShop();
-                shopkeeperModel.SetShopOpen(false);
+                ShopSystem.Instance.CloseShop();                
             }
         }
     }

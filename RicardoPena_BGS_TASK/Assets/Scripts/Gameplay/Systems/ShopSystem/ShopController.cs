@@ -23,12 +23,12 @@ namespace Gameplay.Systems.ShopSystem
 
         private void Init()
         {
-            shopView.OnCloseButtonPressed += () => InventorySystem.InventorySystem.Instance.CloseInventory();
+            shopView.OnCloseButtonPressed += () => CloseShop();
         }
 
         private void Deinit()
         {
-            shopView.OnCloseButtonPressed -= () => InventorySystem.InventorySystem.Instance.CloseInventory();
+            shopView.OnCloseButtonPressed -= () => CloseShop();
         }
 
         public void OpenShop(IShopModel shopModel)
@@ -36,12 +36,14 @@ namespace Gameplay.Systems.ShopSystem
             this.shopModel = shopModel;
             shopView.SetShopSlotsVisual(this.shopModel.GetShopSlots());
             shopView.ToggleShopView(true);
+            this.shopModel.SetShopOpen(true);
             InventorySystem.InventorySystem.Instance.OpenInventory();
         }
 
         public void CloseShop()
         {
             shopView.ToggleShopView(false);
+            shopModel.SetShopOpen(false);
             InventorySystem.InventorySystem.Instance.CloseInventory();
         }
     }

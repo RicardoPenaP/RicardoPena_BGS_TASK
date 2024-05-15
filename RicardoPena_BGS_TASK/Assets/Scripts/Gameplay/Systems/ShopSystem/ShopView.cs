@@ -38,8 +38,7 @@ namespace Gameplay.Systems.ShopSystem
         }
 
         private void CloseButtonPressed()
-        {
-            ToggleShopView(false);
+        {            
             OnCloseButtonPressed?.Invoke();
         }
 
