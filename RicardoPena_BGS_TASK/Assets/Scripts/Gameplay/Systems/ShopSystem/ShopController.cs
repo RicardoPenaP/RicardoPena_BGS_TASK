@@ -13,6 +13,7 @@ namespace Gameplay.Systems.ShopSystem
         public void OpenShop(IShopModel shopModel)
         {
             this.shopModel = shopModel;
+            shopView.SetShopSlotsVisual(this.shopModel.GetShopSlots());
         }
     }
 }
