@@ -40,6 +40,8 @@ namespace Gameplay.Systems.InventorySystem
         public void AddGold(int amount) => inventoryController.AddGold(amount);
 
         public int GetCurrentGold() => inventoryController.GetCurrentGold();
+
+        public void SetCanSell(bool state) => inventoryController.SetCanSell(state);
     }
 }
 

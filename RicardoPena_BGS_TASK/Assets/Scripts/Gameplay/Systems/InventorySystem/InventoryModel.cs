@@ -87,7 +87,7 @@ namespace Gameplay.Systems.InventorySystem
                 inventorySlots[i].SetCurrentItem(item, amount);
                 OnInventorySlotUpdated?.Invoke(inventorySlots[i], i);
                 return true;
-            }            
+            }
             return false;
         }
 
@@ -139,7 +139,12 @@ namespace Gameplay.Systems.InventorySystem
             }
         }
 
-        public void SetCanSell(bool state) => canSell = state;
+        public void SetCanSell(bool state)
+        {
+            canSell = state;
+            OnCanSellChanged?.Invoke(canSell);
+        }
+
 
     }
 }
