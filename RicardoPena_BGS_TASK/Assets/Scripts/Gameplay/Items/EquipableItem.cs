@@ -1,21 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Gameplay.Items.Assets.Scripts.Gameplay.Items
+namespace Gameplay.Items
 {
-    public class EquipableItem : MonoBehaviour
+    [CreateAssetMenu(fileName = "NewEquipableItem", menuName = "Gameplay/Items/Equipable Item")]
+    public class EquipableItem : Item, IEquipable
     {
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        [SerializeField] private Sprite itemSprite;
     }
 }

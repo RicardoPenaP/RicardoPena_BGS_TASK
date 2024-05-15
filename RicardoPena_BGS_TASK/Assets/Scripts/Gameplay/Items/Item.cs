@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Gameplay.Items.Assets.Scripts.Gameplay.Items
+namespace Gameplay.Items
 {    
     public abstract class Item : ScriptableObject
     {
