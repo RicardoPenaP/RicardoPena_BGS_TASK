@@ -1,3 +1,14 @@
 {
-	"name": "Gameplay.Systems.InventorySystem"
+    "name": "Gameplay.Systems.InventorySystem",
+    "rootNamespace": "Gameplay.Systems.InventorySystem",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
