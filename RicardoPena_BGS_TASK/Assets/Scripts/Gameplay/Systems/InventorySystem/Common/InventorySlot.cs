@@ -12,5 +12,6 @@ namespace Gameplay.Systems.InventorySystem.Common
         [SerializeField] private Image frame;
         [SerializeField] private TextMeshProUGUI stackText;
 
+        //private Item
     }
 }
