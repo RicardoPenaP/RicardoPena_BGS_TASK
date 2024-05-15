@@ -37,13 +37,17 @@ namespace Gameplay.Systems.ShopSystem
             shopView.SetShopSlotsVisual(this.shopModel.GetShopSlots());
             shopView.ToggleShopView(true);
             this.shopModel.SetShopOpen(true);
+
+            InventorySystem.InventorySystem.Instance.SetCanSell(true);
             InventorySystem.InventorySystem.Instance.OpenInventory();
+
         }
 
         public void CloseShop()
         {
             shopView.ToggleShopView(false);
             shopModel.SetShopOpen(false);
+            InventorySystem.InventorySystem.Instance.SetCanSell(false);
             InventorySystem.InventorySystem.Instance.CloseInventory();
         }
     }
